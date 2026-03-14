@@ -1,15 +1,3 @@
-.ralph/logs/
-_bmad-output/
-.claude
-_bmad
-.bmad-version
-.ralph
-_briefs
-bmalph
-CLAUDE.md
-dist
-mcp.json
-
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -47,13 +35,6 @@ yarn-error.log*
 
 # vercel
 .vercel
-
-# web-v2 dependencies and build
-web-v2/node_modules
-web-v2/.next
-web-v2/out
-web-v2/dist
-web-v2/build
 
 # typescript
 *.tsbuildinfo
