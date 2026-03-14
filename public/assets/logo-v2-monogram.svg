@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220" width="200" height="220" role="img" aria-label="Ebrar Optik">
+  <!-- Outer ring charcoal -->
+  <circle cx="100" cy="90" r="72" fill="none" stroke="#292524" stroke-width="3" />
+  <!-- Inner ring amber -->
+  <circle cx="100" cy="90" r="60" fill="none" stroke="#f59e0b" stroke-width="2.5" />
+
+  <!-- "E" letter -->
+  <text
+    x="62"
+    y="108"
+    font-family="Inter, system-ui, -apple-system, sans-serif"
+    font-size="52"
+    font-weight="700"
+    fill="#1c1917"
+    letter-spacing="-2"
+  >E</text>
+
+  <!-- "O" letter -->
+  <text
+    x="100"
+    y="108"
+    font-family="Inter, system-ui, -apple-system, sans-serif"
+    font-size="52"
+    font-weight="700"
+    fill="#1c1917"
+    letter-spacing="-2"
+  >O</text>
+
+  <!-- Brand name below -->
+  <text
+    x="100"
+    y="185"
+    font-family="Inter, system-ui, -apple-system, sans-serif"
+    font-size="16"
+    font-weight="600"
+    fill="#1c1917"
+    letter-spacing="4"
+    text-anchor="middle"
+  >EBRAR OPTİK</text>
+</svg>
