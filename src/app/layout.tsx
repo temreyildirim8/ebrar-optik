@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { FloatingWhatsAppButton } from "@/components/FloatingWhatsAppButton";
+import { FloatingSocialButtons } from "@/components/FloatingSocialButtons";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 
@@ -20,11 +20,26 @@ export const metadata: Metadata = {
   description: "Görüşünüz bizim için değerli. Ebrar Optik, Kırıkkale'de profesyonel göz sağlığı hizmetleri ve geniş çerçeve koleksiyonu ile hizmetinizde.",
   keywords: ["Kırıkkale optik", "gözlük", "güneş gözlüğü", "lens", "göz sağlığı", "optik mağaza"],
   authors: [{ name: "Ebrar Optik" }],
+  icons: {
+    icon: [
+      { url: "/assets/logo-v2-monogram.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/assets/logo-v2-monogram.svg",
+    apple: "/assets/logo-v2-monogram.svg",
+  },
   openGraph: {
     title: "Ebrar Optik | Kırıkkale'nin Güvenilir Optik Mağazası",
     description: "Profesyonel göz sağlığı hizmetleri ve geniş çerçeve koleksiyonu",
     locale: "tr_TR",
     type: "website",
+    images: [
+      {
+        url: "/assets/logo-v2-monogram.svg",
+        width: 200,
+        height: 220,
+        alt: "Ebrar Optik Logo",
+      },
+    ],
   },
 };
 
@@ -41,7 +56,7 @@ export default function RootLayout({
         <Navigation />
         {children}
         <Footer />
-        <FloatingWhatsAppButton />
+        <FloatingSocialButtons />
       </body>
     </html>
   );

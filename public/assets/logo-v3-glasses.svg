@@ -37,12 +37,12 @@
 
   <!-- "Optik" regular stone-500 -->
   <text
-    x="198"
+    x="174"
     y="50"
     font-family="Inter, system-ui, -apple-system, sans-serif"
     font-size="28"
     font-weight="400"
     fill="#57534e"
     letter-spacing="-0.5"
-  > Optik</text>
+  >Optik</text>
 </svg>

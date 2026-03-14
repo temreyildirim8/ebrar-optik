@@ -1,4 +1,9 @@
 import { Card } from "@/components/ui/card";
+import {
+  ScrollReveal,
+  StaggerContainer,
+  StaggerItem,
+} from "@/components/ScrollAnimations";
 
 interface Service {
   title: string;
@@ -9,34 +14,7 @@ interface Service {
 export function ServicesSection() {
   const services: Service[] = [
     {
-      title: "Göz Muayenesi",
-      description:
-        "Modern ekipmanlarımızla detaylı göz muayenesi yapıyor, göz sağlığınızı korumanıza yardımcı oluyoruz.",
-      icon: (
-        <svg
-          className="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          aria-hidden="true"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-          />
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-          />
-        </svg>
-      ),
-    },
-    {
-      title: "Reçeteli Gözlük",
+      title: "Reçeteli Optik Gözlük",
       description:
         "Göz doktorunuzun reçetesine uygun, yüz şeklinize ve yaşam tarzınıza en uygun gözlükleri seçmenize yardımcı oluyoruz.",
       icon: (
@@ -79,6 +57,33 @@ export function ServicesSection() {
       ),
     },
     {
+      title: "Numaralı Güneş Gözlüğü",
+      description:
+        "Modern ekipmanlarımızla, istediğiniz çerçeveye sizin için özel bir numaralı güneş gözlüğü yapabiliriz. Yazın güneş gözünüzü yormasın!",
+      icon: (
+        <svg
+          className="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+          />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+          />
+        </svg>
+      ),
+    },
+    {
       title: "Lens Çeşitleri",
       description:
         "Günlük, haftalık, aylık ve renkli lens seçeneklerimizle kontakt lens ihtiyacınızı karşılıyoruz.",
@@ -100,9 +105,9 @@ export function ServicesSection() {
       ),
     },
     {
-      title: "Cam Değişimi",
+      title: "Cam ve Çerçeve Değişimi",
       description:
-        "Kırılmış veya çizilmiş gözlük camlarınızı yüksek kaliteli markalı camlarla değiştiriyoruz.",
+        "Kırılmış veya çizilmiş gözlük camlarınızı ve çerçevelerinizi yenileriyle değiştiriyoruz.",
       icon: (
         <svg
           className="h-6 w-6"
@@ -153,34 +158,40 @@ export function ServicesSection() {
     <section id="hizmetler" className="w-full bg-white py-20 dark:bg-stone-950">
       <div className="container mx-auto max-w-7xl px-6 md:px-12 lg:px-24">
         {/* Section Header */}
-        <div className="mb-12 text-center">
+        <ScrollReveal
+          className="mb-12 text-center"
+          direction="up"
+          distance={30}
+        >
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-stone-900 dark:text-stone-50 sm:text-4xl md:text-5xl">
             Hizmetlerimiz
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-stone-600 dark:text-stone-300">
             Ebrar Optik&apos;te sunduğumuz profesyonel hizmetler
           </p>
-        </div>
+        </ScrollReveal>
 
         {/* Services Grid */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <StaggerContainer
+          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          staggerDelay={0.1}
+        >
           {services.map((service, index) => (
-            <Card
-              key={index}
-              className="group border-stone-200 bg-stone-50 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-stone-800 dark:bg-stone-900"
-            >
-              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-lg bg-emerald-100 text-emerald-600 transition-colors group-hover:bg-emerald-600 group-hover:text-white dark:bg-emerald-900/30 dark:text-emerald-400">
-                {service.icon}
-              </div>
-              <h3 className="mb-3 text-xl font-semibold text-stone-900 dark:text-stone-50">
-                {service.title}
-              </h3>
-              <p className="text-base leading-relaxed text-stone-600 dark:text-stone-300">
-                {service.description}
-              </p>
-            </Card>
+            <StaggerItem key={index}>
+              <Card className="group h-full border-stone-200 bg-stone-50 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-stone-800 dark:bg-stone-900">
+                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-lg bg-emerald-100 text-emerald-600 transition-colors group-hover:bg-emerald-600 group-hover:text-white dark:bg-emerald-900/30 dark:text-emerald-400">
+                  {service.icon}
+                </div>
+                <h3 className="mb-3 text-xl font-semibold text-stone-900 dark:text-stone-50">
+                  {service.title}
+                </h3>
+                <p className="text-base leading-relaxed text-stone-600 dark:text-stone-300">
+                  {service.description}
+                </p>
+              </Card>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );

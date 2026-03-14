@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Glasses } from "lucide-react";
+import { HeroReveal } from "@/components/ScrollAnimations";
 
 export function HeroSection() {
   const whatsappNumber =
@@ -13,17 +14,20 @@ export function HeroSection() {
     <section className="relative flex min-h-[90vh] w-full items-center justify-center overflow-hidden bg-gradient-to-br from-stone-50 via-white to-stone-100 dark:from-stone-950 dark:via-stone-900 dark:to-stone-950">
       <div className="container mx-auto flex max-w-7xl flex-col items-center justify-center gap-8 px-6 py-16 md:px-12 lg:px-24">
         {/* Logo and Brand */}
-        <div className="flex flex-col items-center gap-4 text-center">
+        {/* <HeroReveal className="flex flex-col items-center gap-4 text-center">
           <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 shadow-lg shadow-emerald-500/20">
             <Glasses className="h-10 w-10 text-white" aria-hidden="true" />
           </div>
           <h1 className="text-4xl font-bold tracking-tight text-stone-900 dark:text-stone-50 sm:text-5xl md:text-6xl">
             Ebrar Optik
           </h1>
-        </div>
+        </HeroReveal> */}
 
         {/* Headline */}
-        <div className="flex max-w-3xl flex-col items-center gap-4 text-center">
+        <HeroReveal
+          delay={0.2}
+          className="flex max-w-3xl flex-col items-center gap-4 text-center"
+        >
           <h2 className="text-3xl font-semibold leading-tight text-stone-800 dark:text-stone-100 sm:text-4xl md:text-5xl">
             Görüşünüz Bizim İçin Değerli
           </h2>
@@ -31,13 +35,13 @@ export function HeroSection() {
             Kırıkkale&apos;de profesyonel göz sağlığı hizmetleri ve geniş
             çerçeve koleksiyonu ile hizmetinizde.
           </p>
-        </div>
+        </HeroReveal>
 
         {/* Services Preview */}
-        <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
-          <span className="rounded-full bg-stone-100 px-4 py-2 text-sm font-medium text-stone-700 dark:bg-stone-800 dark:text-stone-300">
-            Göz Muayenesi
-          </span>
+        <HeroReveal
+          delay={0.4}
+          className="flex flex-wrap justify-center gap-3 sm:gap-4"
+        >
           <span className="rounded-full bg-stone-100 px-4 py-2 text-sm font-medium text-stone-700 dark:bg-stone-800 dark:text-stone-300">
             Reçeteli Gözlük
           </span>
@@ -47,7 +51,7 @@ export function HeroSection() {
           <span className="rounded-full bg-stone-100 px-4 py-2 text-sm font-medium text-stone-700 dark:bg-stone-800 dark:text-stone-300">
             Lens
           </span>
-        </div>
+        </HeroReveal>
 
         {/* CTA Button */}
         {/* <div className="flex flex-col items-center gap-4 sm:flex-row">

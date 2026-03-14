@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const navLinks = [
   { href: "/", label: "Ana Sayfa" },
@@ -17,33 +18,16 @@ export function Navigation() {
   return (
     <header className="sticky top-0 z-40 w-full border-b border-stone-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:border-stone-800 dark:bg-stone-950/95">
       <nav className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-6 md:px-12 lg:px-24">
-        {/* Logo */}
-        <a href="#" className="flex items-center space-x-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-600">
-            <svg
-              className="h-6 w-6 text-white"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-              />
-            </svg>
-          </div>
-          <span className="text-xl font-bold text-stone-900 dark:text-stone-50">
-            Ebrar Optik
-          </span>
+        {/* Logo - Horizontal version */}
+        <a href="#" className="flex items-center">
+          <Image
+            src="/assets/logo-v3-glasses.svg"
+            alt="Ebrar Optik"
+            width={140}
+            height={40}
+            className="h-10 w-auto"
+            priority
+          />
         </a>
 
         {/* Desktop Navigation */}
