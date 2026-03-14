@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Card } from "@/components/ui/card";
 import { ScrollReveal } from "@/components/ScrollAnimations";
 import { motion, AnimatePresence } from "framer-motion";
@@ -29,57 +30,57 @@ export function FrameGallery() {
       id: 1,
       name: "Klasik Yuvarlak",
       category: "womens",
-      image: "/frames/womens-1.jpg",
+      image: "/glasses/klasik-yuvarlak.webp",
       description: "Zarif ve klasik yuvarlak çerçeve",
     },
     {
       id: 2,
       name: "Modern Kare",
       category: "mens",
-      image: "/frames/mens-1.jpg",
+      image: "/glasses/modern-kare.webp",
       description: "Şık ve modern kare çerçeve",
     },
     {
       id: 3,
-      name: "Renkli Çocuk",
-      category: "children",
-      image: "/frames/children-1.jpg",
-      description: "Eğlenceli renkli çocuk çerçevesi",
+      name: "Aviator Güneş",
+      category: "sunglasses",
+      image: "/glasses/aviator-gunes.webp",
+      description: "Klasik aviator tarzı güneş gözlüğü",
     },
     {
       id: 4,
-      name: "Aviator Güneş",
+      name: "Polarize Güneş",
       category: "sunglasses",
-      image: "/frames/sunglasses-1.jpg",
-      description: "Klasik aviator tarzı güneş gözlüğü",
+      image: "/glasses/polarize-gunes.webp",
+      description: "Polarize camlı güneş gözlüğü",
     },
     {
       id: 5,
       name: "Kedi Gözü",
       category: "womens",
-      image: "/frames/womens-2.jpg",
+      image: "/glasses/kedi-gozu.webp",
       description: "Vintage kedi gözü modeli",
     },
     {
       id: 6,
       name: "Sportif",
       category: "mens",
-      image: "/frames/mens-2.jpg",
+      image: "/glasses/sportif.webp",
       description: "Aktif yaşam için sportif tasarım",
     },
     {
       id: 7,
       name: "Mini Çocuk",
       category: "children",
-      image: "/frames/children-2.jpg",
+      image: "/glasses/mini-cocuk.webp",
       description: "Küçük yaşlar için mini çerçeve",
     },
     {
       id: 8,
-      name: "Polarize Güneş",
-      category: "sunglasses",
-      image: "/frames/sunglasses-2.jpg",
-      description: "Polarize camlı güneş gözlüğü",
+      name: "Renkli Çocuk",
+      category: "children",
+      image: "/glasses/renkli-cocuk.webp",
+      description: "Eğlenceli renkli çocuk çerçevesi",
     },
   ];
 
@@ -105,6 +106,7 @@ export function FrameGallery() {
         </ScrollReveal>
 
         {/* Category Tabs */}
+        {/* Disabled for now */}
         {/* <ScrollReveal
           className="mb-8 flex flex-wrap justify-center gap-2"
           delay={0.1}
@@ -142,23 +144,13 @@ export function FrameGallery() {
                 transition={{ duration: 0.4, delay: index * 0.05 }}
               >
                 <Card className="group h-full overflow-hidden border-stone-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-stone-800 dark:bg-stone-950">
-                  <div className="aspect-square w-full overflow-hidden bg-stone-100 dark:bg-stone-800">
-                    <div className="flex h-full w-full items-center justify-center text-stone-400">
-                      <svg
-                        className="h-24 w-24"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        aria-hidden="true"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1}
-                          d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                        />
-                      </svg>
-                    </div>
+                  <div className="aspect-square relative w-full overflow-hidden bg-stone-100 dark:bg-stone-800">
+                    <Image
+                      src={frame.image}
+                      alt={frame.name}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
                   </div>
                   <div className="p-4">
                     <h3 className="text-lg font-semibold text-stone-900 dark:text-stone-50">

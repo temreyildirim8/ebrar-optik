@@ -1,6 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { Glasses } from "lucide-react";
 import { HeroReveal } from "@/components/ScrollAnimations";
+import Image from "next/image";
 
 export function HeroSection() {
   const whatsappNumber =
@@ -12,7 +11,27 @@ export function HeroSection() {
 
   return (
     <section className="relative flex min-h-[90vh] w-full items-center justify-center overflow-hidden bg-gradient-to-br from-stone-50 via-white to-stone-100 dark:from-stone-950 dark:via-stone-900 dark:to-stone-950">
-      <div className="container mx-auto flex max-w-7xl flex-col items-center justify-center gap-8 px-6 py-16 md:px-12 lg:px-24">
+      {/* Hero Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/hero.png"
+          alt="Ebrar Optik"
+          fill
+          priority
+          className="object-cover object-center hidden md:block"
+        />
+        <Image
+          src="/hero.png"
+          alt="Ebrar Optik"
+          fill
+          priority
+          className="object-cover object-[center_70%] block md:hidden"
+        />
+        {/* Overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-stone-900/80 via-stone-900/50 to-transparent dark:from-stone-950/90 dark:via-stone-950/60" />
+      </div>
+
+      <div className="container relative z-10 mx-auto flex max-w-7xl flex-col items-start justify-center gap-8 px-6 py-16 md:px-12 lg:px-24">
         {/* Logo and Brand */}
         {/* <HeroReveal className="flex flex-col items-center gap-4 text-center">
           <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 shadow-lg shadow-emerald-500/20">
@@ -26,29 +45,26 @@ export function HeroSection() {
         {/* Headline */}
         <HeroReveal
           delay={0.2}
-          className="flex max-w-3xl flex-col items-center gap-4 text-center"
+          className="flex max-w-3xl flex-col items-start gap-4 text-left"
         >
-          <h2 className="text-3xl font-semibold leading-tight text-stone-800 dark:text-stone-100 sm:text-4xl md:text-5xl">
+          <h2 className="text-3xl font-semibold leading-tight text-white sm:text-4xl md:text-5xl">
             Görüşünüz Bizim İçin Değerli
           </h2>
-          <p className="text-lg text-stone-600 dark:text-stone-300 sm:text-xl md:text-2xl">
+          <p className="text-lg text-stone-200 sm:text-xl md:text-2xl">
             Kırıkkale&apos;de profesyonel göz sağlığı hizmetleri ve geniş
             çerçeve koleksiyonu ile hizmetinizde.
           </p>
         </HeroReveal>
 
         {/* Services Preview */}
-        <HeroReveal
-          delay={0.4}
-          className="flex flex-wrap justify-center gap-3 sm:gap-4"
-        >
-          <span className="rounded-full bg-stone-100 px-4 py-2 text-sm font-medium text-stone-700 dark:bg-stone-800 dark:text-stone-300">
+        <HeroReveal delay={0.4} className="flex flex-wrap gap-3 sm:gap-4">
+          <span className="rounded-full bg-white/20 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm">
             Reçeteli Gözlük
           </span>
-          <span className="rounded-full bg-stone-100 px-4 py-2 text-sm font-medium text-stone-700 dark:bg-stone-800 dark:text-stone-300">
+          <span className="rounded-full bg-white/20 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm">
             Güneş Gözlüğü
           </span>
-          <span className="rounded-full bg-stone-100 px-4 py-2 text-sm font-medium text-stone-700 dark:bg-stone-800 dark:text-stone-300">
+          <span className="rounded-full bg-white/20 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm">
             Lens
           </span>
         </HeroReveal>

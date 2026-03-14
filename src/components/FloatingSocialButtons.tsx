@@ -4,8 +4,11 @@ import { useState, useEffect } from "react";
 
 export function FloatingSocialButtons() {
   const [isDesktop, setIsDesktop] = useState(false);
-  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "905458199862";
-  const whatsappMessage = encodeURIComponent("Merhaba Ebrar Optik, randevu almak istiyorum.");
+  const whatsappNumber =
+    process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "905458199862";
+  const whatsappMessage = encodeURIComponent(
+    "Merhaba Ebrar Optik, randevu almak istiyorum.",
+  );
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
   const instagramLink = "https://www.instagram.com/ebrar.optik/";
 
@@ -28,7 +31,7 @@ export function FloatingSocialButtons() {
             href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex h-12 w-12 items-center justify-center rounded-full bg-green-500 shadow-lg shadow-green-500/30 transition-all duration-300 hover:-translate-y-1 hover:bg-green-600 hover:shadow-xl hover:shadow-green-600/30 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-green-500/50"
+            className="mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-green-500 shadow-lg shadow-green-500/30 transition-all duration-300 hover:-translate-y-1 hover:bg-green-600 hover:shadow-xl hover:shadow-green-600/30 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-green-500/50"
             aria-label="WhatsApp ile iletişime geç"
           >
             <svg
@@ -46,7 +49,7 @@ export function FloatingSocialButtons() {
             href={instagramLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 shadow-lg shadow-pink-500/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-pink-500/40 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-pink-500/50"
+            className="mt-2 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 shadow-lg shadow-pink-500/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-pink-500/40 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-pink-500/50"
             aria-label="Instagram'da bizi takip et"
           >
             <svg
@@ -69,7 +72,7 @@ export function FloatingSocialButtons() {
             href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex h-11 w-11 items-center justify-center rounded-full bg-green-500 shadow-lg shadow-green-500/30 transition-all duration-300 hover:-translate-y-1 hover:bg-green-600 hover:shadow-xl hover:shadow-green-600/30 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-green-500/50"
+            className="mb-2 flex h-11 w-11 items-center justify-center rounded-full bg-green-500 shadow-lg shadow-green-500/30 transition-all duration-300 hover:-translate-y-1 hover:bg-green-600 hover:shadow-xl hover:shadow-green-600/30 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-green-500/50"
             aria-label="WhatsApp ile iletişime geç"
           >
             <svg

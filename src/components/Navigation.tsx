@@ -121,7 +121,7 @@ export function Navigation() {
                 {link.label}
               </a>
             ))}
-            <a
+            {/* <a
               href="https://wa.me/905458199862?text=Merhaba%20Ebrar%20Optik"
               target="_blank"
               rel="noopener noreferrer"
@@ -141,7 +141,7 @@ export function Navigation() {
                 </svg>
                 WhatsApp
               </Button>
-            </a>
+            </a> */}
           </div>
         </div>
       )}

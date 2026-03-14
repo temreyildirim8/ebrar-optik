@@ -28,12 +28,12 @@ export function AboutSection() {
 
         {/* Content Grid */}
         <StaggerContainer
-          className="grid gap-8 md:grid-cols-2 lg:gap-12"
+          className="grid gap-8 md:grid-cols-2 lg:gap-12 items-stretch"
           staggerDelay={0.15}
         >
           {/* History & Experience */}
-          <StaggerItem>
-            <Card className="border-stone-200 bg-stone-50 p-6 dark:border-stone-800 dark:bg-stone-900">
+          <StaggerItem className="h-full">
+            <Card className="h-full border-stone-200 bg-stone-50 p-6 dark:border-stone-800 dark:bg-stone-900 flex flex-col">
               <div className="mb-4 flex items-center gap-3">
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-emerald-100 dark:bg-emerald-900/30">
                   <svg
@@ -55,17 +55,17 @@ export function AboutSection() {
                   Tarihçemiz & Deneyim
                 </h3>
               </div>
-              <p className="text-base leading-relaxed text-stone-700 dark:text-stone-300">
-                Ebrar Optik olarak yıllardır Kırıkkale&apos;de göz sağlığı
-                alanında hizmet veriyoruz. Müşteri memnuniyetini ön planda
-                tutarak, her yaşa ve göze hitap eden kaliteli ürünler sunuyoruz.
+              <p className="text-base leading-relaxed text-stone-700 dark:text-stone-300 flex-1">
+                Ebrar Optik olarak Kırıkkale&apos;de göz sağlığı alanında hizmet
+                veriyoruz. Müşteri memnuniyetini ön planda tutarak, her yaşa ve
+                göze hitap eden kaliteli ürünler sunuyoruz.
               </p>
             </Card>
           </StaggerItem>
 
           {/* Mission & Values */}
-          <StaggerItem>
-            <Card className="border-stone-200 bg-stone-50 p-6 dark:border-stone-800 dark:bg-stone-900">
+          <StaggerItem className="h-full">
+            <Card className="h-full border-stone-200 bg-stone-50 p-6 dark:border-stone-800 dark:bg-stone-900 flex flex-col">
               <div className="mb-4 flex items-center gap-3">
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-emerald-100 dark:bg-emerald-900/30">
                   <svg
@@ -87,7 +87,7 @@ export function AboutSection() {
                   Misyonumuz & Değerlerimiz
                 </h3>
               </div>
-              <p className="text-base leading-relaxed text-stone-700 dark:text-stone-300">
+              <p className="text-base leading-relaxed text-stone-700 dark:text-stone-300 flex-1">
                 Sağlıklı görüş ve kaliteli hizmet anlayışımızla, her müşterimize
                 özel çözüm sunuyoruz. Dürüstlük, güven ve uzmanlık temel
                 değerlerimizdir.
