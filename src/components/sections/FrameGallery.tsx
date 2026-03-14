@@ -139,9 +139,14 @@ export function FrameGallery() {
             {filteredFrames.map((frame, index) => (
               <motion.div
                 key={frame.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{
+                  duration: 0.6,
+                  delay: (index % 4) * 0.1,
+                  ease: [0.25, 0.1, 0.25, 1],
+                }}
               >
                 <Card className="group h-full overflow-hidden border-stone-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-stone-800 dark:bg-stone-950">
                   <div className="aspect-square relative w-full overflow-hidden bg-stone-100 dark:bg-stone-800">
