@@ -1,35 +1,10 @@
 import { HeroReveal } from "@/components/ScrollAnimations";
-import Image from "next/image";
+import { AnimatedHeroBackground } from "@/components/AnimatedHeroBackground";
 
 export function HeroSection() {
-  const whatsappNumber =
-    process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "905458199862";
-  const whatsappMessage = encodeURIComponent(
-    "Merhaba Ebrar Optik, randevu almak istiyorum.",
-  );
-  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
-
   return (
     <section className="relative flex min-h-[90vh] w-full items-center justify-center overflow-hidden bg-gradient-to-br from-stone-50 via-white to-stone-100 dark:from-stone-950 dark:via-stone-900 dark:to-stone-950">
-      {/* Hero Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/hero.webp"
-          alt="Ebrar Optik"
-          fill
-          priority
-          className="object-cover object-center hidden md:block"
-        />
-        <Image
-          src="/hero.webp"
-          alt="Ebrar Optik"
-          fill
-          priority
-          className="object-cover object-[center_70%] block md:hidden"
-        />
-        {/* Overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-stone-900/80 via-stone-900/50 to-transparent dark:from-stone-950/90 dark:via-stone-950/60" />
-      </div>
+      <AnimatedHeroBackground />
 
       <div className="container relative z-10 mx-auto flex max-w-7xl flex-col items-start justify-center gap-8 px-6 py-16 md:px-12 lg:px-24">
         {/* Logo and Brand */}
@@ -47,10 +22,10 @@ export function HeroSection() {
           delay={0.2}
           className="flex max-w-3xl flex-col items-start gap-4 text-left"
         >
-          <h2 className="text-3xl font-semibold leading-tight text-white sm:text-4xl md:text-5xl">
+          <h2 className="drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] text-3xl font-semibold leading-tight text-white sm:text-4xl md:text-5xl">
             Görüşünüz Bizim İçin Değerli
           </h2>
-          <p className="text-lg text-stone-200 sm:text-xl md:text-2xl">
+          <p className="drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] text-lg text-stone-200 sm:text-xl md:text-2xl">
             Kırıkkale&apos;de profesyonel göz sağlığı hizmetleri ve geniş
             çerçeve koleksiyonu ile hizmetinizde.
           </p>
@@ -59,13 +34,13 @@ export function HeroSection() {
         {/* Services Preview */}
         <HeroReveal delay={0.4} className="flex flex-wrap gap-3 sm:gap-4">
           <span className="rounded-full bg-white/20 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm">
-            Reçeteli Gözlük
+            Reçeteli Optik Gözlük
           </span>
           <span className="rounded-full bg-white/20 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm">
             Güneş Gözlüğü
           </span>
           <span className="rounded-full bg-white/20 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm">
-            Lens
+            Lens Çeşitleri
           </span>
         </HeroReveal>
 
