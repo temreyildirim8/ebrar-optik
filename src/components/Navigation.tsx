@@ -30,12 +30,12 @@ export function Navigation() {
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden items-center space-x-1 md:flex">
-          {navLinks.map((link) => (
+        <div className="hidden items-center md:flex">
+          {navLinks.map((link, index) => (
             <a
               key={link.href}
               href={link.href}
-              className="rounded-lg px-4 py-2 text-sm font-semibold text-stone-600 transition-colors hover:bg-stone-100 hover:text-stone-900 dark:text-stone-300 dark:hover:bg-stone-800 dark:hover:text-stone-50"
+              className={`rounded-sm px-4 py-2 text-sm font-semibold text-stone-600 transition-colors hover:bg-stone-400 hover:text-white dark:text-stone-300 dark:hover:bg-stone-800 dark:hover:text-stone-50 ${index < navLinks.length - 1 ? "border-r border-stone-200 dark:border-stone-700" : ""}`}
             >
               {link.label}
             </a>

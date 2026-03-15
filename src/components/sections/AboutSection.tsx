@@ -136,7 +136,7 @@ export function AboutSection() {
                   </h3>
                 </ScrollReveal>
                 <p className="mb-4 text-base leading-relaxed text-stone-700 dark:text-stone-300">
-                  Sertifikalı optik uzmanlarımızla, doğru göz ölçümü ve en uygun
+                  Sertifikalı optik uzmanlığımızla, doğru göz ölçümü ve en uygun
                   gözlük seçimi için yanınızdayız. Modern teknoloji ve yılların
                   verdiği deneyimle hizmet veriyoruz.
                 </p>

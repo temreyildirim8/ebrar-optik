@@ -18,14 +18,14 @@ export function Footer() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand Info */}
           <div className="lg:col-span-2">
-            <div className="mb-4 flex items-center space-x-3">
-              {/* Monogram Logo */}
+            <div className="flex items-center space-x-3">
+              {/* Glasses Logo */}
               <Image
-                src="/assets/logo-v2-monogram.svg"
+                src="/assets/logo-v3-glasses.svg"
                 alt="Ebrar Optik"
-                width={140}
-                height={160}
-                className="h-28 w-auto md:h-32 lg:h-40 xl:h-48 dark:opacity-90"
+                width={240}
+                height={70}
+                className="h-10 w-auto md:h-16 lg:h-20"
               />
             </div>
             <p className="mb-4 max-w-md text-sm text-stone-600 dark:text-stone-400">

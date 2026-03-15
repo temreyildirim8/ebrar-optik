@@ -49,7 +49,7 @@ export function FloatingSocialButtons() {
             href={instagramLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-2 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 shadow-lg shadow-pink-500/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-pink-500/40 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-pink-500/50"
+            className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 shadow-lg shadow-pink-500/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-pink-500/40 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-pink-500/50"
             aria-label="Instagram'da bizi takip et"
           >
             <svg
