@@ -60,9 +60,12 @@ export function AboutSection() {
                 </ScrollReveal>
               </div>
               <p className="text-base leading-relaxed text-stone-700 dark:text-stone-300 flex-1">
-                Ebrar Optik olarak Kırıkkale&apos;de göz sağlığı alanında hizmet
-                veriyoruz. Müşteri memnuniyetini ön planda tutarak, her yaşa ve
-                göze hitap eden kaliteli ürünler sunuyoruz.
+                Kurucumuz{" "}
+                <span className="font-bold">Optisyen Sueda Ebrar</span> hanımın
+                sağlık alanındaki uzun çalışma yıllarından gelen birikimiyle
+                Kırıkkale&apos;de göz sağlığı alanında hizmet veriyoruz. Müşteri
+                memnuniyetini ön planda tutarak, her yaşa ve göze hitap eden
+                kaliteli ürünler sunuyoruz.
               </p>
             </Card>
           </StaggerItem>
@@ -97,8 +100,8 @@ export function AboutSection() {
               </div>
               <p className="text-base leading-relaxed text-stone-700 dark:text-stone-300 flex-1">
                 Sağlıklı görüş ve kaliteli hizmet anlayışımızla, her müşterimize
-                özel çözüm sunuyoruz. Dürüstlük, güven ve uzmanlık temel
-                değerlerimizdir.
+                özel çözüm sunmak temel misyonumuzdur. Dürüstlük, güven ve
+                uzmanlık temel değerlerimizdir.
               </p>
             </Card>
           </StaggerItem>
@@ -142,17 +145,17 @@ export function AboutSection() {
                   staggerDelay={0.08}
                 >
                   <StaggerItem distance={15}>
-                    <span className="rounded-full bg-emerald-100 px-4 py-1.5 text-sm font-medium text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400">
+                    <span className="rounded-full bg-emerald-100 px-4 py-1.5 text-sm font-medium text-emerald-900 dark:bg-emerald-900/30 dark:text-emerald-900">
                       Sertifikalı Optik Uzmanı
                     </span>
                   </StaggerItem>
                   <StaggerItem distance={15}>
-                    <span className="rounded-full bg-emerald-100 px-4 py-1.5 text-sm font-medium text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400">
+                    <span className="rounded-full bg-emerald-100 px-4 py-1.5 text-sm font-medium text-emerald-900 dark:bg-emerald-900/30 dark:text-emerald-900">
                       Modern Ölçüm Ekipmanları
                     </span>
                   </StaggerItem>
                   <StaggerItem distance={15}>
-                    <span className="rounded-full bg-emerald-100 px-4 py-1.5 text-sm font-medium text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400">
+                    <span className="rounded-full bg-emerald-100 px-4 py-1.5 text-sm font-medium text-emerald-900 dark:bg-emerald-900/30 dark:text-emerald-900">
                       Kişiye Özel Çözümler
                     </span>
                   </StaggerItem>

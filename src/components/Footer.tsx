@@ -106,7 +106,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-8 border-t border-stone-200 pt-8 dark:border-stone-800 flex items-center justify-center">
+        <div className="mt-8 border-t border-stone-200 pt-8 dark:border-stone-800 flex items-center justify-center -mx-6 md:mx-0">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <div className="flex flex-col items-center gap-1 text-center">
               <p className="text-sm text-stone-500 dark:text-stone-400">
