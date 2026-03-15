@@ -32,17 +32,20 @@ export function HeroSection() {
         </HeroReveal>
 
         {/* Services Preview */}
-        <HeroReveal delay={0.4} className="flex flex-wrap gap-3 sm:gap-4">
-          <span className="rounded-full bg-white/20 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm">
+        <HeroReveal
+          delay={0.4}
+          className="grid grid-cols-2 gap-3 sm:flex sm:gap-4"
+        >
+          <span className="rounded-full bg-white/20 px-4 py-2 text-center text-sm font-medium text-white backdrop-blur-sm">
             Reçeteli Optik Gözlük
           </span>
-          <span className="rounded-full bg-white/20 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm">
+          <span className="rounded-full bg-white/20 px-4 py-2 text-center text-sm font-medium text-white backdrop-blur-sm">
             Güneş Gözlüğü
           </span>
-          <span className="rounded-full bg-white/20 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm">
+          <span className="rounded-full bg-white/20 px-4 py-2 text-center text-sm font-medium text-white backdrop-blur-sm">
             Lens Çeşitleri
           </span>
-          <span className="rounded-full bg-white/20 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm">
+          <span className="rounded-full bg-white/20 px-4 py-2 text-center text-sm font-medium text-white backdrop-blur-sm">
             Gözlük Bakımı
           </span>
         </HeroReveal>
