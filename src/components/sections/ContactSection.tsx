@@ -40,7 +40,7 @@ export function ContactSection() {
         >
           {/* Phone Card */}
           <StaggerItem>
-            <Card className="h-full border-stone-200 bg-white p-6 text-center dark:border-stone-800 dark:bg-stone-950">
+            <Card className="h-full border-stone-200 bg-white p-10 md:p-6 text-center dark:border-stone-800 dark:bg-stone-950">
               <a href={`tel:${phoneNumber}`}>
                 <div className="mb-4 flex justify-center">
                   <ScrollReveal distance={15}>
@@ -82,7 +82,7 @@ export function ContactSection() {
 
           {/* WhatsApp Card */}
           <StaggerItem>
-            <Card className="h-full border-stone-200 bg-white p-6 text-center dark:border-stone-800 dark:bg-stone-950">
+            <Card className="h-full border-stone-200 bg-white p-10 md:p-6 text-center dark:border-stone-800 dark:bg-stone-950">
               <a
                 href={`https://wa.me/${phoneNumber.replace("+", "")}?text=Merhaba%20Ebrar%20Optik`}
                 target="_blank"
@@ -125,7 +125,7 @@ export function ContactSection() {
 
           {/* Email Card */}
           <StaggerItem>
-            <Card className="h-full border-stone-200 bg-white p-6 text-center dark:border-stone-800 dark:bg-stone-950">
+            <Card className="h-full border-stone-200 bg-white p-10 md:p-6 text-center dark:border-stone-800 dark:bg-stone-950">
               <a href={`mailto:${email}`}>
                 <div className="mb-4 flex justify-center">
                   <ScrollReveal distance={15}>

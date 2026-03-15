@@ -72,7 +72,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold text-stone-900 dark:text-stone-50">
+            <h3 className="mb-2 md:mb-4 text-sm font-semibold text-stone-900 dark:text-stone-50">
               Hızlı Linkler
             </h3>
             <ul className="space-y-2">
@@ -90,8 +90,8 @@ export function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div>
-            <h3 className="mb-4 text-sm font-semibold text-stone-900 dark:text-stone-50">
+          <div className="hidden md:block">
+            <h3 className="mb-2 md:mb-4 text-sm font-semibold text-stone-900 dark:text-stone-50">
               İletişim
             </h3>
             <ul className="space-y-2 text-sm text-stone-600 dark:text-stone-400">
