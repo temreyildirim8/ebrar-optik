@@ -18,7 +18,7 @@ export function Navigation() {
     <header className="sticky top-0 z-40 w-full border-b border-stone-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:border-stone-800 dark:bg-stone-950/95">
       <nav className="container mx-auto flex h-20 max-w-7xl items-center justify-between px-6 md:px-12 lg:px-24">
         {/* Logo - Horizontal version */}
-        <a href="#" className="flex items-center">
+        <a href="#" className="mt-2 flex items-center">
           <Image
             src="/assets/logo-v3-glasses.svg"
             alt="Ebrar Optik"

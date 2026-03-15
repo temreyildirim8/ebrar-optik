@@ -37,7 +37,7 @@ export function HeroSection() {
           className="grid grid-cols-2 gap-3 sm:flex sm:gap-4"
         >
           <span className="rounded-full bg-white/20 px-4 py-2 text-center text-sm font-medium text-white backdrop-blur-sm">
-            Reçeteli Optik Gözlük
+            Reçeteli Gözlük
           </span>
           <span className="rounded-full bg-white/20 px-4 py-2 text-center text-sm font-medium text-white backdrop-blur-sm">
             Güneş Gözlüğü
