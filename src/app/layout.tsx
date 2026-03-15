@@ -4,6 +4,7 @@ import "./globals.css";
 import { FloatingSocialButtons } from "@/components/FloatingSocialButtons";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { ContentProtectionProvider } from "@/components/ContentProtectionProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -56,8 +57,14 @@ export default function RootLayout({
     <html lang="tr">
       <body className={`${inter.variable} antialiased`}>
         <Navigation />
-        {children}
-        <Footer />
+        <ContentProtectionProvider>
+          <main className="protected-content">
+            {children}
+          </main>
+          <div className="protected-content">
+            <Footer />
+          </div>
+        </ContentProtectionProvider>
         <FloatingSocialButtons />
       </body>
     </html>
