@@ -164,7 +164,7 @@ export function ServicesSection() {
         <ScrollReveal
           className="mb-12 text-center"
           direction="up"
-          distance={30}
+          distance={20}
         >
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-stone-900 dark:text-stone-50 sm:text-4xl md:text-5xl">
             Hizmetlerimiz
@@ -182,9 +182,11 @@ export function ServicesSection() {
           {services.map((service, index) => (
             <StaggerItem key={index}>
               <Card className="group h-full border-stone-200 bg-stone-50 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-stone-800 dark:bg-stone-900">
-                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-lg bg-emerald-100 text-emerald-600 transition-colors group-hover:bg-emerald-600 group-hover:text-white dark:bg-emerald-900/30 dark:text-emerald-400">
-                  {service.icon}
-                </div>
+                <ScrollReveal distance={15} delay={index * 0.05}>
+                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-lg bg-emerald-100 text-emerald-600 transition-colors group-hover:bg-emerald-600 group-hover:text-white dark:bg-emerald-900/30 dark:text-emerald-400">
+                    {service.icon}
+                  </div>
+                </ScrollReveal>
                 <h3 className="mb-3 text-xl font-semibold text-stone-900 dark:text-stone-50">
                   {service.title}
                 </h3>
