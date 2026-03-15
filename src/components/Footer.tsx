@@ -4,7 +4,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { href: "#anasayfa", label: "Ana Sayfa" },
+    { href: "#", label: "Ana Sayfa" },
     { href: "#hakkimizda", label: "Hakkımızda" },
     { href: "#hizmetler", label: "Hizmetler" },
     { href: "#cerceveler", label: "Çerçeveler" },
