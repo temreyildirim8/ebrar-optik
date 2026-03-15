@@ -14,14 +14,14 @@ export function HeroSection() {
       {/* Hero Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/hero.png"
+          src="/hero.webp"
           alt="Ebrar Optik"
           fill
           priority
           className="object-cover object-center hidden md:block"
         />
         <Image
-          src="/hero.png"
+          src="/hero.webp"
           alt="Ebrar Optik"
           fill
           priority

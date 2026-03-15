@@ -1,11 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 const navLinks = [
-  { href: "/", label: "Ana Sayfa" },
+  { href: "#", label: "Ana Sayfa" },
   { href: "#hakkimizda", label: "Hakkımızda" },
   { href: "#hizmetler", label: "Hizmetler" },
   { href: "#cerceveler", label: "Çerçeveler" },

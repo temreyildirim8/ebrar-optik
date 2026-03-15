@@ -16,7 +16,7 @@ export function ContactSection() {
   return (
     <section
       id="iletisim"
-      className="w-full bg-stone-50 py-20 dark:bg-stone-900"
+      className="w-full bg-stone-100 py-20 dark:bg-stone-900"
     >
       <div className="container mx-auto max-w-7xl px-6 md:px-12 lg:px-24">
         {/* Section Header */}

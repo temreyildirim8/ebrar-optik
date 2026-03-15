@@ -155,7 +155,10 @@ export function ServicesSection() {
   ];
 
   return (
-    <section id="hizmetler" className="w-full bg-white py-20 dark:bg-stone-950">
+    <section
+      id="hizmetler"
+      className="w-full bg-stone-100 py-20 dark:bg-stone-950"
+    >
       <div className="container mx-auto max-w-7xl px-6 md:px-12 lg:px-24">
         {/* Section Header */}
         <ScrollReveal

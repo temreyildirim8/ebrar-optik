@@ -8,23 +8,32 @@ import { Footer } from "@/components/Footer";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ebraroptik.net"),
   title: "Ebrar Optik | Kırıkkale'nin Güvenilir Optik Mağazası",
-  description: "Görüşünüz bizim için değerli. Ebrar Optik, Kırıkkale'de profesyonel göz sağlığı hizmetleri ve geniş çerçeve koleksiyonu ile hizmetinizde.",
-  keywords: ["Kırıkkale optik", "gözlük", "güneş gözlüğü", "lens", "göz sağlığı", "optik mağaza"],
+  description:
+    "Görüşünüz bizim için değerli. Ebrar Optik, Kırıkkale'de profesyonel göz sağlığı hizmetleri ve geniş çerçeve koleksiyonu ile hizmetinizde.",
+  keywords: [
+    "Kırıkkale optik",
+    "gözlük",
+    "güneş gözlüğü",
+    "lens",
+    "göz sağlığı",
+    "optik mağaza",
+  ],
   authors: [{ name: "Ebrar Optik" }],
   icons: {
-    icon: [
-      { url: "/assets/logo-v2-monogram.svg", type: "image/svg+xml" },
-    ],
+    icon: [{ url: "/assets/logo-v2-monogram.svg", type: "image/svg+xml" }],
     shortcut: "/assets/logo-v2-monogram.svg",
     apple: "/assets/logo-v2-monogram.svg",
   },
   openGraph: {
     title: "Ebrar Optik | Kırıkkale'nin Güvenilir Optik Mağazası",
-    description: "Profesyonel göz sağlığı hizmetleri ve geniş çerçeve koleksiyonu",
+    description:
+      "Profesyonel göz sağlığı hizmetleri ve geniş çerçeve koleksiyonu",
     locale: "tr_TR",
     type: "website",
     images: [
@@ -45,9 +54,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr">
-      <body
-        className={`${inter.variable} antialiased`}
-      >
+      <body className={`${inter.variable} antialiased`}>
         <Navigation />
         {children}
         <Footer />
