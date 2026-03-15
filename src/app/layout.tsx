@@ -55,12 +55,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr">
-      <body className={`${inter.variable} antialiased`}>
+      <body className={`${inter.variable} antialiased tracking-wide`}>
         <Navigation />
         <ContentProtectionProvider>
-          <main className="protected-content">
-            {children}
-          </main>
+          <main className="protected-content">{children}</main>
           <div className="protected-content">
             <Footer />
           </div>

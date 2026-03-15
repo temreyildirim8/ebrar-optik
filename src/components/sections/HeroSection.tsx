@@ -6,7 +6,7 @@ export function HeroSection() {
     <section className="relative flex min-h-[90vh] w-full items-center justify-center overflow-hidden bg-gradient-to-br from-stone-50 via-white to-stone-100 dark:from-stone-950 dark:via-stone-900 dark:to-stone-950">
       <AnimatedHeroBackground />
 
-      <div className="container relative z-10 mx-auto flex max-w-7xl flex-col items-start justify-center gap-8 px-6 py-16 md:px-12 lg:px-24">
+      <div className="container relative z-10 md:mx-auto flex max-w-7xl flex-col items-start justify-center gap-8 px-6 py-16 md:px-12 lg:px-24 backdrop-blur-[2px] md:backdrop-blur-[0]">
         {/* Logo and Brand */}
         {/* <HeroReveal className="flex flex-col items-center gap-4 text-center">
           <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 shadow-lg shadow-emerald-500/20">
@@ -27,7 +27,7 @@ export function HeroSection() {
           </h2>
           <p className="drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] text-lg text-stone-200 sm:text-xl md:text-2xl">
             Kırıkkale&apos;de profesyonel göz sağlığı hizmetleri ve geniş
-            çerçeve koleksiyonu ile hizmetinizde.
+            çerçeve koleksiyonu ile hizmetinizdeyiz.
           </p>
         </HeroReveal>
 
@@ -41,6 +41,9 @@ export function HeroSection() {
           </span>
           <span className="rounded-full bg-white/20 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm">
             Lens Çeşitleri
+          </span>
+          <span className="rounded-full bg-white/20 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm">
+            Gözlük Bakımı
           </span>
         </HeroReveal>
 

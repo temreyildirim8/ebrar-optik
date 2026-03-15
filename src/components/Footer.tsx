@@ -23,9 +23,9 @@ export function Footer() {
               <Image
                 src="/assets/logo-v2-monogram.svg"
                 alt="Ebrar Optik"
-                width={60}
-                height={66}
-                className="h-16 w-auto"
+                width={140}
+                height={160}
+                className="h-28 w-auto md:h-32 lg:h-40 xl:h-48 dark:opacity-90"
               />
             </div>
             <p className="mb-4 max-w-md text-sm text-stone-600 dark:text-stone-400">
