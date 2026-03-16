@@ -72,10 +72,11 @@ export function ContactSection() {
                 href={`tel:${phoneNumber}`}
                 className="text-base font-bold text-amber-600 hover:underline dark:text-amber-400"
               >
-                {phoneNumber.replace(
+                {/* {phoneNumber.replace(
                   /(.{3})(\d{3})(\d{3})(\d{2})(\d{2})/,
                   "$1 ($2) $3 $4 $5",
-                )}
+                )} */}
+                Şimdi ara
               </a>
             </Card>
           </StaggerItem>
@@ -118,7 +119,7 @@ export function ContactSection() {
                 rel="noopener noreferrer"
                 className="text-base font-bold text-green-600 hover:underline dark:text-green-400"
               >
-                Mesaj Gönder
+                Mesaj gönder
               </a>
             </Card>
           </StaggerItem>
@@ -157,7 +158,7 @@ export function ContactSection() {
                 href={`mailto:${email}`}
                 className="text-base font-bold text-blue-600 hover:underline dark:text-blue-400"
               >
-                {email}
+                E-posta gönder
               </a>
             </Card>
           </StaggerItem>
