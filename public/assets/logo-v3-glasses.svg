@@ -1,26 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 100" width="460" height="100" role="img" aria-label="Ebrar Optik">
-  <!-- Glasses icon -->
-  <g transform="translate(8, 22)">
-    <!-- Left lens circle -->
-    <circle cx="20" cy="24" r="18" fill="none" stroke="#292524" stroke-width="2.5" />
-    <!-- Right lens circle -->
-    <circle cx="56" cy="24" r="18" fill="none" stroke="#292524" stroke-width="2.5" />
-    <!-- Bridge connecting the two lenses -->
-    <path
-      d="M38 24 Q44 20 44 24"
-      fill="none"
-      stroke="#292524"
-      stroke-width="2.5"
-      stroke-linecap="round"
-    />
-    <!-- Left temple arm -->
-    <line x1="2" y1="14" x2="2" y2="24" stroke="#292524" stroke-width="2.5" stroke-linecap="round" />
-    <!-- Right temple arm -->
-    <line x1="74" y1="14" x2="74" y2="24" stroke="#292524" stroke-width="2.5" stroke-linecap="round" />
-    <!-- Amber iris dot in right lens -->
-    <circle cx="56" cy="24" r="7" fill="#f59e0b" />
-    <!-- Pupil dot -->
-    <circle cx="56" cy="24" r="3" fill="#292524" />
+  <!-- Glasses icon - V4 design scaled to fit -->
+  <g transform="translate(8, 10) scale(0.45)">
+    <!-- Left lens -->
+    <path d="M75 80C75 96.5685 61.5685 110 45 110C28.4315 110 15 96.5685 15 80C15 63.4315 28.4315 50 45 50C61.5685 50 75 63.4315 75 80V80" stroke="#292524" stroke-width="12" fill="none"/>
+    <!-- Right lens -->
+    <path d="M145 80C145 96.5685 131.568 110 115 110C98.4315 110 85 96.5685 85 80C85 63.4315 98.4315 50 115 50C131.568 50 145 63.4315 145 80V80" stroke="#292524" stroke-width="12" fill="none"/>
+    <!-- Bridge -->
+    <path d="M75 80H85" stroke="#292524" stroke-width="12" stroke-linecap="round"/>
+    <!-- Left temple arm accents -->
+    <path d="M15 50H35M15 80H35M15 110H35" stroke="#57534e" stroke-width="12" stroke-linecap="round"/>
   </g>
 
   <!-- Wordmark -->

@@ -84,7 +84,8 @@ const jsonLd = {
       email: "ebraroptik@gmail.com",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "Yahşihan Yeni Mahalle, Özdemir Bayraktar Caddesi, No: 9",
+        streetAddress:
+          "Yahşihan Yeni Mahalle, Özdemir Bayraktar Caddesi, No: 9",
         addressLocality: "Yahşihan",
         addressRegion: "Kırıkkale",
         postalCode: "71400",

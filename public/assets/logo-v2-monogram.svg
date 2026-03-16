@@ -2,7 +2,7 @@
   <!-- Outer ring charcoal -->
   <circle cx="100" cy="100" r="90" fill="none" stroke="#292524" stroke-width="4" />
   <!-- Inner ring amber -->
-  <circle cx="100" cy="100" r="76" fill="none" stroke="#f59e0b" stroke-width="3" />
+  <circle cx="100" cy="100" r="76" fill="none" stroke="#57534e" stroke-width="3" />
 
   <!-- "E" letter -->
   <text
