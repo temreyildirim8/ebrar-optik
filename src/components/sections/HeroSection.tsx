@@ -6,7 +6,7 @@ export function HeroSection() {
     <section className="relative flex min-h-[90vh] w-full items-center justify-center overflow-hidden bg-gradient-to-br from-stone-50 via-white to-stone-100 dark:from-stone-950 dark:via-stone-900 dark:to-stone-950">
       <AnimatedHeroBackground />
 
-      <div className="container relative z-10 md:mx-auto flex max-w-7xl flex-col items-start justify-center gap-8 px-6 py-16 md:px-12 lg:px-24 backdrop-blur-[2px] md:backdrop-blur-[0]">
+      <div className="container relative z-10 md:mx-auto flex max-w-7xl flex-col items-start justify-center gap-8 px-6 py-16 md:px-12 lg:px-24 [background:radial-gradient(ellipse_at_center,rgba(255,255,255,0.25)_0%,rgba(255,255,255,0.1)_50%,rgba(255,255,255,0)_80%)] md:bg-transparent">
         {/* Logo and Brand */}
         {/* <HeroReveal className="flex flex-col items-center gap-4 text-center">
           <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 shadow-lg shadow-emerald-500/20">
@@ -22,10 +22,10 @@ export function HeroSection() {
           delay={0.2}
           className="flex max-w-3xl flex-col items-start gap-4 text-left"
         >
-          <h2 className="drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] text-3xl font-semibold leading-tight text-white sm:text-4xl md:text-5xl">
+          <h2 className="drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] text-3xl font-black leading-tight text-white sm:text-4xl md:text-5xl">
             Görüşünüz Bizim İçin Değerli
           </h2>
-          <p className="drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] text-lg text-stone-200 sm:text-xl md:text-2xl">
+          <p className="drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] text-lg font-semibold text-stone-200 sm:text-xl md:text-2xl">
             Kırıkkale&apos;de profesyonel göz sağlığı hizmetleri ve geniş
             çerçeve koleksiyonu ile hizmetinizdeyiz.
           </p>
@@ -72,8 +72,8 @@ export function HeroSection() {
         </div> */}
 
         {/* Decorative Elements */}
-        <div className="absolute -left-20 -top-20 h-64 w-64 rounded-full bg-gradient-to-br from-emerald-200/30 to-teal-200/30 blur-3xl dark:from-emerald-800/20 dark:to-teal-800/20" />
-        <div className="absolute -right-20 -bottom-20 h-64 w-64 rounded-full bg-gradient-to-br from-amber-200/30 to-orange-200/30 blur-3xl dark:from-amber-800/20 dark:to-orange-800/20" />
+        {/* <div className="absolute -left-20 -top-20 h-64 w-64 rounded-full bg-gradient-to-br from-emerald-200/30 to-teal-200/30 blur-3xl dark:from-emerald-800/20 dark:to-teal-800/20" />
+        <div className="absolute -right-20 -bottom-20 h-64 w-64 rounded-full bg-gradient-to-br from-amber-200/30 to-orange-200/30 blur-3xl dark:from-amber-800/20 dark:to-orange-800/20" /> */}
       </div>
     </section>
   );

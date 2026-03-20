@@ -22,7 +22,7 @@ export function AnimatedHeroBackground() {
   }, []);
 
   return (
-    <div className="absolute inset-0 z-0 overflow-hidden bg-stone-900">
+    <div className="absolute inset-0 z-0 overflow-hidden bg-white/20 md:bg-stone-900">
       <AnimatePresence initial={false}>
         <motion.div
           key={currentIndex}
@@ -43,12 +43,13 @@ export function AnimatedHeroBackground() {
             className="object-cover object-center"
             sizes="100vw"
             quality={90}
+            style={{ filter: "saturate(0.8) brightness(0.95)" }}
           />
         </motion.div>
       </AnimatePresence>
 
-      {/* Yazıların okunabilirliğini artırmak için zarif gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-stone-900/90 via-stone-900/50 to-stone-900/10 dark:from-stone-950/95 dark:via-stone-950/70 dark:to-stone-950/20" />
+      {/* Gradient overlay */}
+      <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-stone-900/90 via-stone-900/50 to-stone-900/10 dark:from-stone-950/95 dark:via-stone-950/70 dark:to-stone-950/20" />
     </div>
   );
 }
