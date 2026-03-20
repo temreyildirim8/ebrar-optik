@@ -130,3 +130,19 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Hero gradient - only visible below md breakpoint */
+.hero-gradient {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0) 80%
+  );
+}
+
+@media (min-width: 768px) {
+  .hero-gradient {
+    background: transparent;
+  }
+}

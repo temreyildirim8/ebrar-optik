@@ -6,7 +6,7 @@ export function HeroSection() {
     <section className="relative flex min-h-[90vh] w-full items-center justify-center overflow-hidden bg-gradient-to-br from-stone-50 via-white to-stone-100 dark:from-stone-950 dark:via-stone-900 dark:to-stone-950">
       <AnimatedHeroBackground />
 
-      <div className="container relative z-10 md:mx-auto flex max-w-7xl flex-col items-start justify-center gap-8 px-6 py-16 md:px-12 lg:px-24 [background:radial-gradient(ellipse_at_center,rgba(255,255,255,0.25)_0%,rgba(255,255,255,0.1)_50%,rgba(255,255,255,0)_80%)] md:bg-transparent">
+      <div className="container relative z-10 md:mx-auto flex max-w-7xl flex-col items-start justify-center gap-8 px-6 py-16 md:px-12 lg:px-24 hero-gradient">
         {/* Logo and Brand */}
         {/* <HeroReveal className="flex flex-col items-center gap-4 text-center">
           <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 shadow-lg shadow-emerald-500/20">
