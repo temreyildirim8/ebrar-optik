@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ArrowUp } from "lucide-react";
+import { ChevronsUp } from "lucide-react";
 
 export function FloatingSocialButtons() {
   const [isDesktop, setIsDesktop] = useState(false);
@@ -104,13 +104,13 @@ export function FloatingSocialButtons() {
             </svg>
           </a>
           {/* Back to top button - Mobile only */}
-          <button
+          <a
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="flex h-11 w-11 items-center justify-center rounded-full bg-stone-100 shadow-lg shadow-stone-300/30 transition-all duration-300 hover:-translate-y-1 hover:bg-stone-200 hover:shadow-xl dark:bg-stone-800 dark:shadow-stone-900/30 dark:hover:bg-stone-700 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-stone-400/50"
+            className="flex h-11 w-11 shadow-2xl items-center justify-center rounded-full bg-stone-400 shadow-lg shadow-stone-300/30 transition-all duration-300 hover:-translate-y-1 hover:bg-stone-200 hover:shadow-xl dark:bg-stone-800 dark:shadow-stone-900/30 dark:hover:bg-stone-700 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-stone-400/50"
             aria-label="Sayfanın başına dön"
           >
-            <ArrowUp className="h-5 w-5 text-stone-600 dark:text-stone-300" />
-          </button>
+            <ChevronsUp className="h-5 w-5 text-white dark:text-stone-300" />
+          </a>
         </div>
       )}
     </>
