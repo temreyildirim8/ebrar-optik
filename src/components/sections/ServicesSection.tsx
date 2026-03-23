@@ -37,7 +37,7 @@ export function ServicesSection() {
     {
       title: "Güneş Gözlüğü",
       description:
-        "UV korumalı, markalı güneş gözlükleri koleksiyonumuzla stilinizi korurken gözlerinizi güneşin zararlı ışınlarından koruyun.",
+        "UV korumalı, markalı güneş gözlükleri koleksiyonumuzla gözlerinizi güneşin zararlı ışınlarından korurken stilinizi yansıtın.",
       icon: (
         <svg
           className="h-6 w-6"

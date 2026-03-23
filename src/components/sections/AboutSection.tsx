@@ -99,9 +99,8 @@ export function AboutSection() {
                 </ScrollReveal>
               </div>
               <p className="text-base leading-relaxed text-stone-700 dark:text-stone-300 flex-1">
-                Sağlıklı görüş ve kaliteli hizmet anlayışımızla, her müşterimize
-                özel çözüm sunmak temel misyonumuzdur. Dürüstlük, güven ve
-                uzmanlık temel değerlerimizdir.
+                Amacımız basit: her müşterimize doğru gözlüğü bulmak. Dürüstlük,
+                güven ve uzmanlık ise temel değerlerimizdir.
               </p>
             </Card>
           </StaggerItem>
