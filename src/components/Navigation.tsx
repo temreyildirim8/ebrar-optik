@@ -15,13 +15,13 @@ export function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-stone-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:border-stone-800 dark:bg-stone-950/95">
-      <nav className="container mx-auto flex h-20 max-w-7xl items-center justify-between px-6 md:px-12 lg:px-24">
+    <header className="sticky top-0 z-40 w-full border-b border-stone-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:border-stone-800 dark:bg-stone-950/95" role="banner">
+      <nav className="container mx-auto flex h-20 max-w-7xl items-center justify-between px-6 md:px-12 lg:px-24" aria-label="Ana navigasyon">
         {/* Logo - Horizontal version */}
-        <a href="#" className="mt-2 flex items-center">
+        <a href="#" className="mt-2 flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 rounded-lg" aria-label="Ebrar Optik - Ana Sayfa">
           <Image
             src="/assets/logo-v3-glasses.svg"
-            alt="Ebrar Optik"
+            alt=""
             width={240}
             height={70}
             className="h-14 w-auto md:h-16 lg:h-20"
@@ -30,49 +30,26 @@ export function Navigation() {
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden items-center md:flex">
+        <div className="hidden items-center md:flex" role="navigation" aria-label="Masaüstü menü">
           {navLinks.map((link, index) => (
             <a
               key={link.href}
               href={link.href}
-              className={`rounded-sm px-4 py-2 text-sm font-semibold text-stone-600 transition-colors hover:bg-stone-400 hover:text-white dark:text-stone-300 dark:hover:bg-stone-800 dark:hover:text-stone-50 ${index < navLinks.length - 1 ? "border-r border-stone-200 dark:border-stone-700" : ""}`}
+              className={`min-h-[44px] min-w-[44px] flex items-center justify-center rounded-sm px-4 py-2.5 text-sm font-semibold text-stone-600 transition-all hover:bg-stone-400 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 dark:text-stone-300 dark:hover:bg-stone-800 dark:hover:text-stone-50 ${index < navLinks.length - 1 ? "border-r border-stone-200 dark:border-stone-700" : ""}`}
             >
               {link.label}
             </a>
           ))}
         </div>
 
-        {/* WhatsApp Button - Desktop */}
-        {/* <div className="hidden md:block">
-          <a
-            href="https://wa.me/905458199862?text=Merhaba%20Ebrar%20Optik"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button
-              size="sm"
-              className="bg-green-600 text-white hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600"
-            >
-              <svg
-                className="mr-2 h-4 w-4"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-              </svg>
-              WhatsApp
-            </Button>
-          </a>
-        </div> */}
-
         {/* Mobile Menu Button */}
         <button
           type="button"
-          className="rounded-lg p-2 text-stone-600 hover:bg-stone-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-400 dark:text-stone-300 dark:hover:bg-stone-800 md:hidden"
+          className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg p-2.5 text-stone-600 hover:bg-stone-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 dark:text-stone-300 dark:hover:bg-stone-800 md:hidden"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-expanded={isMobileMenuOpen}
-          aria-label="Menüyü aç"
+          aria-controls="mobile-menu"
+          aria-label={isMobileMenuOpen ? "Menüyü kapat" : "Menüyü aç"}
         >
           {isMobileMenuOpen ? (
             <svg
@@ -80,6 +57,7 @@ export function Navigation() {
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
+              aria-hidden="true"
             >
               <path
                 strokeLinecap="round"
@@ -94,6 +72,7 @@ export function Navigation() {
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
+              aria-hidden="true"
             >
               <path
                 strokeLinecap="round"
@@ -108,39 +87,18 @@ export function Navigation() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="border-t border-stone-200 bg-white px-6 py-4 dark:border-stone-800 dark:bg-stone-950 md:hidden">
-          <div className="flex flex-col space-y-2">
+        <div id="mobile-menu" className="border-t border-stone-200 bg-white px-6 py-4 dark:border-stone-800 dark:bg-stone-950 md:hidden" role="navigation" aria-label="Mobil menü">
+          <div className="flex flex-col space-y-1">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="rounded-lg px-4 py-3 text-sm font-medium text-stone-600 transition-colors hover:bg-stone-100 hover:text-stone-900 dark:text-stone-300 dark:hover:bg-stone-800 dark:hover:text-stone-50"
+                className="min-h-[44px] flex items-center rounded-lg px-4 py-3 text-sm font-medium text-stone-600 transition-all hover:bg-stone-100 hover:text-stone-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 dark:text-stone-300 dark:hover:bg-stone-800 dark:hover:text-stone-50"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.label}
               </a>
             ))}
-            {/* <a
-              href="https://wa.me/905458199862?text=Merhaba%20Ebrar%20Optik"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-2"
-            >
-              <Button
-                size="sm"
-                className="w-full bg-green-600 text-white hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600"
-              >
-                <svg
-                  className="mr-2 h-4 w-4"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-                </svg>
-                WhatsApp
-              </Button>
-            </a> */}
           </div>
         </div>
       )}

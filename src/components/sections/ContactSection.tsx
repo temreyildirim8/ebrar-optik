@@ -41,7 +41,11 @@ export function ContactSection() {
           {/* Phone Card */}
           <StaggerItem>
             <Card className="h-full border-stone-200 bg-white p-10 md:p-6 text-center dark:border-stone-800 dark:bg-stone-950">
-              <a href={`tel:${phoneNumber}`}>
+              <a
+                href={`tel:${phoneNumber}`}
+                className="block min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 rounded-lg"
+                aria-label="Telefon ile ara"
+              >
                 <div className="mb-4 flex justify-center">
                   <ScrollReveal distance={15}>
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 dark:bg-amber-900/30">
@@ -62,21 +66,12 @@ export function ContactSection() {
                     </div>
                   </ScrollReveal>
                 </div>
-              </a>
-              <a href={`tel:${phoneNumber}`}>
                 <h3 className="mb-2 text-lg font-semibold text-stone-900 dark:text-stone-50">
                   Telefon
                 </h3>
-              </a>
-              <a
-                href={`tel:${phoneNumber}`}
-                className="text-base font-bold text-amber-600 hover:underline dark:text-amber-400"
-              >
-                {/* {phoneNumber.replace(
-                  /(.{3})(\d{3})(\d{3})(\d{2})(\d{2})/,
-                  "$1 ($2) $3 $4 $5",
-                )} */}
-                Şimdi ara
+                <span className="text-base font-bold text-amber-600 hover:underline dark:text-amber-400">
+                  Şimdi ara
+                </span>
               </a>
             </Card>
           </StaggerItem>
@@ -88,6 +83,8 @@ export function ContactSection() {
                 href={`https://wa.me/${phoneNumber.replace("+", "")}?text=Merhaba%20Ebrar%20Optik`}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="block min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 rounded-lg"
+                aria-label="WhatsApp ile mesaj gönder"
               >
                 <div className="mb-4 flex justify-center">
                   <ScrollReveal distance={15}>
@@ -103,23 +100,12 @@ export function ContactSection() {
                     </div>
                   </ScrollReveal>
                 </div>
-              </a>
-              <a
-                href={`https://wa.me/${phoneNumber.replace("+", "")}?text=Merhaba%20Ebrar%20Optik`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
                 <h3 className="mb-2 text-lg font-semibold text-stone-900 dark:text-stone-50">
                   WhatsApp
                 </h3>
-              </a>
-              <a
-                href={`https://wa.me/${phoneNumber.replace("+", "")}?text=Merhaba%20Ebrar%20Optik`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-base font-bold text-green-600 hover:underline dark:text-green-400"
-              >
-                Mesaj gönder
+                <span className="text-base font-bold text-green-600 hover:underline dark:text-green-400">
+                  Mesaj gönder
+                </span>
               </a>
             </Card>
           </StaggerItem>
@@ -127,7 +113,11 @@ export function ContactSection() {
           {/* Email Card */}
           <StaggerItem>
             <Card className="h-full border-stone-200 bg-white p-10 md:p-6 text-center dark:border-stone-800 dark:bg-stone-950">
-              <a href={`mailto:${email}`}>
+              <a
+                href={`mailto:${email}`}
+                className="block min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 rounded-lg"
+                aria-label="E-posta gönder"
+              >
                 <div className="mb-4 flex justify-center">
                   <ScrollReveal distance={15}>
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/30">
@@ -148,17 +138,12 @@ export function ContactSection() {
                     </div>
                   </ScrollReveal>
                 </div>
-              </a>
-              <a href={`mailto:${email}`}>
                 <h3 className="mb-2 text-lg font-semibold text-stone-900 dark:text-stone-50">
                   E-posta
                 </h3>
-              </a>
-              <a
-                href={`mailto:${email}`}
-                className="text-base font-bold text-blue-600 hover:underline dark:text-blue-400"
-              >
-                E-posta gönder
+                <span className="text-base font-bold text-blue-600 hover:underline dark:text-blue-400">
+                  E-posta gönder
+                </span>
               </a>
             </Card>
           </StaggerItem>
@@ -299,7 +284,7 @@ export function ContactSection() {
                 href={googleMapsLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-9 w-full items-center justify-center rounded-lg bg-emerald-600 px-4 py-2 text-sm font-medium text-white shadow hover:bg-emerald-700 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-emerald-500/20 disabled:pointer-events-none disabled:opacity-50 dark:bg-emerald-500 dark:hover:bg-emerald-600"
+                className="inline-flex min-h-[44px] w-full items-center justify-center rounded-lg bg-emerald-600 px-4 py-3 text-sm font-medium text-white shadow transition-colors hover:bg-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:bg-emerald-500 dark:hover:bg-emerald-600"
               >
                 <svg
                   className="mr-2 h-5 w-5"
