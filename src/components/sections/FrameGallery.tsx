@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Card } from "@/components/ui/card";
 import { ScrollReveal } from "@/components/ScrollAnimations";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 
 interface Frame {
   id: number;
@@ -16,6 +16,7 @@ interface Frame {
 
 export function FrameGallery() {
   const [activeCategory, setActiveCategory] = useState<string>("all");
+  const shouldReduceMotion = useReducedMotion();
 
   const categories = [
     { id: "all", label: "Tümü" },
@@ -130,23 +131,27 @@ export function FrameGallery() {
         <AnimatePresence mode="wait">
           <motion.div
             key={activeCategory}
-            initial={{ opacity: 0, y: 20 }}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
+            exit={shouldReduceMotion ? undefined : { opacity: 0, y: -20 }}
+            transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.3 }}
             className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
           >
             {filteredFrames.map((frame, index) => (
               <motion.div
                 key={frame.id}
-                initial={{ opacity: 0, y: 30 }}
+                initial={shouldReduceMotion ? false : { opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{
-                  duration: 0.9,
-                  delay: (index % 4) * 0.1,
-                  ease: [0.25, 0.1, 0.25, 1],
-                }}
+                transition={
+                  shouldReduceMotion
+                    ? { duration: 0 }
+                    : {
+                        duration: 0.9,
+                        delay: (index % 4) * 0.1,
+                        ease: [0.25, 0.1, 0.25, 1],
+                      }
+                }
               >
                 <Card className="group h-full overflow-hidden border-stone-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-stone-800 dark:bg-stone-950">
                   <div className="aspect-square relative w-full overflow-hidden bg-stone-100 dark:bg-stone-800">
