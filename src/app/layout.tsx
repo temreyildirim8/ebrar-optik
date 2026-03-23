@@ -137,9 +137,16 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} antialiased tracking-wide`}>
+        {/* Skip to main content link for keyboard users */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[9999] focus:rounded-lg focus:bg-emerald-600 focus:px-4 focus:py-3 focus:text-white focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-emerald-600"
+        >
+          Ana içeriğe geç
+        </a>
         <Navigation />
         <ContentProtectionProvider>
-          <main className="protected-content">{children}</main>
+          <main id="main-content" className="protected-content" role="main">{children}</main>
           <div className="protected-content">
             <Footer />
           </div>
