@@ -20,7 +20,7 @@ export function Navigation() {
       role="banner"
     >
       <nav
-        className="container mx-auto flex h-20 max-w-7xl items-center justify-between px-6 md:px-12 lg:px-24"
+        className="container mx-auto flex h-20 max-w-7xl items-center justify-between px-6 md:px-12 xl:px-24"
         aria-label="Ana navigasyon"
       >
         {/* Logo - Horizontal version */}
