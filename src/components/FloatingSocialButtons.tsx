@@ -10,7 +10,7 @@ export function FloatingSocialButtons() {
     "Merhaba Ebrar Optik, randevu almak istiyorum.",
   );
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
-  const instagramLink = "https://www.instagram.com/ebrar.optik/";
+  const instagramLink = "https://www.instagram.com/ebrar.optik71/";
 
   useEffect(() => {
     const checkScreenSize = () => {

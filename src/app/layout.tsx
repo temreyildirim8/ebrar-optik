@@ -69,7 +69,7 @@ const jsonLd = {
       description:
         "Kırıkkale'nin güvenilir optik mağazası. Profesyonel göz sağlığı hizmetleri ve geniş çerçeve koleksiyonu.",
       sameAs: [
-        "https://www.instagram.com/ebraroptik",
+        "https://www.instagram.com/ebrar.optik71",
         "https://www.facebook.com/ebraroptik",
       ],
     },

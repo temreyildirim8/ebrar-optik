@@ -52,7 +52,7 @@ export function Footer() {
                 </svg>
               </a>
               <a
-                href="https://instagram.com/ebraroptik"
+                href="https://instagram.com/ebrar.optik71"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg text-stone-400 hover:text-pink-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 dark:hover:text-pink-400"
