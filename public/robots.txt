@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ebraroptik.net/sitemap.xml
+Sitemap: https://ebrar-optik.com/sitemap.xml

@@ -14,7 +14,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ebraroptik.net"),
+  metadataBase: new URL("https://ebrar-optik.com"),
   title: "Ebrar Optik | Kırıkkale'nin Güvenilir Optik Mağazası",
   description:
     "Görüşünüz bizim için değerli. Ebrar Optik, Kırıkkale'de profesyonel göz sağlığı hizmetleri ve geniş çerçeve koleksiyonu ile hizmetinizde.",
@@ -57,12 +57,12 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://ebraroptik.net/#organization",
+      "@id": "https://ebrar-optik.com/#organization",
       name: "Ebrar Optik",
-      url: "https://ebraroptik.net",
+      url: "https://ebrar-optik.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://ebraroptik.net/assets/logo-v2-monogram.svg",
+        url: "https://ebrar-optik.com/assets/logo-v2-monogram.svg",
         width: 200,
         height: 220,
       },
@@ -75,11 +75,11 @@ const jsonLd = {
     },
     {
       "@type": "LocalBusiness",
-      "@id": "https://ebraroptik.net/#localbusiness",
+      "@id": "https://ebrar-optik.com/#localbusiness",
       name: "Ebrar Optik",
       description:
         "Kırıkkale'de profesyonel göz sağlığı hizmetleri, gözlük ve lens satışı.",
-      url: "https://ebraroptik.net",
+      url: "https://ebrar-optik.com",
       telephone: "+90-535-891-42-42",
       email: "ebraroptik@gmail.com",
       address: {
@@ -117,7 +117,7 @@ const jsonLd = {
         },
       ],
       priceRange: "$$",
-      image: "https://ebraroptik.net/assets/logo-v2-monogram.svg",
+      image: "https://ebrar-optik.com/assets/logo-v2-monogram.svg",
     },
   ],
 };
