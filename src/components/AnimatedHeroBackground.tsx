@@ -40,7 +40,7 @@ export function AnimatedHeroBackground() {
           style={{ filter: "saturate(0.8) brightness(0.95)" }}
         />
         {/* Gradient overlay */}
-        <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-stone-900/90 via-stone-900/50 to-stone-900/10 dark:from-stone-950/95 dark:via-stone-950/70 dark:to-stone-950/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-stone-900/85 via-stone-900/70 to-stone-900/60 dark:from-stone-950/95 dark:via-stone-950/80 dark:to-stone-950/70 md:bg-gradient-to-r md:from-stone-900/90 md:via-stone-900/50 md:to-stone-900/10 md:dark:from-stone-950/95 md:dark:via-stone-950/70 md:dark:to-stone-950/20" />
       </div>
     );
   }
@@ -73,7 +73,7 @@ export function AnimatedHeroBackground() {
       </AnimatePresence>
 
       {/* Gradient overlay */}
-      <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-stone-900/90 via-stone-900/50 to-stone-900/10 dark:from-stone-950/95 dark:via-stone-950/70 dark:to-stone-950/20" />
+      <div className="absolute inset-0 bg-gradient-to-t from-stone-900/85 via-stone-900/70 to-stone-900/60 dark:from-stone-950/95 dark:via-stone-950/80 dark:to-stone-950/70 md:bg-gradient-to-r md:from-stone-900/90 md:via-stone-900/50 md:to-stone-900/10 md:dark:from-stone-950/95 md:dark:via-stone-950/70 md:dark:to-stone-950/20" />
     </div>
   );
 }

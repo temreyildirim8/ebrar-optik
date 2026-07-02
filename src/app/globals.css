@@ -157,9 +157,9 @@
 .hero-gradient {
   background: radial-gradient(
     ellipse at center,
-    rgba(255, 255, 255, 0.25) 0%,
-    rgba(255, 255, 255, 0.1) 50%,
-    rgba(255, 255, 255, 0) 80%
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.15) 50%,
+    rgba(0, 0, 0, 0) 80%
   );
 }
 
