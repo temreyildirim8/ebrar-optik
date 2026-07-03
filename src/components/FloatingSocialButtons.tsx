@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 export function FloatingSocialButtons() {
   const [isDesktop, setIsDesktop] = useState(false);
   const whatsappNumber =
-    process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "905458199862";
+    process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "905063710071";
   const whatsappMessage = encodeURIComponent(
     "Merhaba Ebrar Optik, randevu almak istiyorum.",
   );

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://ebrar-optik.com"),
   title: "Ebrar Optik | Kırıkkale'nin Güvenilir Optik Mağazası",
   description:
-    "Görüşünüz bizim için değerli. Ebrar Optik, Kırıkkale'de profesyonel göz sağlığı hizmetleri ve geniş çerçeve koleksiyonu ile hizmetinizde.",
+    "Görüşünüze değer katıyoruz. Ebrar Optik, Kırıkkale'de profesyonel göz sağlığı hizmetleri ve geniş çerçeve koleksiyonu ile hizmetinizde.",
   keywords: [
     "Kırıkkale optik",
     "gözlük",
@@ -80,7 +80,7 @@ const jsonLd = {
       description:
         "Kırıkkale'de profesyonel göz sağlığı hizmetleri, gözlük ve lens satışı.",
       url: "https://ebrar-optik.com",
-      telephone: "+90-535-891-42-42",
+      telephone: "+90-506-371-00-71",
       email: "ebraroptik@gmail.com",
       address: {
         "@type": "PostalAddress",
@@ -99,21 +99,17 @@ const jsonLd = {
       openingHoursSpecification: [
         {
           "@type": "OpeningHoursSpecification",
-          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          dayOfWeek: [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday",
+          ],
           opens: "09:00",
-          closes: "19:00",
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          dayOfWeek: "Saturday",
-          opens: "09:00",
-          closes: "18:00",
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          dayOfWeek: "Sunday",
-          opens: "09:00",
-          closes: "16:00",
+          closes: "19:30",
         },
       ],
       priceRange: "$$",

@@ -23,11 +23,11 @@ export function Footer() {
             <div className="flex items-center space-x-3">
               {/* Glasses Logo */}
               <Image
-                src="/assets/logo-v3-glasses.svg"
+                src="/assets/logo-v2-trimmed.png"
                 alt="Ebrar Optik"
-                width={240}
-                height={70}
-                className="h-10 w-auto md:h-16 lg:h-20"
+                width={511}
+                height={539}
+                className="h-16 w-auto md:h-20 lg:h-24"
               />
             </div>
             <p className="mb-4 max-w-md text-sm text-stone-600 dark:text-stone-400">
@@ -36,7 +36,7 @@ export function Footer() {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://wa.me/905458199862"
+                href="https://wa.me/905063710071"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg text-stone-400 hover:text-green-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 dark:hover:text-green-400"
@@ -68,7 +68,7 @@ export function Footer() {
                 </svg>
               </a>
               <a
-                href="tel:+905458199862"
+                href="tel:+905063710071"
                 className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg text-stone-400 hover:text-stone-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 dark:hover:text-stone-300"
                 aria-label="Telefon ile ara"
               >
@@ -118,7 +118,7 @@ export function Footer() {
               <ul className="space-y-2 text-sm text-stone-600 dark:text-stone-400">
                 <li>
                   <a
-                    href="tel:+905458199862"
+                    href="tel:+905063710071"
                     className="inline-block min-h-[44px] rounded-lg py-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
                   >
                     +90 (545) 819 98 62

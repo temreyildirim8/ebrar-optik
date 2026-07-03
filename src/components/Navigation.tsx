@@ -20,21 +20,21 @@ export function Navigation() {
       role="banner"
     >
       <nav
-        className="container mx-auto flex h-20 max-w-7xl items-center justify-between px-6 md:px-12 xl:px-24"
+        className="container mx-auto flex h-16 md:h-20 max-w-7xl items-center justify-between px-6 md:px-12 xl:px-24"
         aria-label="Ana navigasyon"
       >
         {/* Logo - Horizontal version */}
         <a
           href="#"
-          className="mt-2 flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 rounded-lg"
+          className="flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 rounded-lg"
           aria-label="Ebrar Optik - Ana Sayfa"
         >
           <Image
-            src="/assets/logo-v3-glasses.svg"
+            src="/assets/logo-v2-mark.png"
             alt=""
-            width={200}
-            height={70}
-            className="h-14 w-auto md:h-16 lg:h-20"
+            width={511}
+            height={486}
+            className="h-12 w-auto md:h-14 lg:h-16"
             priority
           />
         </a>
