@@ -11,7 +11,7 @@ export function ContactSection() {
   const googleMapsLink =
     "https://google.com/maps/place/Ovac%C4%B1k,+H%C3%BCrriyet+Cd.+No:54,+71200+K%C4%B1r%C4%B1kkale+Merkez%2FK%C4%B1r%C4%B1kkale/@39.8441708,33.500299,17z/data=!3m1!4b1!4m6!3m5!1s0x4081df0a7b97fc47:0x5eefc1b311bc3aac!8m2!3d39.8441708!4d33.5033221!16s%2Fg%2F11q2wwjhkl?hl=tr&entry=ttu";
   const embeddedMapUrl =
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d609.8776954576381!2d33.5138127!3d39.839667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d8e5b6a0a0a0a0%3A0xa0a0a0a0a0a0a0a0!2sEbrar%20Optik%2C%20Ovac%C4%B1k%20Mahallesi%2C%20H%C3%BCrriyet%20Caddesi%2C%20K%C4%B1r%C4%B1kkale!5e0!3m2!1str!2str!4v1709904000000!5m2!1str!2str";
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d609.8776954576381!2d33.5033221!3d39.8441708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4081df0a7b97fc47%3A0x5eefc1b311bc3aac!2sEbrar%20Optik%2C%20Ovac%C4%B1k%20Mahallesi%2C%20H%C3%BCrriyet%20Caddesi%2C%20K%C4%B1r%C4%B1kkale!5e0!3m2!1str!2str!4v1709904000000!5m2!1str!2str";
 
   return (
     <section
@@ -179,7 +179,7 @@ export function ContactSection() {
                 Adres
               </h3>
               <p className="text-base text-stone-600 dark:text-stone-300">
-                Ovacık Mahallesi, Hürriyet Caddesi 54/37, Kırıkkale 71100
+                Ovacık Mahallesi, Hürriyet Caddesi No: 54/A, Kırıkkale Merkez
               </p>
             </Card>
           </StaggerItem> */}
@@ -230,7 +230,7 @@ export function ContactSection() {
                 >
                   <address className="not-italic">
                     <p className="text-base leading-relaxed text-stone-700 dark:text-stone-300">
-                      Ovacık Mahallesi, Hürriyet Caddesi 54/37, Kırıkkale 71100
+                      Ovacık Mahallesi, Hürriyet Caddesi No: 54/A, Kırıkkale Merkez
                     </p>
                   </address>
                 </a>
@@ -264,8 +264,12 @@ export function ContactSection() {
                 </div>
                 <div className="space-y-2 text-base text-stone-700 dark:text-stone-300">
                   <div className="flex justify-between">
-                    <span>Her gün:</span>
+                    <span>Pazartesi - Cumartesi:</span>
                     <span className="font-medium">09:00 - 19:30</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Pazar:</span>
+                    <span className="font-medium">Kapalı</span>
                   </div>
                 </div>
               </Card>

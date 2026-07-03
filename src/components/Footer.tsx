@@ -124,7 +124,7 @@ export function Footer() {
                     +90 (506) 371 00 71
                   </a>
                 </li>
-                <li>Kırıkkale Merkez, Kırıkkale</li>
+                <li>Ovacık Mahallesi, Hürriyet Caddesi No: 54/A, Kırıkkale Merkez</li>
               </ul>
             </address>
           </div>

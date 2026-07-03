@@ -83,17 +83,15 @@ const jsonLd = {
       email: "ebraroptik@gmail.com",
       address: {
         "@type": "PostalAddress",
-        streetAddress:
-          "Yahşihan Yeni Mahalle, Özdemir Bayraktar Caddesi, No: 9",
-        addressLocality: "Yahşihan",
+        streetAddress: "Ovacık Mahallesi, Hürriyet Caddesi No: 54/A",
+        addressLocality: "Kırıkkale Merkez",
         addressRegion: "Kırıkkale",
-        postalCode: "71400",
         addressCountry: "TR",
       },
       geo: {
         "@type": "GeoCoordinates",
-        latitude: "39.8569",
-        longitude: "33.4344",
+        latitude: "39.8441708",
+        longitude: "33.5033221",
       },
       openingHoursSpecification: [
         {
@@ -105,7 +103,6 @@ const jsonLd = {
             "Thursday",
             "Friday",
             "Saturday",
-            "Sunday",
           ],
           opens: "09:00",
           closes: "19:30",

@@ -14,7 +14,7 @@ export default function KVKKPage() {
             Veri Sorumlusu
           </h2>
           <p className="text-stone-700 dark:text-stone-300">
-            Ebrar Optik - Yahşihan Mahallesi, 71500 Kırıkkale Merkez/Kırıkkale
+            Ebrar Optik - Ovacık Mahallesi, Hürriyet Caddesi No: 54/A, Kırıkkale Merkez
           </p>
           <h2 className="mt-8 text-xl font-semibold text-stone-900 dark:text-stone-50">
             Toplanan Veriler
