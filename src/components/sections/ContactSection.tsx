@@ -264,8 +264,12 @@ export function ContactSection() {
                 </div>
                 <div className="space-y-2 text-base text-stone-700 dark:text-stone-300">
                   <div className="flex justify-between">
-                    <span>Her gün:</span>
+                    <span>Pazartesi - Cumartesi:</span>
                     <span className="font-medium">09:00 - 19:30</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Pazar:</span>
+                    <span className="font-medium">Kapalı</span>
                   </div>
                 </div>
               </Card>
