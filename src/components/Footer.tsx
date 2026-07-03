@@ -23,10 +23,10 @@ export function Footer() {
             <div className="flex items-center space-x-3">
               {/* Glasses Logo */}
               <Image
-                src="/assets/logo-v2-trimmed.png"
+                src="/assets/logo-v2-mark.png"
                 alt="Ebrar Optik"
                 width={511}
-                height={539}
+                height={486}
                 className="h-16 w-auto md:h-20 lg:h-24"
               />
             </div>
@@ -121,7 +121,7 @@ export function Footer() {
                     href="tel:+905063710071"
                     className="inline-block min-h-[44px] rounded-lg py-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
                   >
-                    +90 (545) 819 98 62
+                    +90 (506) 371 00 71
                   </a>
                 </li>
                 <li>Kırıkkale Merkez, Kırıkkale</li>

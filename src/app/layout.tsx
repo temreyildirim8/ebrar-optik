@@ -28,9 +28,8 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Ebrar Optik" }],
   icons: {
-    icon: [{ url: "/assets/logo-v2-monogram.svg", type: "image/svg+xml" }],
-    shortcut: "/assets/logo-v2-monogram.svg",
-    apple: "/assets/logo-v2-monogram.svg",
+    icon: [{ url: "/assets/logo-v2-icon.png", type: "image/png" }],
+    apple: "/assets/logo-v2-icon.png",
   },
   alternates: {
     canonical: "/",
