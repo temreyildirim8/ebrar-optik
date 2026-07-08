@@ -4,6 +4,10 @@ export const metadata: Metadata = {
   title: "KVKK Aydınlatma Metni | Ebrar Optik",
   description:
     "Ebrar Optik KVKK aydınlatma metni. 6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında kişisel verilerinizin işlenmesi hakkında bilgilendirme.",
+  robots: {
+    index: false,
+    follow: false,
+  },
   alternates: {
     canonical: "/kvkk",
   },
