@@ -1,3 +1,14 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "KVKK Aydınlatma Metni | Ebrar Optik",
+  description:
+    "Ebrar Optik KVKK aydınlatma metni. 6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında kişisel verilerinizin işlenmesi hakkında bilgilendirme.",
+  alternates: {
+    canonical: "/kvkk",
+  },
+};
+
 export default function KVKKPage() {
   return (
     <div className="flex min-h-screen flex-col bg-white py-12 dark:bg-stone-950">

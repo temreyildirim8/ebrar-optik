@@ -31,9 +31,6 @@ export const metadata: Metadata = {
     icon: [{ url: "/assets/logo-v2-icon.png", type: "image/png" }],
     apple: "/assets/logo-v2-icon.png",
   },
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     title: "Ebrar Optik | Kırıkkale'nin Güvenilir Optik Mağazası",
     description:
