@@ -51,7 +51,13 @@ export default function KVKKPage() {
             İletişim
           </h2>
           <p className="text-stone-700 dark:text-stone-300">
-            KVKK ile ilgili sorularınız için: info@ebraroptik.com
+            KVKK ile ilgili sorularınız için:{" "}
+            <a
+              href="mailto:ebraroptik@gmail.com"
+              className="text-emerald-700 underline hover:text-emerald-800 dark:text-emerald-400 dark:hover:text-emerald-300"
+            >
+              ebraroptik@gmail.com
+            </a>
           </p>
         </div>
       </div>
