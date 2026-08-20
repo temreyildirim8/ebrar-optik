@@ -39,7 +39,7 @@ export function Footer() {
                 href="https://wa.me/905063710071"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg text-stone-400 hover:text-green-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 dark:hover:text-green-400"
+                className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg text-stone-400 hover:text-green-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ring focus-visible:ring-offset-2 dark:hover:text-green-400"
                 aria-label="WhatsApp ile iletişime geç"
               >
                 <svg
@@ -55,7 +55,7 @@ export function Footer() {
                 href="https://instagram.com/ebrar.optik71"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg text-stone-400 hover:text-pink-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 dark:hover:text-pink-400"
+                className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg text-stone-400 hover:text-pink-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ring focus-visible:ring-offset-2 dark:hover:text-pink-400"
                 aria-label="Instagram hesabımızı ziyaret et"
               >
                 <svg
@@ -69,7 +69,7 @@ export function Footer() {
               </a>
               <a
                 href="tel:+905063710071"
-                className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg text-stone-400 hover:text-stone-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 dark:hover:text-stone-300"
+                className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg text-stone-400 hover:text-stone-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ring focus-visible:ring-offset-2 dark:hover:text-stone-300"
                 aria-label="Telefon ile ara"
               >
                 <svg
@@ -100,7 +100,7 @@ export function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="inline-block min-h-[44px] w-full rounded-lg py-2.5 text-sm text-stone-600 hover:text-stone-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 dark:text-stone-400 dark:hover:text-stone-300"
+                    className="inline-block min-h-[44px] w-full rounded-lg py-2.5 text-sm text-stone-600 hover:text-stone-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ring focus-visible:ring-offset-2 dark:text-stone-400 dark:hover:text-stone-300"
                   >
                     {link.label}
                   </a>
@@ -119,7 +119,7 @@ export function Footer() {
                 <li>
                   <a
                     href="tel:+905063710071"
-                    className="inline-block min-h-[44px] rounded-lg py-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
+                    className="inline-block min-h-[44px] rounded-lg py-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ring focus-visible:ring-offset-2"
                   >
                     +90 (506) 371 00 71
                   </a>

@@ -58,7 +58,7 @@ export default function KVKKPage() {
             KVKK ile ilgili sorularınız için:{" "}
             <a
               href="mailto:ebraroptik@gmail.com"
-              className="text-emerald-700 underline hover:text-emerald-800 dark:text-emerald-400 dark:hover:text-emerald-300"
+              className="text-brand underline hover:text-brand-mid dark:text-blue-300 dark:hover:text-blue-200"
             >
               ebraroptik@gmail.com
             </a>

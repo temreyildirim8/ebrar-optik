@@ -118,7 +118,7 @@ export function FrameGallery() {
               onClick={() => setActiveCategory(category.id)}
               className={`rounded-full px-6 py-2 text-sm font-medium transition-all ${
                 activeCategory === category.id
-                  ? "bg-emerald-600 text-white shadow-md"
+                  ? "bg-brand text-brand-foreground shadow-md"
                   : "bg-white text-stone-600 hover:bg-stone-100 dark:bg-stone-800 dark:text-stone-300 dark:hover:bg-stone-700"
               }`}
             >

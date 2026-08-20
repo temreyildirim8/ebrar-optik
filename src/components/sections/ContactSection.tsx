@@ -43,7 +43,7 @@ export function ContactSection() {
             <Card className="h-full border-stone-200 bg-white p-10 md:p-6 text-center dark:border-stone-800 dark:bg-stone-950">
               <a
                 href={`tel:${phoneNumber}`}
-                className="block min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 rounded-lg"
+                className="block min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ring focus-visible:ring-offset-2 rounded-lg"
                 aria-label="Telefon ile ara"
               >
                 <div className="mb-4 flex justify-center">
@@ -83,7 +83,7 @@ export function ContactSection() {
                 href={`https://wa.me/${phoneNumber.replace("+", "")}?text=Merhaba%20Ebrar%20Optik`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 rounded-lg"
+                className="block min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ring focus-visible:ring-offset-2 rounded-lg"
                 aria-label="WhatsApp ile mesaj gönder"
               >
                 <div className="mb-4 flex justify-center">
@@ -115,7 +115,7 @@ export function ContactSection() {
             <Card className="h-full border-stone-200 bg-white p-10 md:p-6 text-center dark:border-stone-800 dark:bg-stone-950">
               <a
                 href={`mailto:${email}`}
-                className="block min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 rounded-lg"
+                className="block min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ring focus-visible:ring-offset-2 rounded-lg"
                 aria-label="E-posta gönder"
               >
                 <div className="mb-4 flex justify-center">
@@ -196,9 +196,9 @@ export function ContactSection() {
               <Card className="border-stone-200 bg-white p-6 dark:border-stone-800 dark:bg-stone-950">
                 <div className="mb-4 flex items-center gap-3">
                   <ScrollReveal distance={15}>
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-emerald-100 dark:bg-emerald-900/30">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-brand-soft dark:bg-brand/30">
                       <svg
-                        className="h-6 w-6 text-emerald-600 dark:text-emerald-400"
+                        className="h-6 w-6 text-brand dark:text-blue-300"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -280,7 +280,7 @@ export function ContactSection() {
                 href={googleMapsLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-[44px] w-full items-center justify-center rounded-lg bg-emerald-600 px-4 py-3 text-sm font-medium text-white shadow transition-colors hover:bg-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:bg-emerald-500 dark:hover:bg-emerald-600"
+                className="inline-flex min-h-[44px] w-full items-center justify-center rounded-lg bg-brand px-4 py-3 text-sm font-medium text-brand-foreground shadow transition-colors hover:bg-brand-mid focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:bg-brand-mid dark:hover:bg-brand"
               >
                 <svg
                   className="mr-2 h-5 w-5"
@@ -327,7 +327,7 @@ export function ContactSection() {
                   href={googleMapsLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-sm font-medium text-emerald-600 hover:text-emerald-700 hover:underline dark:text-emerald-400 dark:hover:text-emerald-300"
+                  className="inline-flex items-center gap-1 text-sm font-medium text-brand hover:text-brand-mid hover:underline dark:text-blue-300 dark:hover:text-blue-200"
                 >
                   <svg
                     className="h-4 w-4"

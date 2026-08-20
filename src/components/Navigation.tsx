@@ -26,7 +26,7 @@ export function Navigation() {
         {/* Logo - Horizontal version */}
         <a
           href="#"
-          className="flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 rounded-lg"
+          className="flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ring focus-visible:ring-offset-2 rounded-lg"
           aria-label="Ebrar Optik - Ana Sayfa"
         >
           <Image
@@ -49,7 +49,7 @@ export function Navigation() {
             <a
               key={link.href}
               href={link.href}
-              className={`min-h-[44px] min-w-[44px] flex items-center justify-center rounded-sm px-3 xl:px-4 py-2.5 text-sm font-semibold text-stone-600 transition-all hover:bg-stone-400 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 dark:text-stone-300 dark:hover:bg-stone-800 dark:hover:text-stone-50 ${index < navLinks.length - 1 ? "border-r border-stone-200 dark:border-stone-700" : ""}`}
+              className={`min-h-[44px] min-w-[44px] flex items-center justify-center rounded-sm px-3 xl:px-4 py-2.5 text-sm font-semibold text-stone-600 transition-all hover:bg-stone-400 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ring focus-visible:ring-offset-2 dark:text-stone-300 dark:hover:bg-stone-800 dark:hover:text-stone-50 ${index < navLinks.length - 1 ? "border-r border-stone-200 dark:border-stone-700" : ""}`}
             >
               {link.label}
             </a>
@@ -59,7 +59,7 @@ export function Navigation() {
         {/* Mobile Menu Button */}
         <button
           type="button"
-          className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg p-2.5 text-stone-600 hover:bg-stone-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 dark:text-stone-300 dark:hover:bg-stone-800 lg:hidden"
+          className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg p-2.5 text-stone-600 hover:bg-stone-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ring focus-visible:ring-offset-2 dark:text-stone-300 dark:hover:bg-stone-800 lg:hidden"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-expanded={isMobileMenuOpen}
           aria-controls="mobile-menu"
@@ -112,7 +112,7 @@ export function Navigation() {
               <a
                 key={link.href}
                 href={link.href}
-                className="min-h-[44px] flex items-center rounded-lg px-4 py-3 text-sm font-medium text-stone-600 transition-all hover:bg-stone-100 hover:text-stone-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 dark:text-stone-300 dark:hover:bg-stone-800 dark:hover:text-stone-50"
+                className="min-h-[44px] flex items-center rounded-lg px-4 py-3 text-sm font-medium text-stone-600 transition-all hover:bg-stone-100 hover:text-stone-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ring focus-visible:ring-offset-2 dark:text-stone-300 dark:hover:bg-stone-800 dark:hover:text-stone-50"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.label}

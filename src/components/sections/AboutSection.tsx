@@ -36,9 +36,9 @@ export function AboutSection() {
             <Card className="h-full border-stone-200 bg-stone-50 p-6 dark:border-stone-800 dark:bg-stone-900 flex flex-col">
               <div className="mb-4 flex items-center gap-3">
                 <ScrollReveal distance={15} delay={0}>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-emerald-100 dark:bg-emerald-900/30">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-soft dark:bg-brand/30">
                     <svg
-                      className="h-6 w-6 text-emerald-600 dark:text-emerald-400"
+                      className="h-6 w-6 text-brand dark:text-blue-300"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -75,9 +75,9 @@ export function AboutSection() {
             <Card className="h-full border-stone-200 bg-stone-50 p-6 dark:border-stone-800 dark:bg-stone-900 flex flex-col">
               <div className="mb-4 flex items-center gap-3">
                 <ScrollReveal distance={15} delay={0}>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-emerald-100 dark:bg-emerald-900/30">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-soft dark:bg-brand/30">
                     <svg
-                      className="h-6 w-6 text-emerald-600 dark:text-emerald-400"
+                      className="h-6 w-6 text-brand dark:text-blue-300"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -111,7 +111,7 @@ export function AboutSection() {
           <Card className="border-stone-200 bg-gradient-to-br from-stone-50 to-stone-100 p-8 dark:border-stone-800 dark:from-stone-900 dark:to-stone-800">
             <div className="flex flex-col items-center text-center md:flex-row md:text-left">
               <ScrollReveal distance={20} delay={0}>
-                <div className="mb-6 flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-emerald-600 shadow-lg shadow-emerald-600/20 md:mb-0 md:mr-6">
+                <div className="mb-6 flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-brand shadow-lg shadow-brand/20 md:mb-0 md:mr-6">
                   <svg
                     className="h-10 w-10 text-white"
                     fill="none"
@@ -144,17 +144,17 @@ export function AboutSection() {
                   staggerDelay={0.08}
                 >
                   <StaggerItem distance={15}>
-                    <span className="rounded-full bg-emerald-100 px-4 py-1.5 text-sm font-medium text-emerald-900 dark:bg-emerald-900/30 dark:text-emerald-900">
+                    <span className="rounded-full bg-brand-soft px-4 py-1.5 text-sm font-medium text-brand dark:bg-brand/30 dark:text-blue-100">
                       Sertifikalı Optik Uzmanı
                     </span>
                   </StaggerItem>
                   <StaggerItem distance={15}>
-                    <span className="rounded-full bg-emerald-100 px-4 py-1.5 text-sm font-medium text-emerald-900 dark:bg-emerald-900/30 dark:text-emerald-900">
+                    <span className="rounded-full bg-brand-soft px-4 py-1.5 text-sm font-medium text-brand dark:bg-brand/30 dark:text-blue-100">
                       Modern Ölçüm Ekipmanları
                     </span>
                   </StaggerItem>
                   <StaggerItem distance={15}>
-                    <span className="rounded-full bg-emerald-100 px-4 py-1.5 text-sm font-medium text-emerald-900 dark:bg-emerald-900/30 dark:text-emerald-900">
+                    <span className="rounded-full bg-brand-soft px-4 py-1.5 text-sm font-medium text-brand dark:bg-brand/30 dark:text-blue-100">
                       Kişiye Özel Çözümler
                     </span>
                   </StaggerItem>

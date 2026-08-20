@@ -183,7 +183,7 @@ export function ServicesSection() {
             <StaggerItem key={index}>
               <Card className="group h-full border-stone-200 bg-stone-50 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-stone-800 dark:bg-stone-900">
                 <ScrollReveal distance={15} delay={index * 0.05}>
-                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-lg bg-emerald-100 text-emerald-600 transition-colors group-hover:bg-emerald-600 group-hover:text-white dark:bg-emerald-900/30 dark:text-emerald-400">
+                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-lg bg-brand-soft text-brand transition-colors group-hover:bg-brand group-hover:text-brand-foreground dark:bg-brand/30 dark:text-blue-300">
                     {service.icon}
                   </div>
                 </ScrollReveal>
