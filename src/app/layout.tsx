@@ -25,6 +25,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  verification: {
+    yandex: "dd7c3a784e3eb901",
+  },
   icons: {
     icon: [{ url: "/assets/logo-v2-icon.png", type: "image/png" }],
     apple: "/assets/logo-v2-icon.png",
