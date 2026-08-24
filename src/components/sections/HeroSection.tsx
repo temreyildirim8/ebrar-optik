@@ -13,11 +13,11 @@ export function HeroSection() {
           className="flex max-w-3xl flex-col items-start gap-4 text-left"
         >
           <h1 id="hero-heading" className="drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] text-3xl font-black leading-tight text-white sm:text-4xl md:text-5xl">
-            Görüşünüze Değer Katıyoruz
+            Kırıkkale&apos;de Güvenilir Optik
           </h1>
           <p className="drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] text-lg font-semibold text-stone-200 sm:text-xl md:text-2xl">
-            Kırıkkale&apos;de profesyonel göz sağlığı hizmetleri ve geniş
-            çerçeve koleksiyonu ile hizmetinizdeyiz.
+            Görüşünüze değer katıyoruz. Profesyonel göz sağlığı hizmetleri ve
+            geniş çerçeve koleksiyonu ile hizmetinizdeyiz.
           </p>
         </HeroReveal>
 
