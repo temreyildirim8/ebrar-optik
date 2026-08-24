@@ -2,13 +2,14 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const navLinks = [
-  { href: "#", label: "Ana Sayfa" },
-  { href: "#hakkimizda", label: "Hakkımızda" },
-  { href: "#hizmetler", label: "Hizmetler" },
-  { href: "#cerceveler", label: "Çerçeveler" },
-  { href: "#iletisim", label: "İletişim" },
+  { href: "/", label: "Ana Sayfa" },
+  { href: "/#hakkimizda", label: "Hakkımızda" },
+  { href: "/#hizmetler", label: "Hizmetler" },
+  { href: "/#cerceveler", label: "Çerçeveler" },
+  { href: "/#iletisim", label: "İletişim" },
 ];
 
 export function Navigation() {
@@ -23,40 +24,36 @@ export function Navigation() {
         className="container mx-auto flex h-16 md:h-20 max-w-7xl items-center justify-between px-6 md:px-12 xl:px-24"
         aria-label="Ana navigasyon"
       >
-        {/* Logo - Horizontal version */}
-        <a
-          href="#"
+        <Link
+          href="/"
           className="flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ring focus-visible:ring-offset-2 rounded-lg"
-          aria-label="Ebrar Optik - Ana Sayfa"
         >
           <Image
             src="/assets/logo-v2-mark.png"
-            alt=""
+            alt="Ebrar Optik"
             width={511}
             height={486}
             className="h-12 w-auto md:h-14 lg:h-16"
             priority
           />
-        </a>
+        </Link>
 
-        {/* Desktop Navigation */}
         <div
           className="hidden items-center lg:flex"
           role="navigation"
           aria-label="Masaüstü menü"
         >
           {navLinks.map((link, index) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className={`min-h-[44px] min-w-[44px] flex items-center justify-center rounded-sm px-3 xl:px-4 py-2.5 text-sm font-semibold text-stone-600 transition-all hover:bg-stone-400 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ring focus-visible:ring-offset-2 dark:text-stone-300 dark:hover:bg-stone-800 dark:hover:text-stone-50 ${index < navLinks.length - 1 ? "border-r border-stone-200 dark:border-stone-700" : ""}`}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
 
-        {/* Mobile Menu Button */}
         <button
           type="button"
           className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg p-2.5 text-stone-600 hover:bg-stone-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ring focus-visible:ring-offset-2 dark:text-stone-300 dark:hover:bg-stone-800 lg:hidden"
@@ -99,7 +96,6 @@ export function Navigation() {
         </button>
       </nav>
 
-      {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div
           id="mobile-menu"
@@ -109,14 +105,14 @@ export function Navigation() {
         >
           <div className="flex flex-col space-y-1">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 className="min-h-[44px] flex items-center rounded-lg px-4 py-3 text-sm font-medium text-stone-600 transition-all hover:bg-stone-100 hover:text-stone-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ring focus-visible:ring-offset-2 dark:text-stone-300 dark:hover:bg-stone-800 dark:hover:text-stone-50"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>

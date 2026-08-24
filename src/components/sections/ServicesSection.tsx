@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/card";
+import Link from "next/link";
 import {
   ScrollReveal,
   StaggerContainer,
@@ -8,6 +9,7 @@ import {
 interface Service {
   title: string;
   description: string;
+  href: string;
   icon: React.ReactNode;
 }
 
@@ -15,6 +17,7 @@ export function ServicesSection() {
   const services: Service[] = [
     {
       title: "Reçeteli Optik Gözlük",
+      href: "/gozluk",
       description:
         "Göz doktorunuzun reçetesine uygun, yüz şeklinize ve yaşam tarzınıza en uygun gözlükleri seçmenize yardımcı oluyoruz.",
       icon: (
@@ -36,6 +39,7 @@ export function ServicesSection() {
     },
     {
       title: "Güneş Gözlüğü",
+      href: "/gunes-gozlugu",
       description:
         "UV korumalı, markalı güneş gözlükleri koleksiyonumuzla gözlerinizi güneşin zararlı ışınlarından korurken stilinizi yansıtın.",
       icon: (
@@ -58,6 +62,7 @@ export function ServicesSection() {
     },
     {
       title: "Numaralı Güneş Gözlüğü",
+      href: "/gunes-gozlugu",
       description:
         "Modern ekipmanlarımızla, istediğiniz çerçeveye sizin için özel bir numaralı güneş gözlüğü yapabiliriz. Yazın güneş gözünüzü yormasın!",
       icon: (
@@ -85,6 +90,7 @@ export function ServicesSection() {
     },
     {
       title: "Lens Çeşitleri",
+      href: "/lens",
       description:
         "Günlük, haftalık, aylık ve renkli lens seçeneklerimizle kontakt lens ihtiyacınızı karşılıyoruz.",
       icon: (
@@ -106,6 +112,7 @@ export function ServicesSection() {
     },
     {
       title: "Cam ve Çerçeve Değişimi",
+      href: "/#iletisim",
       description:
         "Kırılmış veya çizilmiş gözlük camlarınızı ve çerçevelerinizi yenileriyle değiştiriyoruz.",
       icon: (
@@ -127,6 +134,7 @@ export function ServicesSection() {
     },
     {
       title: "Gözlük Bakım ve Onarım",
+      href: "/#iletisim",
       description:
         "Gözlüklerinizin vida sıkılaştırma, ped değişimi ve tamir işlemlerini titizlikle yapıyoruz.",
       icon: (
@@ -181,19 +189,24 @@ export function ServicesSection() {
         >
           {services.map((service, index) => (
             <StaggerItem key={index}>
-              <Card className="group h-full border-stone-200 bg-stone-50 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-stone-800 dark:bg-stone-900">
-                <ScrollReveal distance={15} delay={index * 0.05}>
-                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-lg bg-brand-soft text-brand transition-colors group-hover:bg-brand group-hover:text-brand-foreground dark:bg-brand/30 dark:text-blue-300">
-                    {service.icon}
-                  </div>
-                </ScrollReveal>
-                <h3 className="mb-3 text-xl font-semibold text-stone-900 dark:text-stone-50">
-                  {service.title}
-                </h3>
-                <p className="text-base leading-relaxed text-stone-600 dark:text-stone-300">
-                  {service.description}
-                </p>
-              </Card>
+              <Link
+                href={service.href}
+                className="block h-full rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ring focus-visible:ring-offset-2"
+              >
+                <Card className="group h-full border-stone-200 bg-stone-50 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-stone-800 dark:bg-stone-900">
+                  <ScrollReveal distance={15} delay={index * 0.05}>
+                    <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-lg bg-brand-soft text-brand transition-colors group-hover:bg-brand group-hover:text-brand-foreground dark:bg-brand/30 dark:text-blue-300">
+                      {service.icon}
+                    </div>
+                  </ScrollReveal>
+                  <h3 className="mb-3 text-xl font-semibold text-stone-900 dark:text-stone-50">
+                    {service.title}
+                  </h3>
+                  <p className="text-base leading-relaxed text-stone-600 dark:text-stone-300">
+                    {service.description}
+                  </p>
+                </Card>
+              </Link>
             </StaggerItem>
           ))}
         </StaggerContainer>

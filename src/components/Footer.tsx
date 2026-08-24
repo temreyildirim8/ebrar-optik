@@ -1,27 +1,35 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { business } from "@/lib/business";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { href: "#", label: "Ana Sayfa" },
-    { href: "#hakkimizda", label: "Hakkımızda" },
-    { href: "#hizmetler", label: "Hizmetler" },
-    { href: "#cerceveler", label: "Çerçeveler" },
-    { href: "#iletisim", label: "İletişim" },
+    { href: "/", label: "Ana Sayfa" },
+    { href: "/#hakkimizda", label: "Hakkımızda" },
+    { href: "/#hizmetler", label: "Hizmetler" },
+    { href: "/#cerceveler", label: "Çerçeveler" },
+    { href: "/#iletisim", label: "İletişim" },
+  ];
+
+  const serviceLinks = [
+    { href: "/gozluk", label: "Reçeteli Gözlük" },
+    { href: "/gunes-gozlugu", label: "Güneş Gözlüğü" },
+    { href: "/lens", label: "Lens" },
+    { href: "/kirikkale-optik", label: "Kırıkkale Optik" },
+    { href: "/sss", label: "Sıkça Sorulan Sorular" },
   ];
 
   return (
     <footer className="w-full bg-white dark:bg-stone-950" role="contentinfo">
       <div className="w-full border-t border-stone-200 dark:border-stone-800" />
       <div className="container mx-auto max-w-7xl px-6 py-12 md:px-12 lg:px-24">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {/* Brand Info */}
-          <div className="lg:col-span-2">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div>
             <div className="flex items-center space-x-3">
-              {/* Glasses Logo */}
               <Image
                 src="/assets/logo-v2-mark.png"
                 alt="Ebrar Optik"
@@ -36,7 +44,7 @@ export function Footer() {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://wa.me/905063710071"
+                href={`https://wa.me/${business.telephoneTel.replace("+", "")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg text-stone-400 hover:text-green-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ring focus-visible:ring-offset-2 dark:hover:text-green-400"
@@ -68,7 +76,7 @@ export function Footer() {
                 </svg>
               </a>
               <a
-                href="tel:+905063710071"
+                href={`tel:${business.telephoneTel}`}
                 className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg text-stone-400 hover:text-stone-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ring focus-visible:ring-offset-2 dark:hover:text-stone-300"
                 aria-label="Telefon ile ara"
               >
@@ -90,7 +98,6 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
           <nav aria-label="Hızlı linkler">
             <h3 className="mb-2 md:mb-4 text-sm font-semibold text-stone-900 dark:text-stone-50">
               Hızlı Linkler
@@ -98,19 +105,36 @@ export function Footer() {
             <ul className="space-y-1">
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
                     className="inline-block min-h-[44px] w-full rounded-lg py-2.5 text-sm text-stone-600 hover:text-stone-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ring focus-visible:ring-offset-2 dark:text-stone-400 dark:hover:text-stone-300"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
           </nav>
 
-          {/* Contact Info */}
-          <div className="hidden md:block">
+          <nav aria-label="Hizmet sayfaları">
+            <h3 className="mb-2 md:mb-4 text-sm font-semibold text-stone-900 dark:text-stone-50">
+              Hizmetler
+            </h3>
+            <ul className="space-y-1">
+              {serviceLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="inline-block min-h-[44px] w-full rounded-lg py-2.5 text-sm text-stone-600 hover:text-stone-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ring focus-visible:ring-offset-2 dark:text-stone-400 dark:hover:text-stone-300"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <div>
             <h3 className="mb-2 md:mb-4 text-sm font-semibold text-stone-900 dark:text-stone-50">
               İletişim
             </h3>
@@ -118,19 +142,18 @@ export function Footer() {
               <ul className="space-y-2 text-sm text-stone-600 dark:text-stone-400">
                 <li>
                   <a
-                    href="tel:+905063710071"
+                    href={`tel:${business.telephoneTel}`}
                     className="inline-block min-h-[44px] rounded-lg py-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ring focus-visible:ring-offset-2"
                   >
                     +90 (506) 371 00 71
                   </a>
                 </li>
-                <li>Ovacık Mahallesi, Hürriyet Caddesi No: 54/A, Kırıkkale Merkez</li>
+                <li>{business.addressDisplay}</li>
               </ul>
             </address>
           </div>
         </div>
 
-        {/* Bottom Bar */}
         <div className="mt-8 border-t border-stone-200 pt-8 dark:border-stone-800 flex items-center justify-center -mx-6 md:mx-0">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <div className="flex flex-col items-center gap-1 text-center">
@@ -141,12 +164,6 @@ export function Footer() {
                 İçeriklerimizin izinsiz kullanımı yasaktır.
               </p>
             </div>
-            {/* <div className="flex items-center space-x-2 text-xs text-stone-500 dark:text-stone-400">
-              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-              </svg>
-              <span>KVKK uyumlu veri koruması</span>
-            </div> */}
           </div>
         </div>
       </div>

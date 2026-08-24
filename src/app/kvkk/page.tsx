@@ -1,17 +1,13 @@
-import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo";
+import { business } from "@/lib/business";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "KVKK Aydınlatma Metni | Ebrar Optik",
   description:
     "Ebrar Optik KVKK aydınlatma metni. 6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında kişisel verilerinizin işlenmesi hakkında bilgilendirme.",
-  robots: {
-    index: false,
-    follow: false,
-  },
-  alternates: {
-    canonical: "/kvkk",
-  },
-};
+  path: "/kvkk",
+  noIndex: true,
+});
 
 export default function KVKKPage() {
   return (
@@ -23,19 +19,21 @@ export default function KVKKPage() {
         <div className="prose prose-stone dark:prose-invert">
           <p className="text-stone-700 dark:text-stone-300">
             6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında,
-            Ebrar Optik olarak müşterilerimizin kişisel verilerini özenle koruyoruz.
+            Ebrar Optik olarak müşterilerimizin kişisel verilerini özenle
+            koruyoruz.
           </p>
           <h2 className="mt-8 text-xl font-semibold text-stone-900 dark:text-stone-50">
             Veri Sorumlusu
           </h2>
           <p className="text-stone-700 dark:text-stone-300">
-            Ebrar Optik - Ovacık Mahallesi, Hürriyet Caddesi No: 54/A, Kırıkkale Merkez
+            Ebrar Optik - {business.addressDisplay}
           </p>
           <h2 className="mt-8 text-xl font-semibold text-stone-900 dark:text-stone-50">
             Toplanan Veriler
           </h2>
           <p className="text-stone-700 dark:text-stone-300">
-            Müşteri adı, iletişim bilgileri, reçete bilgileri ve satın alma geçmişi.
+            Müşteri adı, iletişim bilgileri, reçete bilgileri ve satın alma
+            geçmişi.
           </p>
           <h2 className="mt-8 text-xl font-semibold text-stone-900 dark:text-stone-50">
             Verilerin Kullanım Amacı
@@ -57,10 +55,10 @@ export default function KVKKPage() {
           <p className="text-stone-700 dark:text-stone-300">
             KVKK ile ilgili sorularınız için:{" "}
             <a
-              href="mailto:ebraroptik@gmail.com"
+              href={`mailto:${business.email}`}
               className="text-brand underline hover:text-brand-mid dark:text-blue-300 dark:hover:text-blue-200"
             >
-              ebraroptik@gmail.com
+              {business.email}
             </a>
           </p>
         </div>

@@ -6,6 +6,8 @@ import { FloatingSocialButtons } from "@/components/FloatingSocialButtons";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { ContentProtectionProvider } from "@/components/ContentProtectionProvider";
+import { business } from "@/lib/business";
+import { buildLocalBusinessGraph } from "@/lib/schema";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -14,19 +16,15 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ebrar-optik.com"),
+  metadataBase: new URL(business.url),
   title: "Ebrar Optik | Kırıkkale'nin Güvenilir Optik Mağazası",
   description:
     "Görüşünüze değer katıyoruz. Ebrar Optik, Kırıkkale'de profesyonel göz sağlığı hizmetleri ve geniş çerçeve koleksiyonu ile hizmetinizde.",
-  keywords: [
-    "Kırıkkale optik",
-    "gözlük",
-    "güneş gözlüğü",
-    "lens",
-    "göz sağlığı",
-    "optik mağaza",
-  ],
   authors: [{ name: "Ebrar Optik" }],
+  robots: {
+    index: true,
+    follow: true,
+  },
   icons: {
     icon: [{ url: "/assets/logo-v2-icon.png", type: "image/png" }],
     apple: "/assets/logo-v2-icon.png",
@@ -46,70 +44,16 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ebrar Optik | Kırıkkale'nin Güvenilir Optik Mağazası",
+    description:
+      "Profesyonel göz sağlığı hizmetleri ve geniş çerçeve koleksiyonu",
+    images: ["/og-image.jpg"],
+  },
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://ebrar-optik.com/#organization",
-      name: "Ebrar Optik",
-      url: "https://ebrar-optik.com",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://ebrar-optik.com/assets/logo-v2-monogram.svg",
-        width: 200,
-        height: 220,
-      },
-      description:
-        "Kırıkkale'nin güvenilir optik mağazası. Profesyonel göz sağlığı hizmetleri ve geniş çerçeve koleksiyonu.",
-      sameAs: [
-        "https://www.instagram.com/ebrar.optik71",
-        "https://www.facebook.com/ebraroptik",
-      ],
-    },
-    {
-      "@type": "LocalBusiness",
-      "@id": "https://ebrar-optik.com/#localbusiness",
-      name: "Ebrar Optik",
-      description:
-        "Kırıkkale'de profesyonel göz sağlığı hizmetleri, gözlük ve lens satışı.",
-      url: "https://ebrar-optik.com",
-      telephone: "+90-506-371-00-71",
-      email: "ebraroptik@gmail.com",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "Ovacık Mahallesi, Hürriyet Caddesi No: 54/A",
-        addressLocality: "Kırıkkale Merkez",
-        addressRegion: "Kırıkkale",
-        addressCountry: "TR",
-      },
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: "39.8441708",
-        longitude: "33.5033221",
-      },
-      openingHoursSpecification: [
-        {
-          "@type": "OpeningHoursSpecification",
-          dayOfWeek: [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-          ],
-          opens: "09:00",
-          closes: "19:30",
-        },
-      ],
-      priceRange: "$$",
-      image: "https://ebrar-optik.com/assets/logo-v2-monogram.svg",
-    },
-  ],
-};
+const jsonLd = buildLocalBusinessGraph();
 
 export default function RootLayout({
   children,
@@ -126,7 +70,6 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} antialiased tracking-wide`}>
-        {/* Skip to main content link for keyboard users */}
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[9999] focus:rounded-lg focus:bg-brand focus:px-4 focus:py-3 focus:text-brand-foreground focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-brand"
@@ -135,7 +78,9 @@ export default function RootLayout({
         </a>
         <Navigation />
         <ContentProtectionProvider>
-          <main id="main-content" className="protected-content" role="main">{children}</main>
+          <main id="main-content" className="protected-content" role="main">
+            {children}
+          </main>
           <div className="protected-content">
             <Footer />
           </div>
