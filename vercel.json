@@ -1,5 +1,11 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    {
+      "source": "/yandex_dd7c3a784e3eb901.html",
+      "destination": "/yandex_dd7c3a784e3eb901.htm"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
