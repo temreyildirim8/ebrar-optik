@@ -1,7 +1,6 @@
-import Script from "next/script";
 import Link from "next/link";
 import { faqs } from "@/lib/faqs";
-import { buildFaqPageSchema } from "@/lib/schema";
+import { buildBreadcrumbSchema, buildFaqPageSchema } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
@@ -13,13 +12,20 @@ export const metadata = buildPageMetadata({
 
 export default function SssPage() {
   const faqSchema = buildFaqPageSchema(faqs);
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Ana Sayfa", path: "/" },
+    { name: "Sıkça Sorulan Sorular", path: "/sss" },
+  ]);
 
   return (
     <article className="w-full bg-white py-12 dark:bg-stone-950 md:py-16">
-      <Script
-        id="faq-json-ld"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <div className="container mx-auto max-w-3xl px-6 md:px-12 lg:px-24">
         <nav aria-label="Sayfa konumu" className="mb-8 text-sm text-stone-500">

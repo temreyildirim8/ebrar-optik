@@ -10,6 +10,8 @@ export function buildLocalBusinessGraph() {
         "@type": "Organization",
         "@id": `${business.url}/#organization`,
         name: business.name,
+        // Aynı adı taşıyan İstanbul'daki optiklerden ayrışmak için
+        alternateName: `${business.name} ${business.areaServed}`,
         url: business.url,
         logo: {
           "@type": "ImageObject",
@@ -24,6 +26,7 @@ export function buildLocalBusinessGraph() {
         "@type": ["Optician", "Store"],
         "@id": `${business.url}/#localbusiness`,
         name: business.name,
+        alternateName: `${business.name} ${business.areaServed}`,
         description:
           "Kırıkkale'de profesyonel göz sağlığı hizmetleri, gözlük ve lens satışı.",
         url: business.url,
@@ -60,6 +63,21 @@ export function buildLocalBusinessGraph() {
         parentOrganization: { "@id": `${business.url}/#organization` },
       },
     ],
+  };
+}
+
+export function buildBreadcrumbSchema(
+  items: { name: string; path: string }[]
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.path === "/" ? business.url : `${business.url}${item.path}`,
+    })),
   };
 }
 

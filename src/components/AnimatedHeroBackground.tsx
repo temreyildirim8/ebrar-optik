@@ -2,75 +2,84 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { useReducedMotion } from "framer-motion";
 
 const images = [
-  "/assets/hero_lifestyle_wide_hr_1773526720963.webp", // Ana, Lifestyle
-  "/assets/hero_interior_wide_1773521896687.webp", // Mağaza
-  "/assets/hero_product_wide_1773521883588.webp", // Yakın Çekim Ürün
+  {
+    src: "/assets/hero_lifestyle_wide_hr_1773526720963.webp",
+    alt: "Gözlük kullanan müşteri — Ebrar Optik Kırıkkale",
+  },
+  {
+    src: "/assets/hero_interior_wide_1773521896687.webp",
+    alt: "Ebrar Optik Kırıkkale mağaza içi",
+  },
+  {
+    src: "/assets/hero_product_wide_1773521883588.webp",
+    alt: "Gözlük çerçevesi yakın çekim — Ebrar Optik Kırıkkale",
+  },
 ];
 
 export function AnimatedHeroBackground() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [index, setIndex] = useState(0);
+  const [rotating, setRotating] = useState(false);
   const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     // Skip image rotation if reduced motion is preferred
     if (shouldReduceMotion) return;
 
-    const timer = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000); // Her 3 saniyede bir değiştir
+    // LCP yalnızca ilk kullanıcı etkileşimine kadar ölçülür. Rotasyonu ve
+    // sonraki slaytların indirilmesini o ana kadar geciktiriyoruz; aksi halde
+    // her yeni slayt LCP'yi ileri itiyordu (ölçüm: 3,2 s).
+    let timer: ReturnType<typeof setInterval> | undefined;
+    let armed = false;
+    const events = ["scroll", "pointerdown", "keydown"] as const;
 
-    return () => clearInterval(timer);
+    const arm = () => {
+      if (armed) return;
+      armed = true;
+      setRotating(true);
+      timer = setInterval(() => {
+        setIndex((prev) => (prev + 1) % images.length);
+      }, 3000); // Her 3 saniyede bir değiştir
+    };
+
+    events.forEach((event) =>
+      window.addEventListener(event, arm, { once: true, passive: true })
+    );
+
+    return () => {
+      clearInterval(timer);
+      events.forEach((event) => window.removeEventListener(event, arm));
+    };
   }, [shouldReduceMotion]);
 
-  // Static version for reduced motion
-  if (shouldReduceMotion) {
-    return (
-      <div className="absolute inset-0 z-0 overflow-hidden bg-white/20 md:bg-stone-900">
-        <Image
-          src={images[0]}
-          alt="Ebrar Optik Konsept"
-          fill
-          priority
-          className="object-cover object-center"
-          sizes="100vw"
-          quality={90}
-          style={{ filter: "saturate(0.8) brightness(0.95)" }}
-        />
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-stone-900/85 via-stone-900/70 to-stone-900/60 dark:from-stone-950/95 dark:via-stone-950/80 dark:to-stone-950/70 md:bg-gradient-to-r md:from-stone-900/90 md:via-stone-900/50 md:to-stone-900/10 md:dark:from-stone-950/95 md:dark:via-stone-950/70 md:dark:to-stone-950/20" />
-      </div>
-    );
-  }
+  // Slaytlar üst üste duruyor ve opaklıkla geçiş yapıyor. Önceki
+  // AnimatePresence kurulumunda key başa dönünce rotasyon donuyor, çıkış
+  // animasyonları tamamlanmadığı için elementler DOM'da birikiyordu.
+  const visible = rotating ? images : images.slice(0, 1);
 
   return (
     <div className="absolute inset-0 z-0 overflow-hidden bg-white/20 md:bg-stone-900">
-      <AnimatePresence initial={false}>
-        <motion.div
-          key={currentIndex}
-          initial={{ opacity: 0, scale: 1.05 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{
-            opacity: { duration: 1, ease: "easeInOut" },
-            scale: { duration: 3, ease: "linear" }, // Yavaşça uzaklaşma (zoom-out) efekti
+      {visible.map((image, i) => (
+        <Image
+          key={image.src}
+          src={image.src}
+          alt={image.alt}
+          fill
+          priority={i === 0}
+          className="object-cover object-center transition-[opacity,transform] duration-1000 ease-in-out"
+          sizes="100vw"
+          quality={90}
+          style={{
+            filter: "saturate(0.8) brightness(0.95)",
+            opacity: i === index ? 1 : 0,
+            // Yavaşça uzaklaşma (zoom-out) efekti
+            transform: i === index ? "scale(1)" : "scale(1.05)",
+            transitionDuration: i === index ? "1000ms, 3000ms" : "1000ms",
           }}
-          className="absolute inset-0"
-        >
-          <Image
-            src={images[currentIndex]}
-            alt={`Ebrar Optik Konsept ${currentIndex + 1}`}
-            fill
-            priority={currentIndex === 0} // Sadece ilk resmi hemen yükle
-            className="object-cover object-center"
-            sizes="100vw"
-            quality={90}
-            style={{ filter: "saturate(0.8) brightness(0.95)" }}
-          />
-        </motion.div>
-      </AnimatePresence>
+        />
+      ))}
 
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-stone-900/85 via-stone-900/70 to-stone-900/60 dark:from-stone-950/95 dark:via-stone-950/80 dark:to-stone-950/70 md:bg-gradient-to-r md:from-stone-900/90 md:via-stone-900/50 md:to-stone-900/10 md:dark:from-stone-950/95 md:dark:via-stone-950/70 md:dark:to-stone-950/20" />

@@ -28,6 +28,7 @@ export function buildPageMetadata({
       title,
       description,
       url,
+      siteName: business.name,
       locale: "tr_TR",
       type: "website",
       images: [
