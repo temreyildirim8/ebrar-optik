@@ -112,7 +112,7 @@ export function ServicesSection() {
     },
     {
       title: "Cam ve Çerçeve Değişimi",
-      href: "/#iletisim",
+      href: "/cam-cerceve-degisimi",
       description:
         "Kırılmış veya çizilmiş gözlük camlarınızı ve çerçevelerinizi yenileriyle değiştiriyoruz.",
       icon: (
@@ -134,7 +134,7 @@ export function ServicesSection() {
     },
     {
       title: "Gözlük Bakım ve Onarım",
-      href: "/#iletisim",
+      href: "/cam-cerceve-degisimi",
       description:
         "Gözlüklerinizin vida sıkılaştırma, ped değişimi ve tamir işlemlerini titizlikle yapıyoruz.",
       icon: (

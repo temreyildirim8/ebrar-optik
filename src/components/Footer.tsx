@@ -20,6 +20,9 @@ export function Footer() {
     { href: "/gozluk", label: "Reçeteli Gözlük" },
     { href: "/gunes-gozlugu", label: "Güneş Gözlüğü" },
     { href: "/lens", label: "Lens" },
+    { href: "/cocuk-gozlugu", label: "Çocuk Gözlüğü" },
+    { href: "/cam-cerceve-degisimi", label: "Cam ve Çerçeve Değişimi" },
+    { href: "/sgk-anlasmali-optik", label: "SGK Anlaşmalı Optik" },
     { href: "/kirikkale-optik", label: "Kırıkkale Optik" },
     { href: "/sss", label: "Sıkça Sorulan Sorular" },
   ];

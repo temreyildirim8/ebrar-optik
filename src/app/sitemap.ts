@@ -10,9 +10,12 @@ const routes: {
 }[] = [
   { path: "/", priority: 1, changeFrequency: "weekly" },
   { path: "/kirikkale-optik", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/sgk-anlasmali-optik", priority: 0.9, changeFrequency: "monthly" },
   { path: "/gozluk", priority: 0.8, changeFrequency: "monthly" },
   { path: "/gunes-gozlugu", priority: 0.8, changeFrequency: "monthly" },
   { path: "/lens", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/cam-cerceve-degisimi", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/cocuk-gozlugu", priority: 0.8, changeFrequency: "monthly" },
   { path: "/sss", priority: 0.7, changeFrequency: "monthly" },
 ];
 

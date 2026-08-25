@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { business } from "@/lib/business";
-import { buildBreadcrumbSchema } from "@/lib/schema";
+import { buildBreadcrumbSchema, buildFaqPageSchema } from "@/lib/schema";
 import type { ServicePageContent } from "@/lib/service-pages";
 
 type ServicePageLayoutProps = {
@@ -12,12 +12,17 @@ export function ServicePageLayout({ page }: ServicePageLayoutProps) {
     { name: "Ana Sayfa", path: "/" },
     { name: page.h1, path: page.path },
   ]);
+  const faqSchema = buildFaqPageSchema(page.faqs);
 
   return (
     <article className="w-full bg-white py-12 dark:bg-stone-950 md:py-16">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <div className="container mx-auto max-w-3xl px-6 md:px-12 lg:px-24">
         <nav aria-label="Sayfa konumu" className="mb-8 text-sm text-stone-500">
@@ -51,6 +56,19 @@ export function ServicePageLayout({ page }: ServicePageLayoutProps) {
           ))}
         </ul>
 
+        {page.sections.map((section) => (
+          <section key={section.heading} className="mt-12">
+            <h2 className="mb-4 text-xl font-semibold text-stone-900 dark:text-stone-50 sm:text-2xl">
+              {section.heading}
+            </h2>
+            <div className="space-y-4 text-base leading-relaxed text-stone-700 dark:text-stone-300">
+              {section.paragraphs.map((paragraph) => (
+                <p key={paragraph.slice(0, 32)}>{paragraph}</p>
+              ))}
+            </div>
+          </section>
+        ))}
+
         <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <Link
             href="/#iletisim"
@@ -73,6 +91,24 @@ export function ServicePageLayout({ page }: ServicePageLayoutProps) {
             Ara: {business.telephoneDisplay}
           </a>
         </div>
+
+        <section className="mt-12 border-t border-stone-200 pt-8 dark:border-stone-800">
+          <h2 className="mb-6 text-xl font-semibold text-stone-900 dark:text-stone-50 sm:text-2xl">
+            Sıkça sorulan sorular
+          </h2>
+          <div className="space-y-6">
+            {page.faqs.map((faq) => (
+              <div key={faq.question}>
+                <h3 className="mb-2 text-base font-semibold text-stone-900 dark:text-stone-50">
+                  {faq.question}
+                </h3>
+                <p className="text-base leading-relaxed text-stone-700 dark:text-stone-300">
+                  {faq.answer}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
 
         <section className="mt-12 border-t border-stone-200 pt-8 dark:border-stone-800">
           <h2 className="mb-4 text-lg font-semibold text-stone-900 dark:text-stone-50">
