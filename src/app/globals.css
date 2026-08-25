@@ -174,3 +174,8 @@
     background: transparent;
   }
 }
+/* Çerez diyaloğu açıkken arka planın kaydırılmasını engelle.
+   showModal() tıklamayı zaten engelliyor ama kaydırmayı engellemiyor. */
+html:has(dialog[open]) {
+  overflow: hidden;
+}

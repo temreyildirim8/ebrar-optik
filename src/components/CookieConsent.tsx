@@ -1,6 +1,6 @@
 "use client";
 
-import { useSyncExternalStore } from "react";
+import { useEffect, useRef, useSyncExternalStore } from "react";
 import Link from "next/link";
 import Script from "next/script";
 
@@ -95,6 +95,22 @@ export function CookieConsent({ gaId }: { gaId: string }) {
     getSnapshot,
     getServerSnapshot
   );
+  const dialogRef = useRef<HTMLDialogElement>(null);
+
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+
+    // showModal(): focus tuzağı, arka planın inert olması ve top-layer
+    // yerleşimi tarayıcıdan geliyor; ayrıca bir şey yazmaya gerek yok.
+    if (durum === "yok" && !dialog.open) {
+      dialog.showModal();
+      // Varsayılan davranış paragraf içindeki KVKK linkini odaklıyor; ekran
+      // okuyucunun önce diyaloğun başlığını duyurması için kendisine alıyoruz.
+      dialog.focus();
+    }
+    if (durum !== "yok" && dialog.open) dialog.close();
+  }, [durum]);
 
   return (
     <>
@@ -114,54 +130,51 @@ gtag('config', '${gaId}');`}
         </>
       )}
 
-      {durum === "yok" && (
-        <div
-          role="dialog"
-          aria-labelledby="cerez-basligi"
-          className="fixed inset-x-0 bottom-0 z-50 border-t border-stone-200 bg-white/95 px-6 py-5 backdrop-blur dark:border-stone-800 dark:bg-stone-950/95"
+      <dialog
+        ref={dialogRef}
+        aria-labelledby="cerez-basligi"
+        tabIndex={-1}
+        // Cevap vermek zorunlu: ESC ile kapatmayı engelliyoruz.
+        onCancel={(event) => event.preventDefault()}
+        className="m-auto max-h-[calc(100%-4rem)] w-[calc(100%-2rem)] max-w-lg overflow-y-auto rounded-2xl border border-stone-200 bg-white p-6 text-left shadow-xl backdrop:bg-stone-950/60 dark:border-stone-800 dark:bg-stone-950 sm:p-8"
+      >
+        <h2
+          id="cerez-basligi"
+          className="text-lg font-semibold text-stone-900 dark:text-stone-50"
         >
-          <div className="container mx-auto flex max-w-4xl flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <div>
-              <h2
-                id="cerez-basligi"
-                className="text-sm font-semibold text-stone-900 dark:text-stone-50"
-              >
-                Çerez tercihiniz
-              </h2>
-              <p className="mt-1 text-sm text-stone-600 dark:text-stone-400">
-                Siteyi nasıl kullandığınızı anlamak için isteğe bağlı analiz
-                çerezleri kullanmak istiyoruz. Reddederseniz hiçbir analiz
-                çerezi yüklenmez ve site aynı şekilde çalışır. Ayrıntılar için{" "}
-                <Link
-                  href="/kvkk"
-                  className="font-medium text-brand underline hover:text-brand-mid"
-                >
-                  KVKK aydınlatma metni
-                </Link>
-                .
-              </p>
-            </div>
+          Çerez tercihiniz
+        </h2>
+        <p className="mt-3 text-sm leading-relaxed text-stone-600 dark:text-stone-400">
+          Siteyi nasıl kullandığınızı anlamak için isteğe bağlı analiz çerezleri
+          kullanmak istiyoruz. Reddederseniz hiçbir analiz çerezi yüklenmez ve
+          site aynı şekilde çalışır. Ayrıntılar için{" "}
+          <Link
+            href="/kvkk"
+            className="font-medium text-brand underline hover:text-brand-mid"
+          >
+            KVKK aydınlatma metni
+          </Link>
+          .
+        </p>
 
-            <div className="flex shrink-0 gap-3">
-              {/* İki seçenek de eşit görünürlükte; öne çıkarılmış "kabul" yok. */}
-              <button
-                type="button"
-                onClick={() => kaydet("ret")}
-                className="inline-flex min-h-[44px] flex-1 items-center justify-center rounded-lg border border-stone-300 px-5 py-3 text-sm font-medium text-stone-800 transition-colors hover:bg-stone-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ring focus-visible:ring-offset-2 dark:border-stone-700 dark:text-stone-100 dark:hover:bg-stone-900 md:flex-none"
-              >
-                Reddet
-              </button>
-              <button
-                type="button"
-                onClick={() => kaydet("kabul")}
-                className="inline-flex min-h-[44px] flex-1 items-center justify-center rounded-lg border border-stone-300 px-5 py-3 text-sm font-medium text-stone-800 transition-colors hover:bg-stone-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ring focus-visible:ring-offset-2 dark:border-stone-700 dark:text-stone-100 dark:hover:bg-stone-900 md:flex-none"
-              >
-                Kabul Et
-              </button>
-            </div>
-          </div>
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+          {/* İki seçenek de eşit görünürlükte; öne çıkarılmış "kabul" yok. */}
+          <button
+            type="button"
+            onClick={() => kaydet("ret")}
+            className="inline-flex min-h-[44px] flex-1 items-center justify-center rounded-lg border border-stone-300 px-5 py-3 text-sm font-medium text-stone-800 transition-colors hover:bg-stone-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ring focus-visible:ring-offset-2 dark:border-stone-700 dark:text-stone-100 dark:hover:bg-stone-900"
+          >
+            Reddet
+          </button>
+          <button
+            type="button"
+            onClick={() => kaydet("kabul")}
+            className="inline-flex min-h-[44px] flex-1 items-center justify-center rounded-lg border border-stone-300 px-5 py-3 text-sm font-medium text-stone-800 transition-colors hover:bg-stone-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ring focus-visible:ring-offset-2 dark:border-stone-700 dark:text-stone-100 dark:hover:bg-stone-900"
+          >
+            Kabul Et
+          </button>
         </div>
-      )}
+      </dialog>
     </>
   );
 }
