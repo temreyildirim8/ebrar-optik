@@ -157,7 +157,7 @@ export function FrameGallery() {
                   <div className="aspect-square relative w-full overflow-hidden bg-stone-100 dark:bg-stone-800">
                     <Image
                       src={frame.image}
-                      alt={frame.name}
+                      alt={`${frame.name} gözlük çerçevesi — Ebrar Optik Kırıkkale`}
                       fill
                       className="object-cover transition-transform duration-300 group-hover:scale-105"
                     />

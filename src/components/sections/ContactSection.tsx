@@ -9,7 +9,7 @@ import { business } from "@/lib/business";
 export function ContactSection() {
   const phoneNumber =
     process.env.NEXT_PUBLIC_WHATSAPP_PHONE || business.telephoneTel;
-  const email = business.contactEmail;
+  const email = business.email;
   const googleMapsLink = business.mapsUrl;
   const embeddedMapUrl = business.mapsEmbedUrl;
 

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { business } from "@/lib/business";
+import { buildBreadcrumbSchema } from "@/lib/schema";
 import type { ServicePageContent } from "@/lib/service-pages";
 
 type ServicePageLayoutProps = {
@@ -7,8 +8,17 @@ type ServicePageLayoutProps = {
 };
 
 export function ServicePageLayout({ page }: ServicePageLayoutProps) {
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Ana Sayfa", path: "/" },
+    { name: page.h1, path: page.path },
+  ]);
+
   return (
     <article className="w-full bg-white py-12 dark:bg-stone-950 md:py-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <div className="container mx-auto max-w-3xl px-6 md:px-12 lg:px-24">
         <nav aria-label="Sayfa konumu" className="mb-8 text-sm text-stone-500">
           <ol className="flex flex-wrap items-center gap-2">

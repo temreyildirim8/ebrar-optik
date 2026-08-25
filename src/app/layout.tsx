@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
+import { CookieConsent } from "@/components/CookieConsent";
 import { FloatingSocialButtons } from "@/components/FloatingSocialButtons";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -36,6 +36,7 @@ export const metadata: Metadata = {
     title: "Ebrar Optik | Kırıkkale'nin Güvenilir Optik Mağazası",
     description:
       "Profesyonel göz sağlığı hizmetleri ve geniş çerçeve koleksiyonu",
+    siteName: business.name,
     locale: "tr_TR",
     type: "website",
     images: [
@@ -58,6 +59,9 @@ export const metadata: Metadata = {
 
 const jsonLd = buildLocalBusinessGraph();
 
+// Ölçüm kimliği herkese açık (HTML'de görünüyor), env değişkenine gerek yok.
+const GA_MEASUREMENT_ID = "G-QD5C0Z5B4L";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -66,8 +70,9 @@ export default function RootLayout({
   return (
     <html lang="tr">
       <head>
-        <Script
-          id="json-ld"
+        {/* next/script JSON-LD'yi client-side inject ediyordu ve HTML'de
+            görünmüyordu; düz <script> ile sunucu tarafında render edilir. */}
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
@@ -89,6 +94,7 @@ export default function RootLayout({
           </div>
         </ContentProtectionProvider>
         <FloatingSocialButtons />
+        <CookieConsent gaId={GA_MEASUREMENT_ID} />
       </body>
     </html>
   );

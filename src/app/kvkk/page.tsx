@@ -43,6 +43,29 @@ export default function KVKKPage() {
             müşteri memnuniyeti süreçleri.
           </p>
           <h2 className="mt-8 text-xl font-semibold text-stone-900 dark:text-stone-50">
+            Çerezler
+          </h2>
+          <p className="text-stone-700 dark:text-stone-300">
+            Sitemizde iki tür çerez söz konusudur. Zorunlu çerezler sitenin
+            çalışması için gereklidir ve rıza gerektirmez; bunlar arasında çerez
+            tercihinizi hatırlayan kayıt da bulunur. İsteğe bağlı analiz
+            çerezleri (Google Analytics) ise ziyaretçi sayısı ve hangi
+            sayfaların görüntülendiği gibi kullanım istatistiklerini ölçer.
+          </p>
+          <p className="text-stone-700 dark:text-stone-300">
+            Analiz çerezleri yalnızca açık rızanız varsa yüklenir. Siteye ilk
+            girişinizde çıkan çerez bildiriminde &quot;Reddet&quot; derseniz
+            hiçbir analiz çerezi çalıştırılmaz. Kararınızı istediğiniz zaman
+            sayfa altındaki &quot;Çerez Tercihleri&quot; bağlantısından
+            değiştirebilirsiniz.
+          </p>
+          <p className="text-stone-700 dark:text-stone-300">
+            Google Analytics kullanımı, verilerin yurt dışındaki sunuculara
+            aktarılması anlamına gelir. Bu aktarım yalnızca açık rıza vermeniz
+            hâlinde gerçekleşir.
+          </p>
+
+          <h2 className="mt-8 text-xl font-semibold text-stone-900 dark:text-stone-50">
             Haklarınız
           </h2>
           <p className="text-stone-700 dark:text-stone-300">

@@ -6,8 +6,6 @@ export const business = {
   telephoneTel: "+905063710071",
   telephoneDisplay: "0506 371 00 71",
   email: "ebraroptik@gmail.com",
-  /** İletişim formu / mailto için kullanılan adres */
-  contactEmail: "suedaebrar1@gmail.com",
   priceRange: "$$",
   address: {
     streetAddress: "Ovacık Mahallesi, Hürriyet Caddesi No: 54/A",

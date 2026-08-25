@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { business } from "@/lib/business";
+import { cerezTercihleriniSifirla } from "@/components/CookieConsent";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -31,10 +32,10 @@ export function Footer() {
           <div>
             <div className="flex items-center space-x-3">
               <Image
-                src="/assets/logo-v2-mark.png"
+                src="/assets/logo-v2-mark.webp"
                 alt="Ebrar Optik"
-                width={511}
-                height={486}
+                width={231}
+                height={220}
                 className="h-16 w-auto md:h-20 lg:h-24"
               />
             </div>
@@ -160,9 +161,24 @@ export function Footer() {
               <p className="text-sm text-stone-500 dark:text-stone-400">
                 &copy; {currentYear} Ebrar Optik. Tüm hakları saklıdır.
               </p>
-              <p className="text-center text-xs text-stone-400 dark:text-stone-500">
+              <p className="text-center text-xs text-stone-500 dark:text-stone-400">
                 İçeriklerimizin izinsiz kullanımı yasaktır.
               </p>
+              <div className="mt-1 flex flex-wrap items-center justify-center gap-x-4 text-sm">
+                <Link
+                  href="/kvkk"
+                  className="inline-flex min-h-[44px] items-center rounded-lg text-stone-600 hover:text-stone-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ring focus-visible:ring-offset-2 dark:text-stone-400 dark:hover:text-stone-300"
+                >
+                  KVKK Aydınlatma Metni
+                </Link>
+                <button
+                  type="button"
+                  onClick={cerezTercihleriniSifirla}
+                  className="inline-flex min-h-[44px] items-center rounded-lg text-stone-600 hover:text-stone-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ring focus-visible:ring-offset-2 dark:text-stone-400 dark:hover:text-stone-300"
+                >
+                  Çerez Tercihleri
+                </button>
+              </div>
             </div>
           </div>
         </div>
