@@ -30,7 +30,7 @@ export function Footer() {
   return (
     <footer className="w-full bg-white dark:bg-stone-950" role="contentinfo">
       <div className="w-full border-t border-stone-200 dark:border-stone-800" />
-      <div className="container mx-auto max-w-7xl px-6 py-12 md:px-12 lg:px-24">
+      <div className="container mx-auto max-w-7xl px-6 pb-8 pt-12 md:px-12 lg:px-24">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <div className="flex items-center space-x-3">
@@ -158,9 +158,13 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 border-t border-stone-200 pt-8 dark:border-stone-800 flex items-center justify-center -mx-6 md:mx-0">
-          <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-            <div className="flex flex-col items-center gap-1 text-center">
+      </div>
+
+      <div className="w-full border-t border-stone-200 dark:border-stone-800" />
+
+      <div className="container mx-auto flex max-w-7xl items-center justify-center px-6 pb-12 pt-8 md:px-12 lg:px-24">
+        <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+          <div className="flex flex-col items-center gap-1 text-center">
               <p className="text-sm text-stone-500 dark:text-stone-400">
                 &copy; {currentYear} Ebrar Optik. Tüm hakları saklıdır.
               </p>
@@ -182,8 +186,35 @@ export function Footer() {
                   Çerez Tercihleri
                 </button>
               </div>
-            </div>
           </div>
+        </div>
+      </div>
+
+      <div className="relative w-full aspect-[900/562] md:aspect-[1920/772]">
+        <picture>
+          <source
+            media="(min-width: 768px)"
+            srcSet="/assets/below-footer.webp"
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/assets/below-footer-mobile.webp"
+            alt="Ebrar Optik'in bulunduğu Kırıkkale sokağının illüstrasyonu"
+            loading="lazy"
+            decoding="async"
+            className="h-full w-full object-cover dark:opacity-90"
+          />
+        </picture>
+        {/* Konumlar illüstrasyondaki ahşap tabelanın yüzdelik koordinatları */}
+        <div className="absolute left-[41.4%] top-[39.8%] flex h-[8.3%] w-[18.7%] items-center justify-center md:left-[44.5%] md:w-[12%]">
+          <Image
+            src="/assets/logo-v2-mark.webp"
+            alt=""
+            aria-hidden="true"
+            width={231}
+            height={220}
+            className="h-[78%] w-auto object-contain"
+          />
         </div>
       </div>
     </footer>
