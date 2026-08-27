@@ -28,11 +28,13 @@ export function ServicesSection() {
           stroke="currentColor"
           aria-hidden="true"
         >
+          <circle cx={6} cy={15} r={4} strokeWidth={2} />
+          <circle cx={18} cy={15} r={4} strokeWidth={2} />
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={2}
-            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+            d="M14 15a2 2 0 0 0-2-2 2 2 0 0 0-2 2M2.5 13 5 7c.7-1.3 1.4-2 3-2M21.5 13 19 7c-.7-1.3-1.5-2-3-2"
           />
         </svg>
       ),
@@ -50,12 +52,12 @@ export function ServicesSection() {
           stroke="currentColor"
           aria-hidden="true"
         >
-          <circle cx={12} cy={12} r={5} />
+          <circle cx={12} cy={12} r={4} fill="currentColor" />
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={2}
-            d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
+            d="M12 2v2M12 20v2M2 12h2M20 12h2m-15.07-7.07 1.41 1.41m9.32 9.32 1.41 1.41M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
           />
         </svg>
       ),
@@ -73,17 +75,13 @@ export function ServicesSection() {
           stroke="currentColor"
           aria-hidden="true"
         >
+          <circle cx={6} cy={15} r={4} strokeWidth={2} fill="#57534e" />
+          <circle cx={18} cy={15} r={4} strokeWidth={2} fill="#57534e" />
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={2}
-            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-          />
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+            d="M14 15a2 2 0 0 0-2-2 2 2 0 0 0-2 2M2.5 13 5 7c.7-1.3 1.4-2 3-2M21.5 13 19 7c-.7-1.3-1.5-2-3-2"
           />
         </svg>
       ),
