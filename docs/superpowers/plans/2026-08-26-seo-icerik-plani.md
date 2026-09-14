@@ -90,7 +90,9 @@ Sitede blog yok. Yazı yazmadan önce kurulmalı.
 - [ ] Hafta 8: **[Sahibi]** ikinci yorum turu + GSC kontrolü
 - [ ] Hafta 10: ilk 8 haftanın verisine göre rehber kuyruğunu revize et
 - [ ] Hafta 12: çeyrek değerlendirmesi, rakiplerle sıralama karşılaştırması
-- [ ] **[Sahibi]** Yorum sayısı 10'u geçtiğinde haber ver → `aggregateRating` schema eklenebilir
+- [ ] **[Sahibi]** Gerçek müşteri yorumlarını Google İşletme Profili'nde topla;
+      kendi işletmemizin `aggregateRating` verisi kendi sitemizde Google yıldızlı
+      sonuç uygunluğu sağlamaz (bkz. `../../seo-offsite-checklist.md`).
 
 ---
 

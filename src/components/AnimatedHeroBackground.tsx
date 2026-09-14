@@ -25,8 +25,12 @@ export function AnimatedHeroBackground() {
   const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
-    // Skip image rotation if reduced motion is preferred
-    if (shouldReduceMotion) return;
+    // Mobilde tek kadın görseli sabit kalır; carousel yalnızca masaüstünde döner.
+    if (
+      shouldReduceMotion ||
+      !window.matchMedia("(min-width: 768px)").matches
+    )
+      return;
 
     // LCP yalnızca ilk kullanıcı etkileşimine kadar ölçülür. Rotasyonu ve
     // sonraki slaytların indirilmesini o ana kadar geciktiriyoruz; aksi halde
@@ -68,6 +72,7 @@ export function AnimatedHeroBackground() {
           alt={image.alt}
           fill
           priority={i === 0}
+          fetchPriority={i === 0 ? "high" : "auto"}
           className="object-cover object-center transition-[opacity,transform] duration-1000 ease-in-out"
           sizes="100vw"
           quality={90}

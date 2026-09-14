@@ -3,6 +3,7 @@
 import { useEffect, useRef, useSyncExternalStore } from "react";
 import Link from "next/link";
 import Script from "next/script";
+import { getContactClickEvent } from "@/lib/analytics";
 
 const STORAGE_KEY = "ebrar-cerez-onayi";
 
@@ -110,6 +111,28 @@ export function CookieConsent({ gaId }: { gaId: string }) {
       dialog.focus();
     }
     if (durum !== "yok" && dialog.open) dialog.close();
+  }, [durum]);
+
+  useEffect(() => {
+    if (durum !== "kabul") return;
+
+    const trackContactClick = (event: MouseEvent) => {
+      if (!(event.target instanceof Element)) return;
+
+      const link = event.target.closest<HTMLAnchorElement>("a[href]");
+      if (!link) return;
+
+      const eventName = getContactClickEvent(link.href);
+      if (!eventName) return;
+
+      const analyticsWindow = window as Window & {
+        gtag?: (command: "event", name: string) => void;
+      };
+      analyticsWindow.gtag?.("event", eventName);
+    };
+
+    document.addEventListener("click", trackContactClick);
+    return () => document.removeEventListener("click", trackContactClick);
   }, [durum]);
 
   return (

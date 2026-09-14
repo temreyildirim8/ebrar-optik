@@ -3,6 +3,8 @@
 Kod dışı, işletme sahibinin yapacağı işler. Devam eden içerik planı:
 `superpowers/plans/2026-08-26-seo-icerik-plani.md`
 
+Kod tarafı doğrulama: `npm run build && node scripts/check-seo.mjs`.
+
 ## Tamamlandı
 
 - [x] Google Search Console: `https://ebrar-optik.com` property → sitemap gönderildi
@@ -22,14 +24,24 @@ Kod dışı, işletme sahibinin yapacağı işler. Devam eden içerik planı:
 - [ ] Index kontrolü: `site:ebrar-optik.com` — 9 sayfa da indekste mi
 - [ ] GSC URL Inspection ile yeni sayfaları indekslemeye gönder:
       `/sgk-anlasmali-optik`, `/cam-cerceve-degisimi`, `/cocuk-gozlugu`
-- [ ] Rich Results Test: ana sayfa Optician, `/sss` ve hizmet sayfaları FAQPage,
-      hizmet sayfaları BreadcrumbList
+- [ ] Rich Results Test: ana sayfa Optician, `/sss` ve hizmet sayfaları
+      BreadcrumbList; FAQPage JSON-LD için Schema.org Validator kullanın
 - [ ] Mağaza fotoğrafı çekimi (hizmet sayfalarında içerik görseli yok)
-- [ ] Gerçek yorum sayısı 10'u geçince `aggregateRating` schema eklenebilir —
-      sahte rating yok
 
 ## Notlar
 
+- Google FAQ zengin sonuçlarını 7 Mayıs 2026'da kaldırdı. FAQPage verisi
+  korunabilir; Google'da FAQ zengin sonucu beklenmemeli.
+  Kaynak: https://developers.google.com/search/updates
+- Kendi işletmemize verilen yorumlar için `aggregateRating` eklemek, kendi
+  sitemizde Google yıldızlı sonuç uygunluğu sağlamaz; yorum sayısı bu kuralı
+  değiştirmez. Gerçek müşteri yorumlarını Google İşletme Profili'nde toplayın.
+  Kaynak: https://developers.google.com/search/docs/appearance/structured-data/review-snippet
+- Sitemap'te gerçek son önemli değişim tarihi tutulmadığı için `lastmod`
+  üretilmiyor. Derleme tarihini içerik güncellemesi gibi göstermeyin.
+  Kaynak: https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap
+- Breadcrumb, hizmet sayfalarında ve `/sss` başlığının üstünde görünür;
+  ana sayfada gösterilmez. Google'da görünmesi ayrıca garanti değildir.
 - NAP tek kaynak `src/lib/business.ts`. GBP, dizinler ve site aynı değerleri
   kullanmalı; e-posta `ebraroptik@gmail.com` olarak tekleştirildi.
 - Marka SERP'inde aynı adı taşıyan İstanbul optikleri var. Dış profillerde
