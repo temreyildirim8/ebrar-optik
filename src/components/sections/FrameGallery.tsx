@@ -1,94 +1,65 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
 import { Card } from "@/components/ui/card";
 import { ScrollReveal } from "@/components/ScrollAnimations";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 
 interface Frame {
   id: number;
   name: string;
-  category: string;
   image: string;
   description: string;
 }
 
 export function FrameGallery() {
-  const [activeCategory, setActiveCategory] = useState<string>("all");
-  const shouldReduceMotion = useReducedMotion();
-
-  const categories = [
-    { id: "all", label: "Tümü" },
-    { id: "womens", label: "Kadın" },
-    { id: "mens", label: "Erkek" },
-    { id: "children", label: "Çocuk" },
-    { id: "sunglasses", label: "Güneş Gözlüğü" },
-  ];
-
   const frames: Frame[] = [
     {
       id: 1,
       name: "Klasik Yuvarlak",
-      category: "womens",
       image: "/glasses/klasik-yuvarlak.webp",
       description: "Zarif ve klasik yuvarlak çerçeve",
     },
     {
       id: 2,
       name: "Modern Kare",
-      category: "mens",
       image: "/glasses/modern-kare.webp",
       description: "Şık ve modern kare çerçeve",
     },
     {
       id: 3,
       name: "Aviator Güneş",
-      category: "sunglasses",
       image: "/glasses/aviator-gunes.webp",
       description: "Klasik aviator tarzı güneş gözlüğü",
     },
     {
       id: 4,
       name: "Polarize Güneş",
-      category: "sunglasses",
       image: "/glasses/polarize-gunes.webp",
       description: "Polarize camlı güneş gözlüğü",
     },
     {
       id: 5,
       name: "Kedi Gözü",
-      category: "womens",
       image: "/glasses/kedi-gozu.webp",
       description: "Vintage kedi gözü modeli",
     },
     {
       id: 6,
       name: "Sportif",
-      category: "mens",
       image: "/glasses/sportif.webp",
       description: "Aktif yaşam için sportif tasarım",
     },
     {
       id: 7,
       name: "Mini Çocuk",
-      category: "children",
       image: "/glasses/mini-cocuk.webp",
       description: "Küçük yaşlar için mini çerçeve",
     },
     {
       id: 8,
       name: "Renkli Çocuk",
-      category: "children",
       image: "/glasses/renkli-cocuk.webp",
       description: "Eğlenceli renkli çocuk çerçevesi",
     },
   ];
-
-  const filteredFrames =
-    activeCategory === "all"
-      ? frames
-      : frames.filter((frame) => frame.category === activeCategory);
 
   return (
     <section
@@ -106,53 +77,10 @@ export function FrameGallery() {
           </p>
         </ScrollReveal>
 
-        {/* Category Tabs */}
-        {/* Disabled for now */}
-        {/* <ScrollReveal
-          className="mb-8 flex flex-wrap justify-center gap-2"
-          delay={0.1}
-        >
-          {categories.map((category) => (
-            <button
-              key={category.id}
-              onClick={() => setActiveCategory(category.id)}
-              className={`rounded-full px-6 py-2 text-sm font-medium transition-all ${
-                activeCategory === category.id
-                  ? "bg-brand text-brand-foreground shadow-md"
-                  : "bg-white text-stone-600 hover:bg-stone-100 dark:bg-stone-800 dark:text-stone-300 dark:hover:bg-stone-700"
-              }`}
-            >
-              {category.label}
-            </button>
-          ))}
-        </ScrollReveal> */}
-
         {/* Frames Grid */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeCategory}
-            initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={shouldReduceMotion ? undefined : { opacity: 0, y: -20 }}
-            transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.3 }}
-            className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
-          >
-            {filteredFrames.map((frame, index) => (
-              <motion.div
-                key={frame.id}
-                initial={shouldReduceMotion ? false : { opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={
-                  shouldReduceMotion
-                    ? { duration: 0 }
-                    : {
-                        duration: 0.9,
-                        delay: (index % 4) * 0.1,
-                        ease: [0.25, 0.1, 0.25, 1],
-                      }
-                }
-              >
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {frames.map((frame) => (
+              <div key={frame.id}>
                 <Card className="group h-full overflow-hidden border-stone-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-stone-800 dark:bg-stone-950">
                   <div className="aspect-square relative w-full overflow-hidden bg-stone-100 dark:bg-stone-800">
                     <Image
@@ -171,10 +99,9 @@ export function FrameGallery() {
                     </p>
                   </div>
                 </Card>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
-        </AnimatePresence>
+        </div>
 
         {/* Store Visit CTA */}
         <ScrollReveal className="mt-12 text-center" delay={0.2}>

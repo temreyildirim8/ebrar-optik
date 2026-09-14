@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { useReducedMotion } from "framer-motion";
 
 const images = [
   {
@@ -22,11 +21,11 @@ const images = [
 export function AnimatedHeroBackground() {
   const [index, setIndex] = useState(0);
   const [rotating, setRotating] = useState(false);
-  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     // xl altında tek kadın görseli sabit kalır; carousel 1280px ve üstünde döner.
     const desktop = window.matchMedia("(min-width: 1280px)");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
     // LCP yalnızca ilk kullanıcı etkileşimine kadar ölçülür. Rotasyonu ve
     // sonraki slaytların indirilmesini o ana kadar geciktiriyoruz; aksi halde
@@ -54,7 +53,7 @@ export function AnimatedHeroBackground() {
       stop();
       setIndex(0);
       setRotating(false);
-      if (shouldReduceMotion || !desktop.matches) return;
+      if (reducedMotion.matches || !desktop.matches) return;
       events.forEach((event) =>
         window.addEventListener(event, arm, { once: true, passive: true })
       );
@@ -62,12 +61,14 @@ export function AnimatedHeroBackground() {
 
     update();
     desktop.addEventListener("change", update);
+    reducedMotion.addEventListener("change", update);
 
     return () => {
       stop();
       desktop.removeEventListener("change", update);
+      reducedMotion.removeEventListener("change", update);
     };
-  }, [shouldReduceMotion]);
+  }, []);
 
   // Slaytlar üst üste duruyor ve opaklıkla geçiş yapıyor. Önceki
   // AnimatePresence kurulumunda key başa dönünce rotasyon donuyor, çıkış

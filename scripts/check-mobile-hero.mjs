@@ -11,11 +11,10 @@ const source = await readFile(
 // Gerçek bileşenin efektini kontrollü tarayıcı ve zamanlayıcılarla çalıştır.
 function mount(width, reducedMotion = false) {
   const events = new EventTarget();
-  const media = new EventTarget();
   const timers = new Map();
   const state = [];
   let effect;
-  let threshold;
+  let desktopMedia;
   const react = {
     createElement: () => null,
     useState(initial) {
@@ -34,14 +33,18 @@ function mount(width, reducedMotion = false) {
     React: react,
     require(name) {
       if (name === "react") return react;
-      if (name === "framer-motion") return { useReducedMotion: () => reducedMotion };
       if (name === "next/image") return { default: () => null };
       throw new Error(`Unexpected import: ${name}`);
     },
     window: {
       matchMedia(query) {
-        threshold = Number(query.match(/min-width:\s*(\d+)px/)[1]);
-        media.matches = width >= threshold;
+        const media = new EventTarget();
+        if (query.includes("min-width")) {
+          media.matches = width >= 1280;
+          desktopMedia = media;
+        } else {
+          media.matches = reducedMotion;
+        }
         return media;
       },
       addEventListener: events.addEventListener.bind(events),
@@ -57,8 +60,8 @@ function mount(width, reducedMotion = false) {
     interact() { events.dispatchEvent(new Event("pointerdown")); },
     tick() { timers.forEach((callback) => callback()); },
     resize(nextWidth) {
-      media.matches = nextWidth >= threshold;
-      media.dispatchEvent(new Event("change"));
+      desktopMedia.matches = nextWidth >= 1280;
+      desktopMedia.dispatchEvent(new Event("change"));
     },
     cleanup() { cleanup?.(); },
   };

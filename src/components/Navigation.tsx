@@ -29,10 +29,10 @@ export function Navigation() {
           className="flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ring focus-visible:ring-offset-2 rounded-lg"
         >
           <Image
-            src="/assets/logo-v2-mark.webp"
+            src="/assets/logo-v2-mark-nav.webp"
             alt="Ebrar Optik"
-            width={231}
-            height={220}
+            width={126}
+            height={120}
             className="h-12 w-auto md:h-14 lg:h-16"
             priority
           />
