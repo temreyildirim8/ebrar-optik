@@ -25,12 +25,8 @@ export function AnimatedHeroBackground() {
   const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
-    // Mobilde tek kadın görseli sabit kalır; carousel yalnızca masaüstünde döner.
-    if (
-      shouldReduceMotion ||
-      !window.matchMedia("(min-width: 768px)").matches
-    )
-      return;
+    // xl altında tek kadın görseli sabit kalır; carousel 1280px ve üstünde döner.
+    const desktop = window.matchMedia("(min-width: 1280px)");
 
     // LCP yalnızca ilk kullanıcı etkileşimine kadar ölçülür. Rotasyonu ve
     // sonraki slaytların indirilmesini o ana kadar geciktiriyoruz; aksi halde
@@ -48,13 +44,28 @@ export function AnimatedHeroBackground() {
       }, 3000); // Her 3 saniyede bir değiştir
     };
 
-    events.forEach((event) =>
-      window.addEventListener(event, arm, { once: true, passive: true })
-    );
+    const stop = () => {
+      clearInterval(timer);
+      armed = false;
+      events.forEach((event) => window.removeEventListener(event, arm));
+    };
+
+    const update = () => {
+      stop();
+      setIndex(0);
+      setRotating(false);
+      if (shouldReduceMotion || !desktop.matches) return;
+      events.forEach((event) =>
+        window.addEventListener(event, arm, { once: true, passive: true })
+      );
+    };
+
+    update();
+    desktop.addEventListener("change", update);
 
     return () => {
-      clearInterval(timer);
-      events.forEach((event) => window.removeEventListener(event, arm));
+      stop();
+      desktop.removeEventListener("change", update);
     };
   }, [shouldReduceMotion]);
 
