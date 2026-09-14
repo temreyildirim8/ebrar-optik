@@ -44,7 +44,6 @@ export function ContactSection() {
               <a
                 href={`tel:${phoneNumber}`}
                 className="block min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ring focus-visible:ring-offset-2 rounded-lg"
-                aria-label="Telefon ile ara"
               >
                 <div className="mb-4 flex justify-center">
                   <ScrollReveal distance={15}>
@@ -69,7 +68,7 @@ export function ContactSection() {
                 <h3 className="mb-2 text-lg font-semibold text-stone-900 dark:text-stone-50">
                   Telefon
                 </h3>
-                <span className="text-base font-bold text-amber-600 hover:underline dark:text-amber-400">
+                <span className="text-base font-bold text-amber-700 hover:underline dark:text-amber-400">
                   Şimdi ara
                 </span>
               </a>
@@ -84,7 +83,6 @@ export function ContactSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ring focus-visible:ring-offset-2 rounded-lg"
-                aria-label="WhatsApp ile mesaj gönder"
               >
                 <div className="mb-4 flex justify-center">
                   <ScrollReveal distance={15}>
@@ -103,7 +101,7 @@ export function ContactSection() {
                 <h3 className="mb-2 text-lg font-semibold text-stone-900 dark:text-stone-50">
                   WhatsApp
                 </h3>
-                <span className="text-base font-bold text-green-600 hover:underline dark:text-green-400">
+                <span className="text-base font-bold text-green-700 hover:underline dark:text-green-400">
                   Mesaj gönder
                 </span>
               </a>
@@ -116,7 +114,6 @@ export function ContactSection() {
               <a
                 href={`mailto:${email}`}
                 className="block min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ring focus-visible:ring-offset-2 rounded-lg"
-                aria-label="E-posta gönder"
               >
                 <div className="mb-4 flex justify-center">
                   <ScrollReveal distance={15}>
