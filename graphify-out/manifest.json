@@ -1,0 +1,548 @@
+{
+  "components.json": {
+    "mtime": 1783018532.1924107,
+    "seen": 1789489995.4719071,
+    "ast_hash": "f9b838065323828efd209f38da0e25f2",
+    "semantic_hash": ""
+  },
+  "eslint.config.mjs": {
+    "mtime": 1783018532.192505,
+    "seen": 1789489995.471914,
+    "ast_hash": "dfa1f5f6a7037bf39dc510f30b180002",
+    "semantic_hash": ""
+  },
+  "next.config.ts": {
+    "mtime": 1783018532.1925912,
+    "seen": 1789489995.471915,
+    "ast_hash": "240f1b7daf056b0e1595abf2bf402bc9",
+    "semantic_hash": ""
+  },
+  "package.json": {
+    "mtime": 1789473350.8605738,
+    "seen": 1789489995.471916,
+    "ast_hash": "fddffd4078a1ab15c7e9563615392975",
+    "semantic_hash": ""
+  },
+  "postcss.config.mjs": {
+    "mtime": 1783018532.1932735,
+    "seen": 1789489995.47192,
+    "ast_hash": "239f3ebf717465dc636818a1a619398d",
+    "semantic_hash": ""
+  },
+  "scripts/check-analytics.mjs": {
+    "mtime": 1789153425.7106097,
+    "seen": 1789489995.471921,
+    "ast_hash": "295d0f0ca246ca5de699838a6a5fb2d8",
+    "semantic_hash": ""
+  },
+  "scripts/check-mobile-hero.mjs": {
+    "mtime": 1789410302.6642876,
+    "seen": 1789489995.471921,
+    "ast_hash": "fd0dff83aaa91cf1c330e9db69959ca4",
+    "semantic_hash": ""
+  },
+  "scripts/check-seo.mjs": {
+    "mtime": 1789408132.267891,
+    "seen": 1789489995.471922,
+    "ast_hash": "9367d25eddad25af6d11c93616142a4e",
+    "semantic_hash": ""
+  },
+  "scripts/generate-below-footer.js": {
+    "mtime": 1787784866.7401118,
+    "seen": 1789489995.471922,
+    "ast_hash": "2cd9e23b915d4283f6d571a66c6cbeb5",
+    "semantic_hash": ""
+  },
+  "scripts/generate-favicon-ico.js": {
+    "mtime": 1783018532.1987813,
+    "seen": 1789489995.4719229,
+    "ast_hash": "cd016993507553170958598734d220de",
+    "semantic_hash": ""
+  },
+  "scripts/generate-og-image.js": {
+    "mtime": 1783018532.1988678,
+    "seen": 1789489995.4719229,
+    "ast_hash": "26fbefd54ebbbf265be6bcc62ada2496",
+    "semantic_hash": ""
+  },
+  "src/app/cam-cerceve-degisimi/page.tsx": {
+    "mtime": 1787696995.3022578,
+    "seen": 1789489995.471924,
+    "ast_hash": "810182279e52a3d1612b6b10aa1739da",
+    "semantic_hash": ""
+  },
+  "src/app/cocuk-gozlugu/page.tsx": {
+    "mtime": 1787696995.302518,
+    "seen": 1789489995.471925,
+    "ast_hash": "054e81541703d9e7462e6625b9c5b554",
+    "semantic_hash": ""
+  },
+  "src/app/gozluk/page.tsx": {
+    "mtime": 1787566596.338595,
+    "seen": 1789489995.471925,
+    "ast_hash": "00494038cd1a4e1c5eebd57552d00df3",
+    "semantic_hash": ""
+  },
+  "src/app/gunes-gozlugu/page.tsx": {
+    "mtime": 1787566596.338934,
+    "seen": 1789489995.471926,
+    "ast_hash": "23c14b7ac9a07ffabd011ad56e438194",
+    "semantic_hash": ""
+  },
+  "src/app/kirikkale-optik/page.tsx": {
+    "mtime": 1787566596.339323,
+    "seen": 1789489995.471926,
+    "ast_hash": "afd0497ee220d6e102f817338cde9901",
+    "semantic_hash": ""
+  },
+  "src/app/kvkk/page.tsx": {
+    "mtime": 1787694239.1508343,
+    "seen": 1789489995.471927,
+    "ast_hash": "1c412f92fc5c40554b3ae487c44031ed",
+    "semantic_hash": ""
+  },
+  "src/app/layout.tsx": {
+    "mtime": 1789486643.5388227,
+    "seen": 1789489995.471927,
+    "ast_hash": "509a80c1b646ef7dfcfc89a59cd63ff3",
+    "semantic_hash": ""
+  },
+  "src/app/lens/page.tsx": {
+    "mtime": 1787566596.340575,
+    "seen": 1789489995.4719281,
+    "ast_hash": "c50f3d2f649571bb98f64e9fa1d96b35",
+    "semantic_hash": ""
+  },
+  "src/app/page.tsx": {
+    "mtime": 1787566596.3409858,
+    "seen": 1789489995.4719281,
+    "ast_hash": "923a422b9909cfa15041f56ecc30c226",
+    "semantic_hash": ""
+  },
+  "src/app/robots.ts": {
+    "mtime": 1787694239.151884,
+    "seen": 1789489995.471929,
+    "ast_hash": "dcd967da26a360349be9268fdb9331e3",
+    "semantic_hash": ""
+  },
+  "src/app/sgk-anlasmali-optik/page.tsx": {
+    "mtime": 1787696995.3029563,
+    "seen": 1789489995.471929,
+    "ast_hash": "9dac7bbb23a2b2ce898336da7b4f2609",
+    "semantic_hash": ""
+  },
+  "src/app/sitemap.ts": {
+    "mtime": 1789408146.0991285,
+    "seen": 1789489995.47193,
+    "ast_hash": "3dd58e5d0159adbeaf6ea89bbb6aae92",
+    "semantic_hash": ""
+  },
+  "src/app/sss/page.tsx": {
+    "mtime": 1787694239.152315,
+    "seen": 1789489995.471931,
+    "ast_hash": "052fffc47cc1d27c67492d91d0d0fc35",
+    "semantic_hash": ""
+  },
+  "src/components/AnimatedHeroBackground.tsx": {
+    "mtime": 1789410261.9427109,
+    "seen": 1789489995.471931,
+    "ast_hash": "f481b56f8d9d014a9649d00269ef0fff",
+    "semantic_hash": ""
+  },
+  "src/components/ContentProtectionProvider.tsx": {
+    "mtime": 1783018532.1998599,
+    "seen": 1789489995.471932,
+    "ast_hash": "20111bec6851e353651014347637a551",
+    "semantic_hash": ""
+  },
+  "src/components/CookieConsent.tsx": {
+    "mtime": 1789153425.7117646,
+    "seen": 1789489995.471936,
+    "ast_hash": "e80acb4a637ec22185cda42b99a77910",
+    "semantic_hash": ""
+  },
+  "src/components/FloatingSocialButtons.tsx": {
+    "mtime": 1789410261.8335624,
+    "seen": 1789489995.471937,
+    "ast_hash": "69dd94b908689baa15a345619ab08fb3",
+    "semantic_hash": ""
+  },
+  "src/components/Footer.tsx": {
+    "mtime": 1787784866.7403414,
+    "seen": 1789489995.471937,
+    "ast_hash": "6a16bb4ae10ffc49ecb6567e08ec859e",
+    "semantic_hash": ""
+  },
+  "src/components/Navigation.tsx": {
+    "mtime": 1789410261.714112,
+    "seen": 1789489995.4719381,
+    "ast_hash": "88106cbff6d236696063994679ec088f",
+    "semantic_hash": ""
+  },
+  "src/components/ProtectedImage.tsx": {
+    "mtime": 1783018532.2003944,
+    "seen": 1789489995.4719381,
+    "ast_hash": "ba66ebb5eba143590f06133030b087f3",
+    "semantic_hash": ""
+  },
+  "src/components/ScrollAnimations.tsx": {
+    "mtime": 1789410271.0949717,
+    "seen": 1789489995.471939,
+    "ast_hash": "9ab521c35906560a12b38974ba8577a4",
+    "semantic_hash": ""
+  },
+  "src/components/ServicePageLayout.tsx": {
+    "mtime": 1787696995.3042428,
+    "seen": 1789489995.471939,
+    "ast_hash": "503da77801f6b906a1fd4b6b4c83b51d",
+    "semantic_hash": ""
+  },
+  "src/components/Watermark.tsx": {
+    "mtime": 1783018532.2005625,
+    "seen": 1789489995.47194,
+    "ast_hash": "34ad664ce7beee2cdfbd8c10187e21fd",
+    "semantic_hash": ""
+  },
+  "src/components/sections/AboutSection.tsx": {
+    "mtime": 1789153425.6427026,
+    "seen": 1789489995.47194,
+    "ast_hash": "f856d5f356fb25e6ca9aa6ada43d87f7",
+    "semantic_hash": ""
+  },
+  "src/components/sections/ContactSection.tsx": {
+    "mtime": 1789412137.0656033,
+    "seen": 1789489995.4719412,
+    "ast_hash": "56802f594860d012f75bd0b10ccb9b67",
+    "semantic_hash": ""
+  },
+  "src/components/sections/FrameGallery.tsx": {
+    "mtime": 1789410494.0951405,
+    "seen": 1789489995.4719412,
+    "ast_hash": "30cc8a6ac2e56f0553ee95714178d7e5",
+    "semantic_hash": ""
+  },
+  "src/components/sections/HeroSection.tsx": {
+    "mtime": 1787694239.1580088,
+    "seen": 1789489995.471942,
+    "ast_hash": "b69ea192f2fc801779b960c2af8dc5c7",
+    "semantic_hash": ""
+  },
+  "src/components/sections/ServicesSection.tsx": {
+    "mtime": 1789153425.643179,
+    "seen": 1789489995.471942,
+    "ast_hash": "be0606ebc190ec410e90bcb4afe227c3",
+    "semantic_hash": ""
+  },
+  "src/components/ui/button.tsx": {
+    "mtime": 1783018532.2013226,
+    "seen": 1789489995.471943,
+    "ast_hash": "b5fc0a11441b60e0cec7fb47aeeb448c",
+    "semantic_hash": ""
+  },
+  "src/components/ui/card.tsx": {
+    "mtime": 1783018532.2014,
+    "seen": 1789489995.471943,
+    "ast_hash": "f493f1f077059a080b2c475873def5c0",
+    "semantic_hash": ""
+  },
+  "src/hooks/useImageProtection.ts": {
+    "mtime": 1783018532.2015376,
+    "seen": 1789489995.4719439,
+    "ast_hash": "509457533508b09872b0d3f3743edb24",
+    "semantic_hash": ""
+  },
+  "src/hooks/useTextProtection.ts": {
+    "mtime": 1783018532.201623,
+    "seen": 1789489995.4719439,
+    "ast_hash": "c7af667e2c6bb82f16947666fffcfc41",
+    "semantic_hash": ""
+  },
+  "src/lib/analytics.ts": {
+    "mtime": 1789153425.7120566,
+    "seen": 1789489995.471945,
+    "ast_hash": "ddcfb0bba3859283480c5f722c7fb157",
+    "semantic_hash": ""
+  },
+  "src/lib/business.ts": {
+    "mtime": 1787784866.7212772,
+    "seen": 1789489995.471946,
+    "ast_hash": "131cca5ef3666f503622e68fbee71289",
+    "semantic_hash": ""
+  },
+  "src/lib/faqs.ts": {
+    "mtime": 1787566596.3453114,
+    "seen": 1789489995.471946,
+    "ast_hash": "1b8256c6c0313b1653a41653959ea643",
+    "semantic_hash": ""
+  },
+  "src/lib/schema.ts": {
+    "mtime": 1787694239.15896,
+    "seen": 1789489995.471946,
+    "ast_hash": "007589a01fee51df600f05c3530172b6",
+    "semantic_hash": ""
+  },
+  "src/lib/seo.ts": {
+    "mtime": 1787694239.1594253,
+    "seen": 1789489995.471947,
+    "ast_hash": "459f8e32311e4c84b0789151c2f3a5a3",
+    "semantic_hash": ""
+  },
+  "src/lib/service-pages.ts": {
+    "mtime": 1787696995.305041,
+    "seen": 1789489995.471947,
+    "ast_hash": "a093caf0cf460973593e141b3c494395",
+    "semantic_hash": ""
+  },
+  "src/lib/utils.ts": {
+    "mtime": 1783018532.2017448,
+    "seen": 1789489995.4719481,
+    "ast_hash": "5a6fd53fdcf2be529e9cc0b718fde352",
+    "semantic_hash": ""
+  },
+  "tsconfig.json": {
+    "mtime": 1783018532.2018518,
+    "seen": 1789489995.4719481,
+    "ast_hash": "e21374a49a678e049ba16eab2ac6cb8e",
+    "semantic_hash": ""
+  },
+  "vercel.json": {
+    "mtime": 1787567111.1611865,
+    "seen": 1789489995.471949,
+    "ast_hash": "e121174ac049e95fe7febc4e1b8ba7e6",
+    "semantic_hash": ""
+  },
+  ".impeccable.md": {
+    "mtime": 1787241790.5525825,
+    "seen": 1789489995.471949,
+    "ast_hash": "ea51e42e2e316f643a937211b17dee5c",
+    "semantic_hash": ""
+  },
+  ".planning/quick/1-subtle-fade-slide-on-key-elements-within/1-SUMMARY.md": {
+    "mtime": 1783018532.1922235,
+    "seen": 1789489995.47195,
+    "ast_hash": "2b3f2ee293550a74433cbbfc680f123d",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1783018532.1923237,
+    "seen": 1789489995.47195,
+    "ast_hash": "c2b410c7ada73250aa4b12aa005a7d33",
+    "semantic_hash": ""
+  },
+  "docs/seo-offsite-checklist.md": {
+    "mtime": 1789408073.261165,
+    "seen": 1789489995.471951,
+    "ast_hash": "23a6f5f06041f0c701b7a2f5cfcbf0b7",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-08-24-seo-iyilestirme.md": {
+    "mtime": 1787566596.3379824,
+    "seen": 1789489995.471952,
+    "ast_hash": "702df1dbd343c5e1afa0ed075361a19f",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-08-26-seo-icerik-plani.md": {
+    "mtime": 1789486583.5227418,
+    "seen": 1789489995.471952,
+    "ast_hash": "ade6436b923aedbaf4f9a518dc121a08",
+    "semantic_hash": ""
+  },
+  "tasks/plan.md": {
+    "mtime": 1789051810.6637583,
+    "seen": 1789489995.471953,
+    "ast_hash": "f8950167552ad2cf56068858426225bc",
+    "semantic_hash": ""
+  },
+  "tasks/todo.md": {
+    "mtime": 1789051810.7471972,
+    "seen": 1789489995.471953,
+    "ast_hash": "815c380cf4311ddcb567837b322ebaf3",
+    "semantic_hash": ""
+  },
+  "assets-src/below-footer-raw.jpeg": {
+    "mtime": 1787784866.7390366,
+    "seen": 1789489995.4719539,
+    "ast_hash": "38435a303d894e17dc7d49388e30a9eb",
+    "semantic_hash": ""
+  },
+  "docs/artifacts/desktop-carousel-hero.png": {
+    "mtime": 1789153425.7089446,
+    "seen": 1789489995.4719539,
+    "ast_hash": "5a9565b7734347506db82f5f93cdfc07",
+    "semantic_hash": ""
+  },
+  "docs/artifacts/mobile-static-hero.png": {
+    "mtime": 1789153425.7102017,
+    "seen": 1789489995.471955,
+    "ast_hash": "02c82dd077b693c4b120fece0126d4e3",
+    "semantic_hash": ""
+  },
+  "public/assets/below-footer-mobile.webp": {
+    "mtime": 1787784866.7395427,
+    "seen": 1789489995.471955,
+    "ast_hash": "4f6426fed334608b40f8f819d2be328c",
+    "semantic_hash": ""
+  },
+  "public/assets/below-footer.webp": {
+    "mtime": 1787784866.7398987,
+    "seen": 1789489995.471955,
+    "ast_hash": "bb3969e753ed82c3f1367e77df55f063",
+    "semantic_hash": ""
+  },
+  "public/assets/hero_interior_wide_1773521896687.webp": {
+    "mtime": 1783018532.193504,
+    "seen": 1789489995.471956,
+    "ast_hash": "4859a284e2a81b8bf7c2f8dac01cc255",
+    "semantic_hash": ""
+  },
+  "public/assets/hero_lifestyle_wide_1773521870447.webp": {
+    "mtime": 1783018532.1936696,
+    "seen": 1789489995.471957,
+    "ast_hash": "540b83dcb2aa1b38cd67f146ac42a1f2",
+    "semantic_hash": ""
+  },
+  "public/assets/hero_lifestyle_wide_hr_1773526720963.webp": {
+    "mtime": 1789410308.7115993,
+    "seen": 1789489995.471957,
+    "ast_hash": "97675fada423827ff666d57abb23fe7b",
+    "semantic_hash": ""
+  },
+  "public/assets/hero_product_wide_1773521883588.webp": {
+    "mtime": 1783018532.194007,
+    "seen": 1789489995.471957,
+    "ast_hash": "ce10acf33c4d3c75db2bbb38797ebd62",
+    "semantic_hash": ""
+  },
+  "public/assets/logo-v1-eye.svg": {
+    "mtime": 1783018532.1941404,
+    "seen": 1789489995.471958,
+    "ast_hash": "cc44932c3476fd816d52f2a19cf74f87",
+    "semantic_hash": ""
+  },
+  "public/assets/logo-v2-icon-180.png": {
+    "mtime": 1789486643.5379868,
+    "seen": 1789489995.471959,
+    "ast_hash": "3c22e46904b9ee70aff6f33f51f7c8d6",
+    "semantic_hash": ""
+  },
+  "public/assets/logo-v2-icon-32.png": {
+    "mtime": 1789486643.5382226,
+    "seen": 1789489995.471959,
+    "ast_hash": "0fef049d124dd74d2c5c55ce139e1f31",
+    "semantic_hash": ""
+  },
+  "public/assets/logo-v2-icon.png": {
+    "mtime": 1783115183.115696,
+    "seen": 1789489995.47196,
+    "ast_hash": "5e059d9101c426d888d1f6ca5ecba8ac",
+    "semantic_hash": ""
+  },
+  "public/assets/logo-v2-mark-nav.webp": {
+    "mtime": 1789410308.7150095,
+    "seen": 1789489995.47196,
+    "ast_hash": "238415182ffceadb7964352c29ddfba4",
+    "semantic_hash": ""
+  },
+  "public/assets/logo-v2-mark.png": {
+    "mtime": 1783114554.6159658,
+    "seen": 1789489995.471961,
+    "ast_hash": "4d59bcef6640b757803c95c2240ac110",
+    "semantic_hash": ""
+  },
+  "public/assets/logo-v2-mark.webp": {
+    "mtime": 1787694239.1494355,
+    "seen": 1789489995.471961,
+    "ast_hash": "4df9060305fd4a157732b32df21766bb",
+    "semantic_hash": ""
+  },
+  "public/assets/logo-v2-monogram.svg": {
+    "mtime": 1783018532.1942468,
+    "seen": 1789489995.4719622,
+    "ast_hash": "8828ef4be4bbe9611d66476d404c2c1e",
+    "semantic_hash": ""
+  },
+  "public/assets/logo-v2-trimmed.png": {
+    "mtime": 1783114340.914054,
+    "seen": 1789489995.4719622,
+    "ast_hash": "fe4a776625abea7de4fd17c49de1fed8",
+    "semantic_hash": ""
+  },
+  "public/assets/logo-v2.png": {
+    "mtime": 1783114107.6791065,
+    "seen": 1789489995.471963,
+    "ast_hash": "4ac7c2d36e99c3cdcb978757d7067c73",
+    "semantic_hash": ""
+  },
+  "public/assets/logo-v3-glasses.svg": {
+    "mtime": 1783018532.194355,
+    "seen": 1789489995.471963,
+    "ast_hash": "8671d8347b341f0d33716df991eea3a3",
+    "semantic_hash": ""
+  },
+  "public/assets/logo-v4-glasses.svg": {
+    "mtime": 1783018532.1944458,
+    "seen": 1789489995.471964,
+    "ast_hash": "debef7a9b0beee1e3eaf457b8c9d3bfe",
+    "semantic_hash": ""
+  },
+  "public/frames/placeholder.svg": {
+    "mtime": 1783018532.1946628,
+    "seen": 1789489995.471964,
+    "ast_hash": "c0bac591caa745b6fbd4212616cd3061",
+    "semantic_hash": ""
+  },
+  "public/glasses/aviator-gunes.webp": {
+    "mtime": 1783018532.195006,
+    "seen": 1789489995.4719648,
+    "ast_hash": "58db9d6fb731091c87e5ab0663d06a4d",
+    "semantic_hash": ""
+  },
+  "public/glasses/kedi-gozu.webp": {
+    "mtime": 1783018532.1952202,
+    "seen": 1789489995.4719648,
+    "ast_hash": "9475f7c9a38c5a99074c6d8752b83699",
+    "semantic_hash": ""
+  },
+  "public/glasses/klasik-yuvarlak.webp": {
+    "mtime": 1783018532.1956284,
+    "seen": 1789489995.471966,
+    "ast_hash": "06e552a05fa39a929b81de8d1159e33f",
+    "semantic_hash": ""
+  },
+  "public/glasses/mini-cocuk.webp": {
+    "mtime": 1783018532.1959386,
+    "seen": 1789489995.471966,
+    "ast_hash": "3497d26fde80997674a8b5f5a7afe2e1",
+    "semantic_hash": ""
+  },
+  "public/glasses/modern-kare.webp": {
+    "mtime": 1783018532.1962993,
+    "seen": 1789489995.471967,
+    "ast_hash": "18385bb2e83defdb2a97d9d993bcec4e",
+    "semantic_hash": ""
+  },
+  "public/glasses/polarize-gunes.webp": {
+    "mtime": 1783018532.196679,
+    "seen": 1789489995.471968,
+    "ast_hash": "84d08c4253bb76697f17268a5a2b2988",
+    "semantic_hash": ""
+  },
+  "public/glasses/renkli-cocuk.webp": {
+    "mtime": 1783018532.1970086,
+    "seen": 1789489995.471968,
+    "ast_hash": "302e40f8d6ca3cfa5f0bc963f6037312",
+    "semantic_hash": ""
+  },
+  "public/glasses/sportif.webp": {
+    "mtime": 1783018532.197259,
+    "seen": 1789489995.4719691,
+    "ast_hash": "4201bb92f0706beb2cd8e3b9abc9bab3",
+    "semantic_hash": ""
+  },
+  "public/og-image.jpg": {
+    "mtime": 1783018532.198331,
+    "seen": 1789489995.4719691,
+    "ast_hash": "b254d2d6311289a22bb129162372a815",
+    "semantic_hash": ""
+  }
+}
