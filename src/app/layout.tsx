@@ -22,8 +22,9 @@ export const metadata: Metadata = {
     yandex: "dd7c3a784e3eb901",
   },
   icons: {
-    icon: [{ url: "/assets/logo-v2-icon.png", type: "image/png" }],
-    apple: "/assets/logo-v2-icon.png",
+    // 512px ikon her sayfa yüklemesinde 43 KB indiriliyordu; favicon 32px yeter.
+    icon: [{ url: "/assets/logo-v2-icon-32.png", type: "image/png", sizes: "32x32" }],
+    apple: "/assets/logo-v2-icon-180.png",
   },
   openGraph: {
     title: "Ebrar Optik | Kırıkkale'nin Güvenilir Optik Mağazası",
