@@ -1,177 +1,245 @@
-# Ebrar Optik SEO İçerik Planı (12 hafta)
+# Ebrar Optik SEO ve Gözlük Rehberi Planı
 
-> **For agentic workers:** Adımlar checkbox (`- [ ]`) ile takip edilir. Kod dışı adımlar **[Sahibi]** ile işaretlidir; onları ajan yapamaz.
+**Güncelleme:** 15 Eylül 2026
 
-**Goal:** Yerel arama niyetini karşılayan sayfa setini tamamlamak, hizmet sayfalarını destekleyen ince bir rehber katmanı kurmak ve ölçümü sıralama yerine telefon/yol tarifi dönüşümü üzerinden takip etmek.
+**Durum:** Uygulama planı; aşağıdaki işler tamamlanmış sayılmaz.
 
-**Önceki plan:** `2026-08-24-seo-iyilestirme.md` (teknik hijyen, schema, hizmet sayfaları) — tamamlandı, PR #3 ve #4.
+**Amaç:** Kırıkkale’de ilgili aramalardan gelen ziyaretçilerin telefon, WhatsApp ve yol tarifi adımlarına geçmesini, ardından gerçek mağaza ziyaretlerini artırmak.
 
-## Stratejik çerçeve — önce bunu okuyun
+## Karar ve kapsam
 
-Bu plan kasıtlı olarak **ayda 2 parça** hızında. Yaygın SEO tavsiyesi haftada 3-5 yazı önerir; tek şubeli bir optik için bu yanlıştır.
+Öncelik sırası: **Search Console verisi → Google İşletme Profili → dönüşüm takibi → mevcut içerik → üç yazılık rehber denemesi.**
 
-Organik trafiğin değeri burada coğrafi olarak sınırlı. "sgk gözlük hakkı sorgulama" ülke genelinde yüksek hacimli bir aramadır ama İzmir'den arayan kişi Kırıkkale'ye gelmez. Dönüşüm getiren aramalar "kırıkkale gözlükçü", "sgk anlaşmalı optik kırıkkale" gibi 10-15 terimden ibaret ve bunların çoğu PR #4 ile karşılandı.
+Blog önerisi: `/rehber` altında “Gözlük Rehberi” adıyla küçük bir bölüm açmak. İlk üç yazı, mağazada sık sorulan ve hizmet seçimini kolaylaştıran soruları cevaplayacak. Ayda en fazla iki yazı hazırlamak başlangıç için bir iş yükü tercihidir; SEO gerekliliği değildir. Konular gerçek sorgular ve müşteri sorularıyla doğrulanır.
 
-Bundan daha önemlisi: **içerik şu an en büyük kaldıraç değil.** Google İşletme Profili ve müşteri yorumları. Yerel pakette çıkmak üç blog yazısından fazla müşteri getirir. Aşağıdaki planda Faz 0 bu yüzden içerik değil.
+Bu güncelleme önceki planın sabit kelime/başlık uzunluğu hedeflerini, veri olmadan belirlenen yedi yazılık kuyruğunu ve sıralama taahhütlerini değiştirir. Tarihli dosya yolu mevcut bağlantıları korumak için aynı kalır.
 
-Arama hacmi ve zorluk değerleri tahmindir; Ahrefs/Semrush bağlı değil. Gerçek veri GSC'de biriktikçe Faz 4'te kuyruk revize edilir.
+İlgili belgeler:
 
-## Global Constraints
+- [Önceki teknik SEO planı](2026-08-24-seo-iyilestirme.md)
+- [Kod dışı SEO kontrol listesi](../../seo-offsite-checklist.md)
+- [Gerçek fotoğraf çekim ve yerleştirme planı](../../../tasks/plan.md)
 
-- `output: 'export'` ve `images.unoptimized: true` korunur; SSR/middleware eklenmez
-- Yeni bağımlılık eklenmez; rehber sayfaları mevcut `ServicePageLayout` desenini kullanır
-- NAP tek kaynak: `src/lib/business.ts`
-- Fiyat yazılmaz (sahibinin kararı) — "bütçenize uygun" düzeyinde kalınır
-- İşletme hakkında doğrulanmamış iddia yazılmaz: teslim süresi, stok, muayene, marka listesi
-- SGK mevzuatı genel düzeyde anlatılır, "güncel durum için mağazadan teyit alın" notu korunur
-- Gerçek yorum olmadan `aggregateRating` eklenmez
-- Yeni sayfa yayınlandığında `src/app/sitemap.ts` ve footer link listesi güncellenir
+## Başlangıç durumu ve varsayımlar
 
----
+- Yerel kodda sitemap dokuz URL içeriyor; bu sayı Google’da indekslenmiş sayfa sayısı değildir.
+- Gözlük, güneş gözlüğü, lens, çocuk gözlüğü, SGK ve cam/çerçeve değişimi için hizmet sayfaları var. Rehber bölümü henüz yok.
+- `src/lib/analytics.ts` telefon, WhatsApp, yol tarifi ve Instagram tıklamalarını ayırt ediyor. Canlı GA4 alımı ve raporlar panelden ayrıca doğrulanacak.
+- Güncel Search Console ve İşletme Profili verileri incelenmedi. En büyük darboğazın içerik olduğu henüz kanıtlanmış değil.
+- Hedef, Kırıkkale mağazasına müşteri kazandırmak. Hizmet kapsamını, gerçek fotoğrafları ve işletmeye özgü bilgileri işletme sahibi doğrular.
 
-## Faz 0 — İçerik değil, temel (Hafta 1-2)
+**Sorumlular:** “Kod/içerik” repo değişikliklerini hazırlayan kişi veya ajanı, “Sahibi” işletme bilgisini ve panel erişimini sağlayan kişiyi ifade eder. Panel işi, kodda uygulama bulunmasına dayanılarak tamamlandı işaretlenmez.
 
-En yüksek etkili işler burada ve çoğu kod dışı.
+## Faz 1 — Görünürlüğü ölç ve fırsatları seç
 
-- [ ] **[Sahibi]** Google İşletme Profili: en az 10 fotoğraf (dış cephe, vitrin, iç mekan, çalışma alanı, ürün)
-- [ ] **[Sahibi]** GBP hizmet listesi: gözlük, güneş gözlüğü, lens, cam değişimi, çocuk gözlüğü, SGK
-- [ ] **[Sahibi]** GBP'ye "SGK anlaşmalı" bilgisini işletme açıklamasına ekle
-- [ ] **[Sahibi]** İlk yorum turu: memnun müşterilerden Google yorumu iste, hedef 10+
-- [ ] **[Sahibi]** Instagram bio'ya site linki
-- [ ] Ana sayfaya SGK güven bandı — sitede "SGK" yalnızca footer linkinde geçiyor, en güçlü ayrışma noktası ana sayfada yok
-- [ ] `/kirikkale-optik` başlık ve meta açıklama uzunluk denetimi
+**Sorumlu:** Sahibi + kod/içerik
 
-## Faz 1 — Mevcut sayfaları güçlendirme (Hafta 1-4)
+**Zaman:** İlk hafta
 
-`/seo-check` bulguları ve pillar yükseltmesi.
+- [ ] Search Console’da son üç ayı önceki üç ayla karşılaştır; site daha yeniyse mevcut tarih aralığını ve veri sınırını kaydet.
+- [ ] Marka adını içeren sorguları ayır; marka dışı sorgu ve sayfa bazında gösterim, tıklama, tıklama oranı ve ortalama konumu çıkar. Mobil/masaüstü ayrımını incele.
+- [ ] “Kırıkkale optik”, “Kırıkkale gözlükçü” ve hizmet aramalarını fırsat adayı olarak değerlendir; arama hacimlerini tahmin edilmiş gerçekler gibi kullanma.
+- [ ] Gösterim alan ancak az tıklanan sayfalarda sorgu, başlık, açıklama ve içerik uyumunu incele. Tek başına düşük tıklama oranını başlık hatası sayma; konumu da değerlendir.
+- [ ] Dokuz sitemap URL’sinin indeks durumunu Search Console’dan kontrol et; sorunlu olanlarda URL Denetimi ile canonical ve erişim durumunu incele. `site:` aramasını kesin indeks kanıtı kabul etme.
+- [ ] En fazla üç öncelikli mevcut sayfa seç; her biri için sorgu, sorun, önerilen değişiklik ve başlangıç değerlerini kaydet.
 
-- [ ] `/kirikkale-optik` pillar'a çıkarma: 600 → 2000 kelime, hizmet sayfalarına dallanan hub yapısı
-- [ ] `/sgk-anlasmali-optik` title 43 → 50-60 karakter, "gözlük hakkı" ifadesini ekle
-      Öneri: `SGK Anlaşmalı Optik Kırıkkale | Gözlük Hakkı | Ebrar Optik` (58)
-- [ ] Ana sayfa meta açıklaması 135 → 150-160 karakter, SGK ve eylem çağrısı ekle
-- [ ] Yedi hizmet sayfasının tamamında title uzunluğunu 50-60 aralığına hizala
-- [ ] Numaralı güneş gözlüğü için ayrı sayfa (`/numarali-gunes-gozlugu`) — şu an `/gunes-gozlugu` iki farklı niyeti taşıyor
-- [ ] **[Sahibi]** Mağaza fotoğrafı çekimi: hizmet sayfalarında tek görsel logo, içerik görseli yok
-- [ ] Çekilen fotoğrafları hizmet sayfalarına yerleştir, alt metinleri anahtar kelimeli yaz
+**Tamamlanma ölçütü:** Tarihli başlangıç raporu ve veriye dayalı üç sayfalık iş listesi. Veri yetersizse bu açıkça yazılır; mağazada sık gelen sorular geçici konu kaynağı olur.
 
-## Faz 2 — Rehber altyapısı (Hafta 3)
+## Faz 2 — Google İşletme Profili’ni tamamla
 
-Sitede blog yok. Yazı yazmadan önce kurulmalı.
+**Sorumlu:** Sahibi
 
-- [ ] `/rehber` liste sayfası (`src/app/rehber/page.tsx`)
-- [ ] Rehber içerik modeli (`src/lib/guides.ts`) — `service-pages.ts` desenini izle
-- [ ] `GuideLayout` bileşeni: breadcrumb, h1, bölümler, SSS, ilgili hizmet linkleri
-- [ ] Rehber sayfalarına `Article` + `BreadcrumbList` + `FAQPage` schema
-- [ ] `sitemap.ts` rehber route'larını kapsayacak şekilde güncelle
+**Zaman:** İlk iki hafta; Faz 1 sonrası, ölçüm kurulumu ile birlikte ilerleyebilir
 
-## Faz 3 — Rehber içerikleri (Hafta 5-11)
+- [ ] Profil sahipliği/doğrulamasını ve yönetici erişimini panelden kontrol et.
+- [ ] Gerçek işletme adı, kategori, adres, telefon, site bağlantısı ve özel günler dahil çalışma saatlerini doğrula. İsim, adres ve telefon `src/lib/business.ts` ile tutarlı olsun.
+- [ ] Gerçekte sunulan hizmetleri ekle; SGK anlaşması bilgisini işletme sahibi doğruladıktan sonra belirt.
+- [ ] Dış cephe, tabela, iç mekân, ürünler ve çalışma alanını gösteren güncel gerçek fotoğrafları seçip ekle. Çekim planındaki görselleri yeniden kullan.
+- [ ] Gerçek müşterilere tarafsız yorum daveti için kolay erişilen yorum bağlantısı hazırla; yorumlara düzenli yanıt ver.
+- [ ] Instagram/Facebook profillerindeki site ve iletişim bilgilerini doğrula.
+- [ ] Panelin sunduğu arama terimlerini, görüntülemeleri, arama/site/yol tarifi etkileşimlerini mevcut dönem için kaydet.
 
-| Sıra | Başlık | Hedef sorgu | Niyet | Öncelik | Kelime |
-|---|---|---|---|---|---|
-| 1 | Gözlük Reçetesi Nasıl Okunur? | gözlük numarası nasıl okunur, sph cyl ax | Bilgilendirici | Quick win | 1200 |
-| 2 | Yüz Şekline Göre Gözlük Seçimi | yüz şekline göre gözlük | Ticari | Quick win | 1400 |
-| 3 | Cam Tipleri: Anti-Reflet, Mavi Işık, Progresif | anti reflet cam nedir, mavi ışık filtresi | Bilgilendirici | Big bet | 1600 |
-| 4 | İlk Kez Lens Kullanacaklara Rehber | lens nasıl takılır, ilk kez lens | Bilgilendirici | Big bet | 1300 |
-| 5 | SGK Gözlük Hakkı Sorgulama | sgk gözlük hakkı sorgulama | Bilgilendirici | Fill-in | 1000 |
-| 6 | Çocuğunuz Gözlüğünü Takmıyorsa | çocuk gözlük takmıyor | Bilgilendirici | Fill-in | 900 |
-| 7 | Lens Bakımı ve Hijyen Kuralları | lens bakımı, lens solüsyonu | Bilgilendirici | Fill-in | 900 |
+**Tamamlanma ölçütü:** Kontrollerin tarih ve panel kanıtı ile kaydı, eksik bilgilerin tamamlanması, fotoğrafların yayında olması ve tekrar kullanılabilir yorum daveti süreci.
 
-- [ ] Rehber 1: Gözlük Reçetesi Nasıl Okunur?
-- [ ] Rehber 2: Yüz Şekline Göre Gözlük Seçimi
-- [ ] Rehber 3: Cam Tipleri
-- [ ] Rehber 4: İlk Kez Lens Kullanacaklara Rehber
-- [ ] Rehber 5: SGK Gözlük Hakkı Sorgulama
-- [ ] Rehber 6: Çocuğunuz Gözlüğünü Takmıyorsa
-- [ ] Rehber 7: Lens Bakımı ve Hijyen
+Google yerel sonuçları alaka, mesafe ve bilinirlik üzerinden değerlendirir; eksiksiz bilgiler ve gerçek müşteri yorumları bu çalışmanın parçasıdır. Fotoğraf sayısı veya yorum sayısı için bir sıralama eşiği varsayılmaz. [Google yerel sıralama rehberi](https://support.google.com/business/answer/7091?hl=tr)
 
-## Faz 4 — Ölçüm ve revizyon (Hafta 4, 8, 10, 12)
+## Faz 3 — Müşteri eylemlerini doğrula
 
-- [ ] Hafta 4: GSC'de hangi sorguların gösterim aldığını çıkar
-- [ ] Hafta 8: **[Sahibi]** ikinci yorum turu + GSC kontrolü
-- [ ] Hafta 10: ilk 8 haftanın verisine göre rehber kuyruğunu revize et
-- [ ] Hafta 12: çeyrek değerlendirmesi, rakiplerle sıralama karşılaştırması
-- [ ] **[Sahibi]** Gerçek müşteri yorumlarını Google İşletme Profili'nde topla;
-      kendi işletmemizin `aggregateRating` verisi kendi sitemizde Google yıldızlı
-      sonuç uygunluğu sağlamaz (bkz. `../../seo-offsite-checklist.md`).
+**Sorumlu:** Kod/içerik + Sahibi
 
----
+**Zaman:** İlk iki hafta; içerik değişikliklerinin başlangıç ölçümünden önce
 
-## 12 haftalık takvim
+- [ ] Canlı sitede çerez rızasından sonra telefon, WhatsApp ve yol tarifi bağlantılarını ayrı ayrı test et.
+- [ ] `phone_click`, `whatsapp_click`, `directions_click` olaylarının GA4 Realtime/DebugView içinde doğru adla, tek tıklamada tek olay olarak alındığını doğrula; test trafiğini değerlendirme notuna ekle.
+- [ ] Bu üç müşteri niyeti olayının GA4 önemli etkinlik ayarlarını panelden kontrol et. `instagram_click` ayrı bir yardımcı etkileşim olarak kalsın.
+- [ ] Organik aramadan gelen oturumlar için açılış sayfası ve olay türü kırılımını hazırla; rehberlerin giriş sayfası olduğu oturumları ayrıca izle.
+- [ ] Mevcut sayfa/oturum verisi yeterliyse yeni olay ekleme. Rehberden hizmete geçiş için ek ölçüm gerekiyorsa önce mevcut raporun neden yetmediğini kaydet.
+- [ ] Mağazada “Bizi nereden buldunuz?” sorusuyla kişisel veri toplamadan haftalık toplam ziyaret/satış kaynağı notu tut.
 
-| Hafta | İş | Tip |
+**Tamamlanma ölçütü:** Üç olay için canlı panel doğrulaması ve tarihli başlangıç raporu. Tıklama, gerçekleşen telefon görüşmesi, mağaza ziyareti veya satış olarak raporlanmaz. Çerez rızası nedeniyle ölçümün tüm ziyaretçileri kapsamadığı belirtilir; GBP ile GA4 sayıları tekil müşteri toplamı gibi toplanmaz.
+
+## Faz 4 — Mevcut hizmet sayfalarını güçlendir
+
+**Sorumlu:** Kod/içerik + işletme bilgisi için Sahibi
+
+**Zaman:** 2–4. haftalar
+
+- [ ] Faz 1’de seçilen sayfaların başlık ve açıklamalarını hedeflenen gerçek sorguya göre düzenle; sabit karakter/kelime sayısını başarı ölçütü yapma.
+- [ ] `/kirikkale-optik` sayfasında konum, ulaşım, çalışma saatleri ve ilgili hizmet bağlantılarını kullanıcının kolay bulabildiğini kontrol et.
+- [ ] Öncelikli hizmet sayfalarına gerçek fotoğraf, hizmet süreci, seçimde etkili ayrıntılar ve mağazada sık sorulan soruları ekle.
+- [ ] Ana sayfada doğrulanmış SGK bilgisi ve ilgili hizmet bağlantısının görünürlüğünü kontrol et; mevcut içeriği tekrar üretme.
+- [ ] Telefon, WhatsApp ve yol tarifine mobil erişimi kontrol et; ilgili hizmetler arasında açıklayıcı bağlantılar kullan.
+- [ ] Fotoğrafların boyutlarını ve yükleme davranışını kontrol et. Search Console Core Web Vitals saha verisini, PageSpeed ölçümünü teknik teşhis için değerlendir; az trafikte saha verisi olmamasını hata sayma.
+
+**Tamamlanma ölçütü:** Seçilen sayfalardaki belirli kullanıcı sorularının cevaplanması, gerçek işletme bilgilerinin doğrulanması ve mobil iletişim akışının çalışması.
+
+## Faz 5 — Üç yazılık Gözlük Rehberi
+
+**Sorumlu:** Kod/içerik; mağaza deneyimi ve doğruluk kontrolü için Sahibi
+
+**Zaman:** 4–8. haftalar; konular Faz 1 sonuçlarıyla kesinleşir
+
+### İlk konu adayları
+
+| Konu | Cevaplanacak soru | İlgili hizmet | Özgün katkı |
+|---|---|---|---|
+| Mevcut çerçeveme yeni cam takılabilir mi? | Hangi durumlarda mağazada uygunluk kontrolü gerekir? | `/cam-cerceve-degisimi` | Gerçek çerçeve örnekleri ve mağazadaki değerlendirme süreci |
+| Gözlük çerçevesi seçerken ölçü ve oturuş | Köprü, sap ve çerçeve ölçüsünde nelere bakılır? | `/gozluk` | Gerçek ürünler üzerinden ölçü/oturuş örnekleri |
+| Numaralı güneş gözlüğü seçerken nelere bakılır? | Çerçeve ve kullanım ihtiyacı seçimi nasıl etkiler? | `/gunes-gozlugu` | Mağazada sunulan seçenekler ve doğrulanmış ürün örnekleri |
+
+- [ ] Her konu için mevcut hizmet sayfasını kontrol et. Ayrı soruya yeterli özgün cevap yoksa yeni URL açmak yerine mevcut sayfayı iyileştir.
+- [ ] Mağaza ekibinden gerçek soruları, örnekleri ve fotoğrafları topla; üç yazının kapsamını bunlarla kesinleştir.
+- [ ] `/rehber` liste sayfasını ve üç yazı sayfasını mevcut Next.js statik dışa aktarma yapısıyla hazırla.
+- [ ] Mevcut sayfa düzeni, metadata, breadcrumb ve iletişim bileşenlerini uygun olduğu ölçüde kullan. İlk sürümde CMS, arama, kategori sistemi veya yeni bağımlılık ekleme.
+- [ ] Her yazıda doğrudan cevap, karar vermeye yardımcı örnekler, ilgili hizmet bağlantısı ve bağlama uygun iletişim çağrısı bulunsun. Hizmet sayfasından ilgili rehbere geri bağlantı ver.
+- [ ] İçeriği gerçekten hazırlayan/kontrol eden kişiyi doğru biçimde belirt; unvan veya uzmanlık uydurma. Yayın tarihi gerçek olsun; güncelleme tarihi yalnızca anlamlı değişiklikte yenilensin.
+- [ ] Benzersiz başlık/açıklama ve canonical ekle; sitemap ve site içi erişimi güncelle. Article/BreadcrumbList verisi kullanılacaksa yalnızca görünür, gerçek bilgileri temsil etsin.
+- [ ] Yazıları işletme bilgisi kontrolünden geçirip yayınla; Search Console’dan URL’leri incele ve indeks durumunu takip et.
+
+**İçerik ilkeleri:** Sabit kelime hedefi yok. Kırıkkale ifadesi yalnızca bağlam gerektiriyorsa kullanılır. Fiyat, stok, teslim süresi ve hizmet iddiaları doğrulanmadan yazılmaz; mevcut fiyat yayımlamama tercihi korunur. Sağlık veya SGK mevzuatı kapsamına giren bilgiler yazılacaksa güncel birincil kaynak ve uygun uzman kontrolü gerekir. İlk deneme ürün seçimi ve mağaza sürecine odaklanır.
+
+Google’ın içerik rehberi özgün katkı, gerçek deneyim, güvenilirlik ve kullanıcının sorusunu cevaplamayı öne çıkarır. Üç yazı ve ayda iki yayın tercihi bu proje için öneridir; Google’ın sayısal şartı değildir. [Google faydalı içerik rehberi](https://developers.google.com/search/docs/fundamentals/creating-helpful-content)
+
+**Tamamlanma ölçütü:** Üç ayrı soruyu cevaplayan, doğrulanmış, hizmete bağlı, mobilde okunabilir yazılar; çalışan bağlantılar ve ölçüm; sitemap’te yer alan erişilebilir URL’ler. İndeks veya sıralama garantisi verilmez.
+
+### Blogun amacı ve sayfa yapısı
+
+Rehberin görevi, gözlük seçerken veya mevcut gözlüğünü yenilerken karar veremeyen kişiye yardımcı olmak ve mağazaya gelmeden önce sorusunu cevaplamaktır. Hizmet sayfası mağazada ne sunulduğunu anlatır; rehber belirli bir soruyu örneklerle açıklar. Aynı metin iki sayfaya dağıtılmaz.
+
+- `/rehber` başlığı “Gözlük Rehberi” olur. Kısa bir açıklama ve yayımlanmış yazıların başlık/özet bağlantıları yeterlidir.
+- Yazı akışı: soruya kısa cevap → açıklayıcı alt başlıklar → gerçek örnek/fotoğraf → ilgili hizmet ve iletişim adımı.
+- Site menüsü veya footer üzerinden rehbere erişim sağlanır; yalnızca yayındaki yazılara bağlantı verilir.
+- Breadcrumb akışı “Ana Sayfa → Gözlük Rehberi → Yazı” olur. Hizmet sayfası breadcrumb’ı yazıya aynen kopyalanmaz.
+- Aşağıdaki URL ve başlıklar taslaktır; Faz 1 verisiyle yayın öncesinde kesinleştirilir.
+
+### Yazı 1 — Mevcut çerçeveme yeni cam takılabilir mi?
+
+**Taslak URL:** `/rehber/mevcut-cerceveye-yeni-cam`
+
+**Okurun kararı:** Mevcut çerçevesini değerlendirmek üzere mağazaya getirmek.
+
+İçerik akışı:
+
+1. Kısa cevap: uygunluğun çerçeve ve istenen cam birlikte değerlendirilerek belirlenmesi; her çerçeveye uygunluk sözü verilmemesi.
+2. Mağazada hangi çerçeve özelliklerinin kontrol edildiği; açıklama işletme ekibinin gerçek uygulamasından alınır.
+3. Mevcut çerçeveyi kullanmak ile yeni çerçeve seçmek arasındaki karar noktaları.
+4. Kişisel veri içermeyen gerçek bir çerçeve örneği ve değerlendirme fotoğrafı.
+5. Müşterinin gelirken yanında getirmesi gerekenler; liste işletme sahibince doğrulanır.
+
+- [ ] İşletmeden bir örnek, bir fotoğraf ve en sık gelen üç soruyu al.
+- [ ] `/cam-cerceve-degisimi` içeriğiyle tekrarı ayıkla ve iki yönlü bağlantıları ekle.
+- [ ] İletişim çağrısını “Çerçevenizin değerlendirilmesi için bize ulaşın” gibi koşulsuz uygunluk vaat etmeyen bir metinle hazırla.
+
+### Yazı 2 — Gözlük çerçevesi seçerken ölçü ve oturuş
+
+**Taslak URL:** `/rehber/gozluk-cercevesi-olcu-ve-oturus`
+
+**Okurun kararı:** Deneme sırasında nelere dikkat edeceğini öğrenmek ve uygun çerçeve seçimi için mağazaya başvurmak.
+
+İçerik akışı:
+
+1. Rahat oturuşu değerlendirirken sorulacak temel sorular.
+2. Çerçeve üzerindeki ölçülerin gerçek bir ürün fotoğrafında açıklanması.
+3. Köprü, sap ve çerçeve genişliğinin deneme sırasında nasıl değerlendirildiği.
+4. Tek başına yüz şekli veya bir ölçüye dayanarak seçim yapmanın sınırları; mağazada deneme ve ayar süreci.
+5. Mağazadaki gerçek bir seçim örneği üzerinden kısa kontrol listesi.
+
+- [ ] Gerçek ürün üzerindeki ölçüleri gösteren fotoğrafı ve ekibin deneme kontrol listesini al.
+- [ ] `/gozluk` sayfasıyla iki yönlü bağlantı kur; genel hizmet tanıtımını tekrarlama.
+- [ ] İletişim çağrısını mağazada çerçeve deneme ve seçim desteğine bağla.
+
+### Yazı 3 — Numaralı güneş gözlüğü seçerken nelere bakılır?
+
+**Taslak URL:** `/rehber/numarali-gunes-gozlugu-secimi`
+
+**Okurun kararı:** Kendi kullanım ihtiyacına göre mağazada hangi seçenekleri soracağını belirlemek.
+
+İçerik akışı:
+
+1. Günlük kullanım ve kullanım ortamını netleştiren kısa sorular.
+2. Çerçeve ve cam seçeneklerinin birlikte değerlendirilmesi; uygunluğun kişiye ve ürüne göre doğrulanması.
+3. Sunulan cam özelliklerinin ürün belgelerine dayanarak açıklanması; özelliklerin birbirinin yerine geçtiğinin varsayılmaması.
+4. Mağazada gerçekten sunulan seçeneklerden bir ürün örneği.
+5. Görüşme öncesinde hazırlanabilecek sorular ve mağazadaki seçim süreci.
+
+- [ ] Sunulan seçenekleri, ürün özelliklerini ve kullanılacak fotoğrafı işletme sahibinden doğrula.
+- [ ] `/gunes-gozlugu` sayfasıyla iki yönlü bağlantı kur; ayrı bir hizmet URL’si ihtiyacını bu yazıdan bağımsız değerlendir.
+- [ ] İletişim çağrısını “Size uygun seçenekleri görüşmek için bize ulaşın” düzeyinde tut; doğrulanmamış stok, fiyat veya teslim sözü ekleme.
+
+### Hazırlık ve yayın sırası
+
+| Dönem | İş | Çıkış koşulu |
 |---|---|---|
-| 1 | `/kirikkale-optik` pillar + ana sayfa SGK bandı + title/meta düzeltmeleri | Sayfa |
-| 2 | GBP fotoğraf, hizmet listesi, ilk yorum turu | **[Sahibi]** |
-| 3 | Rehber altyapısı + numaralı güneş gözlüğü sayfası | Altyapı |
-| 4 | GSC kontrolü | Ölçüm |
-| 5 | Rehber 1: Gözlük reçetesi nasıl okunur | Rehber |
-| 6 | Mağaza fotoğrafı çekimi ve yerleştirme | **[Sahibi]** + kod |
-| 7 | Rehber 2: Yüz şekline göre gözlük | Rehber |
-| 8 | Yorum turu + GSC kontrolü | Ölçüm |
-| 9 | Rehber 3: Cam tipleri | Rehber |
-| 10 | Kuyruk revizyonu | Strateji |
-| 11 | Rehber 4: İlk kez lens | Rehber |
-| 12 | Çeyrek değerlendirmesi | Ölçüm |
+| 4. hafta | Üç konuyu sorgu ve mağaza sorularıyla doğrula; ilk yazının örneklerini topla | Her konu mevcut hizmet sayfasından farklı bir soruyu karşılıyor |
+| 5. hafta | Rehber liste sayfası ve Yazı 1 | Doğruluk, bağlantı, mobil görünüm ve ölçüm kontrolleri tamam |
+| 6. hafta | Yazı 2 taslağı ve gerçek görseller | İşletme kontrolü tamam |
+| 7. hafta | Yazı 2 yayını, Yazı 3 taslağı | İki yönlü hizmet bağlantıları ve teknik kontroller tamam |
+| 8. hafta | Yazı 3 yayını | Ürün bilgisi kontrolü ve yayın kontrolleri tamam |
 
-Rehber 5, 6 ve 7 ikinci çeyreğe kalır; kuyruk 10. haftada GSC verisiyle yeniden sıralanır.
+Bu takvim hazırlık kapasitesine göre kaydırılabilir. Veri veya gerçek örnekler hazır değilse konu değiştirilir ya da yayın ertelenir. Üçüncü yazıyı yayımlamak için ilk yazının sıralama kazanması beklenmez; denemeyi büyütme kararı Faz 6 ölçümlerinden sonra verilir.
 
-## Konu haritası
+### Her yazı için yayın kontrolü
 
-```
-PILLAR: /kirikkale-optik  (600 → 2000 kelime)
-│
-├── SGK ve gözlük hakkı        → /sgk-anlasmali-optik ✓
-│   └── Rehber 5: hak sorgulama
-├── Gözlük seçimi              → /gozluk ✓
-│   ├── Rehber 1: reçete okuma
-│   ├── Rehber 2: yüz şekli
-│   └── Rehber 3: cam tipleri
-├── Lens                       → /lens ✓
-│   ├── Rehber 4: ilk kez lens
-│   └── Rehber 7: bakım ve hijyen
-├── Çocuk gözlüğü              → /cocuk-gozlugu ✓
-│   └── Rehber 6: gözlüğe alışma
-├── Güneş gözlüğü              → /gunes-gozlugu ✓
-│   └── /numarali-gunes-gozlugu (yeni)
-└── Servis                     → /cam-cerceve-degisimi ✓
-```
+- [ ] Okurun sorusu girişte açıkça cevaplanıyor; metin hizmet sayfasının kopyası değil.
+- [ ] İşletmeye özgü en az bir doğrulanmış örnek var; fotoğraf kullanılıyorsa gerçek sahneyi gösteriyor ve alternatif metni bunu tarif ediyor.
+- [ ] Yazar/kontrol eden kişi, ürün bilgileri ve kullanılan kaynaklar doğru.
+- [ ] İlgili hizmet bağlantısı, geri bağlantı ve iletişim çağrısı çalışıyor.
+- [ ] Yazı ve rehber listesi üretilen statik çıktıda erişilebilir; başlık, canonical, breadcrumb ve sitemap kontrolleri tamam.
+- [ ] Yayın tarihi ve başlangıç ölçüm dönemi kaydedildi; Faz 6 kontrolünde yazının yayında kaldığı süre dikkate alınacak.
 
-## İç linkleme kuralları
+## Faz 6 — Ölç ve sonraki içeriği seç
 
-Hub-and-spoke: `/kirikkale-optik` merkez, hizmet sayfaları ona ve birbirine bağlı (PR #4'te kuruldu).
+**Sorumlu:** Sahibi + kod/içerik
 
-Her rehber yazısı için: **en az bir** hizmet sayfasına link, **tam olarak bir** dönüşüm CTA'sı. Hizmet sayfaları da ilgili rehbere geri bağlanır, tek yön olmaz.
+**Zaman:** İlk yayın sonrası 4, 8 ve 12. haftalarda değerlendirme; bunlar sonuç garantisi değil kontrol tarihleridir.
 
-| Rehber | Bağlanacağı hizmet sayfası |
-|---|---|
-| Reçete okuma | `/gozluk`, `/sgk-anlasmali-optik` |
-| Yüz şekli | `/gozluk`, `/gunes-gozlugu` |
-| Cam tipleri | `/gozluk`, `/cam-cerceve-degisimi` |
-| İlk kez lens | `/lens` |
-| Lens bakımı | `/lens` |
-| Çocuk gözlük takmıyorsa | `/cocuk-gozlugu` |
-| SGK hakkı sorgulama | `/sgk-anlasmali-optik` |
-
-## Başarı metrikleri
-
-Sıralama ara metriktir. Bir optik için gerçek dönüşüm telefon araması ve yol tarifi talebidir.
-
-| Metrik | Kaynak | 3 aylık hedef |
+| Ölçüm | Kaynak | Kararda kullanımı |
 |---|---|---|
-| İndekslenen sayfa | GSC | 9/9 |
-| Marka dışı gösterim | GSC | Sıfırdan ölçülebilir seviyeye |
-| "kırıkkale optik/gözlükçü" ortalama pozisyon | GSC | İlk 10 |
-| Yerel pakette görünme | GBP Insights | Hedef: var |
-| GBP → telefon araması | GBP Insights | Taban ölçüm + artış |
-| Google yorum sayısı | GBP | 10+ |
-| Yayınlanan içerik | — | 4 rehber + 2 sayfa |
+| Marka dışı ilgili sorgu gösterimleri ve tıklamalar | Search Console | Hangi sayfa/soru için talep sinyali var? |
+| Sayfa bazında organik girişler | GA4 | Hangi içerik siteye ziyaretçi getiriyor? |
+| Telefon, WhatsApp, yol tarifi tıklamaları ayrı ayrı | GA4 | Hangi girişler müşteri niyetine dönüşüyor? |
+| Profildeki arama/site/yol tarifi etkileşimleri | İşletme Profili | Yerel görünürlük müşteri eylemi üretiyor mu? |
+| Beyan edilen mağaza ziyaretleri ve satışlar | Haftalık mağaza notu | Dijital ilgi gerçek müşteriye yansıyor mu? |
 
-İlk ay sıralama beklenmemeli; yeni sayfalarda anlamlı veri 6-8 haftadan önce oluşmaz.
+- [ ] Yayın/değişiklik tarihlerini kaydet; başlangıç ve sonraki dönemleri aynı süreyle karşılaştır, mevsimsellik ve veri azlığını belirt.
+- [ ] İlgili sorgular ve iletişim eylemleri oluşan konunun devamını üret; yazı sayısını tek başına başarı sayma.
+- [ ] Gösterim var ama tıklama azsa sorgu/başlık/konum ilişkisini incele; ziyaret var ama eylem yoksa içerik niyeti ve iletişim adımını gözden geçir.
+- [ ] Gösterim yoksa önce indeks ve konu uyumunu incele. Yetersiz örneklemde başarı/başarısızlık ilan etme veya aynı konunun yeni kopyalarını açma.
+- [ ] İlk üç yazıyı değerlendirip sonraki iki konuyu seç, mevcut yazıları iyileştir veya yeni yayınları beklet; kararı verisiyle kaydet.
 
-## Kapsam dışı — bilinçli olarak yapılmayacaklar
+## Uygulama doğrulaması
 
-- **Ulusal karşılaştırma içerikleri** ("en iyi gözlük markaları", "gözlük fiyatları 2026"): Atasun ve e-ticaret siteleriyle yarışılır, kazanılsa bile gelen trafik müşteriye dönüşmez
-- **İlçe başına ayrı sayfa** (Bahşili optik, Yahşihan gözlükçü): doorway page olarak okunur ve ceza riski taşır. İlçeler `/kirikkale-optik` içinde tek bölümde geçiyor
-- **Haftada 3-5 yazı temposu**: sürdürülemez, üç ay sonra terk edilir
-- **Sayfaya özel OG görselleri**: üretim maliyeti kazancından yüksek, şimdilik atlandı
-- **Uydurma `aggregateRating`**: Google yapısal veri politikasına aykırı
+Bu bölüm gelecekteki kod/içerik uygulamasında çalıştırılır; yalnızca plan düzenlemesi için uygulama tamamlandı anlamına gelmez.
+
+- [ ] `npm run lint` ve `npm run build` başarılı.
+- [ ] `node scripts/check-seo.mjs` başarılı; rehber eklenince mevcut kontrolün yeni URL’leri kapsadığı doğrulanmış.
+- [ ] Metadata, canonical, sitemap, breadcrumb ve site içi bağlantılar üretilen sayfalarda kontrol edilmiş.
+- [ ] Yeni/değişen sayfalar mobil ve masaüstünde okunabilir; klavye erişimi, görsel alternatif metinleri ve iletişim bağlantıları çalışıyor.
+- [ ] Canlı GA4 ve Search Console kontrolleri panel kanıtıyla ayrı kaydedilmiş; yerel test panel doğrulaması yerine geçmiyor.
+
+## İlk denemenin sınırları
+
+- Genel haber akışı, toplu otomatik yazı üretimi ve haftalık yayın kotası yok.
+- Birbirinin kopyası ilçe sayfaları ve yalnızca anahtar kelimeyi hedefleyen yazılar yok.
+- Yeni hizmet sayfası ancak mevcut sayfanın karşılamadığı ayrı bir kullanıcı ihtiyacı doğrulanırsa açılır.
+- İncelenmemiş panel işleri ve doğrulanmamış işletme iddiaları tamamlandı olarak işaretlenmez.
