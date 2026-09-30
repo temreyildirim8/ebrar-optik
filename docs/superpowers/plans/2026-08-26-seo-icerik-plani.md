@@ -4,6 +4,8 @@
 
 **Durum:** Uygulama planı; aşağıdaki işler tamamlanmış sayılmaz.
 
+**30 Eylül 2026 yayın hazırlığı:** `/rehber` ve üç genel bilgi yazısı, gerçek mağaza fotoğrafları, sitemap, canonical, breadcrumb ve karşılıklı hizmet bağlantıları yerel derlemede doğrulandı. Search Console, İşletme Profili ve canlı GA4 panel kontrolleri ayrı takip edilir; Faz 1–5 bütünü henüz tamamlanmadı.
+
 **Amaç:** Kırıkkale’de ilgili aramalardan gelen ziyaretçilerin telefon, WhatsApp ve yol tarifi adımlarına geçmesini, ardından gerçek mağaza ziyaretlerini artırmak.
 
 ## Karar ve kapsam

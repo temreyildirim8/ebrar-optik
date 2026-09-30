@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { guideArticles } from "@/lib/guide";
 import { SITE_URL } from "@/lib/seo";
 
 export const dynamic = "force-static";
@@ -17,6 +18,12 @@ const routes: {
   { path: "/cam-cerceve-degisimi", priority: 0.8, changeFrequency: "weekly" },
   { path: "/cocuk-gozlugu", priority: 0.8, changeFrequency: "weekly" },
   { path: "/sss", priority: 0.7, changeFrequency: "weekly" },
+  { path: "/rehber", priority: 0.7, changeFrequency: "weekly" },
+  ...guideArticles.map(({ slug }) => ({
+    path: `/rehber/${slug}`,
+    priority: 0.6,
+    changeFrequency: "weekly" as const,
+  })),
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

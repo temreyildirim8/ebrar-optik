@@ -12,6 +12,7 @@ export type ServicePageContent = {
   metaTitle: string;
   metaDescription: string;
   h1: string;
+  image: { src: string; alt: string };
   intro: string[];
   sections: ServiceSection[];
   bullets: string[];
@@ -30,6 +31,7 @@ export const servicePages: Record<string, ServicePageContent> = {
     metaDescription:
       "Kırıkkale'de reçeteli optik gözlük. Yüz şeklinize uygun çerçeve seçimi, cam montajı, ayar ve SGK ile gözlük alımı Ebrar Optik'te.",
     h1: "Kırıkkale'de Reçeteli Optik Gözlük",
+    image: { src: "/assets/ebrar-optik-cerceve-rafi.webp", alt: "Ebrar Optik mağazasındaki gözlük çerçeveleri" },
     intro: [
       "Göz doktorunuzun yazdığı reçeteyi elinize aldıktan sonraki kısım bizim işimiz. Ebrar Optik olarak Kırıkkale Merkez'de, reçetenizdeki numaraya uygun camı seçmenize, o cama ve yüzünüze uyan çerçeveyi bulmanıza ve gözlüğü rahat kullanabileceğiniz şekilde ayarlamanıza yardımcı oluyoruz.",
       "Gözlük, kataloglardan seçilen bir aksesuar değil; kişiye göre hazırlanan bir üründür. Aynı numarada iki kişi aynı çerçeveyi taktığında ikisi de rahat etmeyebilir. Bu yüzden ölçü almadan, deneme yaptırmadan ve kullanım alışkanlığınızı sormadan satış yapmıyoruz.",
@@ -103,6 +105,7 @@ export const servicePages: Record<string, ServicePageContent> = {
       },
     ],
     related: [
+      { href: "/rehber/gozluk-cercevesi-olcu-ve-oturus", label: "Çerçeve ölçüsü rehberi" },
       { href: "/sgk-anlasmali-optik", label: "SGK anlaşmalı optik" },
       { href: "/cam-cerceve-degisimi", label: "Cam ve çerçeve değişimi" },
       { href: "/gunes-gozlugu", label: "Güneş gözlüğü" },
@@ -119,6 +122,7 @@ export const servicePages: Record<string, ServicePageContent> = {
     metaDescription:
       "Kırıkkale'de UV korumalı güneş gözlüğü ve numaralı güneş gözlüğü. Polarize cam seçenekleri ve istediğiniz çerçeveye özel cam montajı Ebrar Optik'te.",
     h1: "Güneş Gözlüğü ve Numaralı Güneş Gözlüğü",
+    image: { src: "/assets/ebrar-gunes-gozlugu-rafi.webp", alt: "Ebrar Optik mağazasındaki güneş gözlüğü rafları" },
     intro: [
       "Güneş gözlüğü yazlık bir aksesuar değil, gözünüzü koruyan bir üründür. Kırıkkale'de yaz aylarındaki güneşin yanı sıra kışın kar ve asfalt yansıması da gözü yorar. Ebrar Optik'te hem korumayı hem görünümü birlikte düşünerek seçim yapmanıza yardımcı oluyoruz.",
       "Numara kullanıyorsanız güneşte gözlüğünüzü çıkarmak zorunda kalmanız gerekmiyor. Beğendiğiniz çerçeveye reçetenize uygun numaralı güneş camı monte ediyoruz.",
@@ -184,6 +188,7 @@ export const servicePages: Record<string, ServicePageContent> = {
       },
     ],
     related: [
+      { href: "/rehber/numarali-gunes-gozlugu-secimi", label: "Numaralı güneş gözlüğü rehberi" },
       { href: "/gozluk", label: "Reçeteli gözlük" },
       { href: "/cam-cerceve-degisimi", label: "Cam ve çerçeve değişimi" },
       { href: "/sgk-anlasmali-optik", label: "SGK anlaşmalı optik" },
@@ -199,6 +204,7 @@ export const servicePages: Record<string, ServicePageContent> = {
     metaDescription:
       "Kırıkkale'de günlük, haftalık, aylık ve renkli kontakt lens. Lens tipi seçimi, hijyen ve kullanım danışmanlığı Ebrar Optik'te.",
     h1: "Kontakt Lens Çeşitleri",
+    image: { src: "/assets/ebrar-magaza-ici.webp", alt: "Ebrar Optik mağazasının iç mekânı" },
     intro: [
       "Kontakt lens, gözlüğün yerine geçebilecek ya da yanında kullanılabilecek bir seçenek. Spor yaparken, özel günlerde ya da gün boyu gözlük takmak istemediğinizde işinizi görür. Ebrar Optik'te günlük, haftalık, aylık ve renkli lens alternatifleri bulabilirsiniz.",
       "Doğru lens tipi kişiden kişiye değişir. Reçeteniz, gözünüzün yapısı, ne sıklıkla kullanacağınız ve hijyen rutinine ne kadar vakit ayırabileceğiniz seçimi doğrudan etkiler.",
@@ -279,6 +285,7 @@ export const servicePages: Record<string, ServicePageContent> = {
     metaDescription:
       "Kırıkkale'de SGK anlaşmalı optik. Reçetenizle çerçeve ve cam hakkınızı kullanın; süreç, gerekli belgeler ve hak sorgulama adımları Ebrar Optik'te.",
     h1: "SGK Anlaşmalı Optik — Kırıkkale",
+    image: { src: "/assets/ebrar-giris.webp", alt: "Ebrar Optik mağazasının giriş kapısı ve vitrini" },
     intro: [
       "Ebrar Optik, Kırıkkale Merkez'de hizmet veren SGK anlaşmalı bir optisyenlik müessesesidir. Göz doktorunuzdan aldığınız reçeteyle mağazamıza gelip çerçeve ve cam hakkınızı doğrudan burada kullanabilirsiniz.",
       "Süreç çoğu kişinin sandığından basit, ama birkaç ayrıntıyı bilmeden gelirseniz ikinci kez gelmek zorunda kalabilirsiniz. Aşağıda sırayı, gerekenleri ve sık karıştırılan noktaları topladık.",
@@ -366,6 +373,7 @@ export const servicePages: Record<string, ServicePageContent> = {
     metaDescription:
       "Kırıkkale'de gözlük camı değişimi, çerçeve değişimi, menteşe ve burunluk onarımı. Mevcut çerçevenize yeni cam montajı Ebrar Optik'te.",
     h1: "Gözlük Camı ve Çerçeve Değişimi",
+    image: { src: "/assets/ebrar-optik-cerceve-rafi.webp", alt: "Ebrar Optik mağazasında sergilenen gözlük çerçeveleri" },
     intro: [
       "Gözlüğünüzün camı çizildiğinde, kırıldığında veya numaranız değiştiğinde baştan gözlük almanız gerekmiyor. Sevdiğiniz çerçeveyi koruyup yalnızca camını yenileyebilirsiniz. Ebrar Optik'te Kırıkkale Merkez'de cam değişimi, çerçeve değişimi ve gözlük onarımı yapıyoruz.",
       "Aynı şekilde camınız sağlamsa ama çerçeveniz kırıldıysa, uygun bir çerçeve bulup mevcut camlarınızı taşımak çoğu durumda mümkün.",
@@ -432,6 +440,7 @@ export const servicePages: Record<string, ServicePageContent> = {
       },
     ],
     related: [
+      { href: "/rehber/mevcut-cerceveye-yeni-cam", label: "Mevcut çerçeveye yeni cam rehberi" },
       { href: "/gozluk", label: "Reçeteli gözlük" },
       { href: "/gunes-gozlugu", label: "Güneş gözlüğü" },
       { href: "/sgk-anlasmali-optik", label: "SGK anlaşmalı optik" },
@@ -446,6 +455,7 @@ export const servicePages: Record<string, ServicePageContent> = {
     metaDescription:
       "Kırıkkale'de çocuk gözlüğü. Hafif ve sağlam çerçeveler, doğru ölçü, dayanıklı cam seçenekleri ve aileyle birlikte deneme Ebrar Optik'te.",
     h1: "Çocuk Gözlüğü — Kırıkkale",
+    image: { src: "/assets/ebrar-magaza-ici.webp", alt: "Ebrar Optik mağazasındaki çerçeve rafları ve danışma alanı" },
     intro: [
       "Çocuk gözlüğü, küçültülmüş bir yetişkin gözlüğü değildir. Çocuğun yüzü büyümeye devam eder, gözlüğü yetişkinlerden daha sert kullanır ve rahatsız olduğunda bunu her zaman söylemez. Bu yüzden seçim yaparken ölçü ve dayanıklılık, görünümden önce gelir.",
       "Ebrar Optik'te çocuğunuzun gözlüğünü sizinle birlikte, deneyerek seçiyoruz. Kırıkkale Merkez'deki mağazamıza reçetenizle uğramanız yeterli.",
@@ -527,6 +537,7 @@ export const servicePages: Record<string, ServicePageContent> = {
     metaTitle: "Kırıkkale Optik | Ebrar Optik Mağazası",
     metaDescription: `Kırıkkale optik arıyorsanız Ebrar Optik: ${ADRES}. SGK anlaşmalı; gözlük, güneş gözlüğü, lens, cam değişimi ve bakım hizmetleri.`,
     h1: "Kırıkkale Optik — Ebrar Optik",
+    image: { src: "/assets/ebrar-dis-cephe.webp", alt: "Kırıkkale'deki Ebrar Optik mağazasının dış cephesi" },
     intro: [
       `Kırıkkale'de güvenilir bir optik mağazası arıyorsanız Ebrar Optik ${business.address.streetAddress} adresinde hizmet veriyor. Çalışma saatlerimiz ${SAAT}; pazar günü kapalıyız.`,
       "Reçeteli gözlükten kontakt lense, numaralı güneş gözlüğünden cam-çerçeve değişimine kadar optik ihtiyaçlarınızı tek noktadan karşılıyoruz. SGK anlaşmalı bir müessese olduğumuz için reçetenizle gelip hakkınızı doğrudan burada kullanabilirsiniz.",
