@@ -5,16 +5,16 @@ import Image from "next/image";
 
 const images = [
   {
-    src: "/assets/hero_lifestyle_wide_hr_1773526720963.webp",
-    alt: "Gözlük kullanan müşteri — Ebrar Optik Kırıkkale",
+    src: "/assets/ebrar-dis-cephe-ana.webp",
+    alt: "Kırıkkale'deki Ebrar Optik mağazasının dış cephesi",
   },
   {
-    src: "/assets/hero_interior_wide_1773521896687.webp",
-    alt: "Ebrar Optik Kırıkkale mağaza içi",
+    src: "/assets/ebrar-magaza-ici.webp",
+    alt: "Ebrar Optik mağazasının iç mekânı",
   },
   {
-    src: "/assets/hero_product_wide_1773521883588.webp",
-    alt: "Gözlük çerçevesi yakın çekim — Ebrar Optik Kırıkkale",
+    src: "/assets/ebrar-gunes-gozlugu-rafi.webp",
+    alt: "Ebrar Optik mağazasındaki güneş gözlükleri",
   },
 ];
 
@@ -23,7 +23,7 @@ export function AnimatedHeroBackground() {
   const [rotating, setRotating] = useState(false);
 
   useEffect(() => {
-    // xl altında tek kadın görseli sabit kalır; carousel 1280px ve üstünde döner.
+    // Küçük ekranlarda ilk mağaza fotoğrafı sabit kalır.
     const desktop = window.matchMedia("(min-width: 1280px)");
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
@@ -78,24 +78,26 @@ export function AnimatedHeroBackground() {
   return (
     <div className="absolute inset-0 z-0 overflow-hidden bg-white/20 md:bg-stone-900">
       {visible.map((image, i) => (
-        <Image
-          key={image.src}
-          src={image.src}
-          alt={image.alt}
-          fill
-          priority={i === 0}
-          fetchPriority={i === 0 ? "high" : "auto"}
-          className="object-cover object-center transition-[opacity,transform] duration-1000 ease-in-out"
-          sizes="100vw"
-          quality={90}
-          style={{
-            filter: "saturate(0.8) brightness(0.95)",
-            opacity: i === index ? 1 : 0,
-            // Yavaşça uzaklaşma (zoom-out) efekti
-            transform: i === index ? "scale(1)" : "scale(1.05)",
-            transitionDuration: i === index ? "1000ms, 3000ms" : "1000ms",
-          }}
-        />
+        <picture key={image.src}>
+          {i === 0 && <source media="(max-width: 767px)" srcSet="/assets/ebrar-gunes-gozlugu-mobil.webp" />}
+          <Image
+            src={image.src}
+            alt={i === 0 ? "Ebrar Optik mağazası" : image.alt}
+            fill
+            loading={i === 0 ? "eager" : "lazy"}
+            fetchPriority={i === 0 ? "high" : "auto"}
+            className={`object-cover transition-[opacity,transform] duration-1000 ease-in-out ${i === 0 ? "object-top max-md:object-center" : "object-center"}`}
+            sizes="100vw"
+            quality={90}
+            style={{
+              filter: "saturate(0.8) brightness(0.95)",
+              opacity: i === index ? 1 : 0,
+              // Yavaşça uzaklaşma (zoom-out) efekti
+              transform: i === index ? "scale(1)" : "scale(1.05)",
+              transitionDuration: i === index ? "1000ms, 3000ms" : "1000ms",
+            }}
+          />
+        </picture>
       ))}
 
       {/* Gradient overlay */}

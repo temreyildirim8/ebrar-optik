@@ -17,12 +17,12 @@ export function HeroSection() {
               Ebrar Optik
             </span>
             <span className="mt-1 block text-2xl font-bold text-stone-200 sm:text-3xl md:text-4xl">
-              Kırıkkale&apos;de Güvenilir Optik
+              Kırıkkale&apos;de gözlük ve lens
             </span>
           </h1>
           <p className="drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] text-lg font-semibold text-stone-200 sm:text-xl md:text-2xl">
-            Görüşünüze değer katıyoruz. Profesyonel göz sağlığı hizmetleri ve
-            geniş çerçeve koleksiyonu ile hizmetinizdeyiz.
+            Çerçeveyi mağazada deneyin, cam seçeneklerini reçetenizle birlikte konuşalım.
+            Güneş gözlüklerine ve lenslere de yakından bakabilirsiniz.
           </p>
         </HeroReveal>
 

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { business } from "@/lib/business";
 import { buildBreadcrumbSchema, buildFaqPageSchema } from "@/lib/schema";
 import type { ServicePageContent } from "@/lib/service-pages";
@@ -43,6 +44,14 @@ export function ServicePageLayout({ page }: ServicePageLayoutProps) {
         <h1 className="mb-6 text-3xl font-bold tracking-tight text-stone-900 dark:text-stone-50 sm:text-4xl">
           {page.h1}
         </h1>
+
+        <Image
+          src={page.image.src}
+          alt={page.image.alt}
+          width={1200}
+          height={800}
+          className="mb-8 h-auto w-full rounded-xl"
+        />
 
         <div className="space-y-4 text-base leading-relaxed text-stone-700 dark:text-stone-300">
           {page.intro.map((paragraph) => (

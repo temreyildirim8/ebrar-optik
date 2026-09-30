@@ -5,9 +5,9 @@ const dist = new URL("../dist/", import.meta.url);
 const read = (file) => readFile(new URL(file, dist), "utf8");
 const sitemap = await read("sitemap.xml");
 const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]);
-assert.equal(urls.length, 9, "Sitemap dokuz sayfa içermeli.");
-assert.equal([...sitemap.matchAll(/<changefreq>weekly<\/changefreq>/g)].length, 9,
-  "Dokuz sayfanın tamamı haftalık güncelleme sıklığı bildirmeli.");
+assert.equal(urls.length, 13, "Sitemap on üç sayfa içermeli.");
+assert.equal([...sitemap.matchAll(/<changefreq>weekly<\/changefreq>/g)].length, 13,
+  "On üç sayfanın tamamı haftalık güncelleme sıklığı bildirmeli.");
 assert(!sitemap.includes("<lastmod>"), "Gerçek değişim tarihi yokken lastmod üretilmemeli.");
 assert(!urls.some((url) => url.endsWith("/kvkk")), "KVKK sitemap dışında kalmalı.");
 
@@ -28,13 +28,32 @@ for (const url of urls) {
   if (path !== "/") {
     const breadcrumb = schemas.find((schema) => schema["@type"] === "BreadcrumbList");
     assert(breadcrumb, `${path}: breadcrumb schema eksik.`);
-    assert.equal(breadcrumb.itemListElement.length, 2);
+    const isGuideArticle = path.startsWith("/rehber/");
+    assert.equal(breadcrumb.itemListElement.length, isGuideArticle ? 3 : 2);
     assert.equal(breadcrumb.itemListElement[0].position, 1);
     assert.equal(breadcrumb.itemListElement[0].item, "https://ebrar-optik.com");
-    assert.equal(breadcrumb.itemListElement[1].position, 2);
-    assert.equal(breadcrumb.itemListElement[1].item, url);
+    if (isGuideArticle) {
+      assert.equal(breadcrumb.itemListElement[1].position, 2);
+      assert.equal(breadcrumb.itemListElement[1].item, "https://ebrar-optik.com/rehber");
+    }
+    assert.equal(breadcrumb.itemListElement.at(-1).position, isGuideArticle ? 3 : 2);
+    assert.equal(breadcrumb.itemListElement.at(-1).item, url);
     assert.match(html, /<nav aria-label="Sayfa konumu"/);
   }
 }
+
+const guideLinks = [
+  ["/cam-cerceve-degisimi", "/rehber/mevcut-cerceveye-yeni-cam"],
+  ["/gozluk", "/rehber/gozluk-cercevesi-olcu-ve-oturus"],
+  ["/gunes-gozlugu", "/rehber/numarali-gunes-gozlugu-secimi"],
+];
+const guideIndex = await read("rehber.html");
+assert((await read("index.html")).includes('href="/rehber"'), "Rehber site içinden erişilebilir olmalı.");
+for (const [service, article] of guideLinks) {
+  assert(urls.includes(`https://ebrar-optik.com${article}`), `${article}: sitemap URL eksik.`);
+  assert(guideIndex.includes(`href="${article}"`), `${article}: liste bağlantısı eksik.`);
+  assert((await read(`${service.slice(1)}.html`)).includes(`href="${article}"`), `${service}: rehber bağlantısı eksik.`);
+  assert((await read(`${article.slice(1)}.html`)).includes(`href="${service}"`), `${article}: hizmet bağlantısı eksik.`);
+}
 assert.match(await read("kvkk.html"), /name="robots" content="noindex, nofollow"/);
-console.log("SEO doğrulandı: dokuz canonical, JSON-LD, breadcrumb, robots ve sitemap.");
+console.log("SEO doğrulandı: on üç canonical, JSON-LD, breadcrumb, rehber bağlantıları, robots ve sitemap.");

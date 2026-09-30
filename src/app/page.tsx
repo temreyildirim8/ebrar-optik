@@ -6,9 +6,9 @@ import { ContactSection } from "@/components/sections/ContactSection";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "Ebrar Optik | Kırıkkale'nin Güvenilir Optik Mağazası",
+  title: "Ebrar Optik | Kırıkkale'de Gözlük ve Lens",
   description:
-    "Görüşünüze değer katıyoruz. Ebrar Optik, Kırıkkale'de profesyonel göz sağlığı hizmetleri ve geniş çerçeve koleksiyonu ile hizmetinizde.",
+    "Kırıkkale'de Ebrar Optik mağazasında optik çerçeveleri ve güneş gözlüklerini deneyin. Reçetenize uygun cam ve lens seçenekleri hakkında bilgi alın.",
   path: "/",
 });
 

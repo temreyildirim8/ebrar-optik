@@ -13,6 +13,7 @@ export function Footer() {
     { href: "/#hakkimizda", label: "Hakkımızda" },
     { href: "/#hizmetler", label: "Hizmetler" },
     { href: "/#cerceveler", label: "Çerçeveler" },
+    { href: "/rehber", label: "Gözlük Rehberi" },
     { href: "/#iletisim", label: "İletişim" },
   ];
 
@@ -196,7 +197,6 @@ export function Footer() {
             media="(min-width: 768px)"
             srcSet="/assets/below-footer.webp"
           />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/assets/below-footer-mobile.webp"
             alt="Ebrar Optik'in bulunduğu Kırıkkale sokağının illüstrasyonu"
