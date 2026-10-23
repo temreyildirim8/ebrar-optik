@@ -8,7 +8,7 @@ import { getContactClickEvent } from "@/lib/analytics";
 const STORAGE_KEY = "ebrar-cerez-onayi";
 
 /** Metin veya çerez türleri değişirse artır; kayıtlı rıza geçersiz sayılır. */
-const CONSENT_VERSION = 1;
+const CONSENT_VERSION = 2;
 
 type Decision = "kabul" | "ret";
 
@@ -168,9 +168,9 @@ gtag('config', '${gaId}');`}
           Çerez tercihiniz
         </h2>
         <p className="mt-3 text-sm leading-relaxed text-stone-600 dark:text-stone-400">
-          Siteyi nasıl kullandığınızı anlamak için isteğe bağlı analiz çerezleri
-          kullanmak istiyoruz. Reddederseniz hiçbir analiz çerezi yüklenmez ve
-          site aynı şekilde çalışır. Ayrıntılar için{" "}
+          Siteyi nasıl kullandığınızı anlamak için isteğe bağlı Google Analytics
+          çerezlerini kullanmak istiyoruz. Reddederseniz Google Analytics
+          yüklenmez ve site aynı şekilde çalışır. Ayrıntılar için{" "}
           <Link
             href="/kvkk"
             className="font-medium text-brand underline hover:text-brand-mid"
